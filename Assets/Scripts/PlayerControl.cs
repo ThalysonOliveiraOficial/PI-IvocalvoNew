@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     //Girar Player
     private void TurnPlayer()
     {
-        _rot -= Input.GetAxisRaw("Horizontal") * _turnSpeed;
+        _rot += Input.GetAxisRaw("Horizontal") * _turnSpeed;
         transform.localEulerAngles = new Vector3(0,_rot,0); 
     }
 
