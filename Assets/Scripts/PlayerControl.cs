@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     float _moveZ, _rot, _gravityForce = -9.8f, _playerSpeed;
     [SerializeField] float _playerBaseSpeed = 2f, _turnSpeed = 1f, _jumpHeight = 1f;
     bool _groundedPlayer;
+    [SerializeField] Animator _anim;
 
 
     //Girar Player
@@ -34,6 +35,8 @@ public class PlayerControl : MonoBehaviour
         {
             _playerSpeed = _playerBaseSpeed;
         }
+
+        _anim.SetFloat("Andar", _moveZ);
     }
     void Gravidade()
     {//gravidade
