@@ -21,9 +21,11 @@ public class PlayerControl : MonoBehaviour
     //Movimento do Player
     void Movimento()
     {
+        //andar
         _moveZ = Input.GetAxisRaw("Vertical");
         _controller.Move(transform.forward * _moveZ * Time.deltaTime * _playerSpeed);
-
+        
+        //Correr com shift
         if(Input.GetAxisRaw("Fire3") > 0)
         {
             _playerSpeed = _playerBaseSpeed * 2;
@@ -34,7 +36,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
     void Gravidade()
-    {
+    {//gravidade
         _playerVelocity.y = _playerVelocity.y + _gravityForce *Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
