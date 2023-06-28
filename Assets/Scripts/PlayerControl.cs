@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] Animator _anim;
 
 
+
+
     //Girar Player
     private void TurnPlayer()
     {
