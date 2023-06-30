@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
     public Rigidbody _rb;
 
     public float _rotationSpeed;
+
 
     private void Start()
     {

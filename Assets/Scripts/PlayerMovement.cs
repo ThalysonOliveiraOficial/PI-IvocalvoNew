@@ -20,11 +20,12 @@ public class PlayerMovement : MonoBehaviour
     bool _groundedPlayer;
     float _gravityValue = -18f;
     bool _isRunning;
-    public bool _isMoving;
+    bool _isMoving;
 
     [SerializeField]Animator _anim;
     [SerializeField] Rigidbody _rb;
     [SerializeField] CharacterController _controller;
+
 
     private void MeuInput()
     {
@@ -68,8 +69,8 @@ public class PlayerMovement : MonoBehaviour
 
         _controller.Move(_moveDir * _moveSpeed * Time.deltaTime);
 
-        _anim.SetBool("Correndo", _isRunning);
         _anim.SetBool("Andando", _isMoving);
+        _anim.SetBool("Correndo", _isRunning);
     }
 
     private void Pulo()
