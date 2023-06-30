@@ -11,14 +11,18 @@ public class PlayerMovement : MonoBehaviour
 
     float _hInput;
     float _vInput;
+    float _runInput;
 
     Vector3 _moveDir;
 
     [SerializeField] float _jumpHeight = 1f;
     Vector3 _playerVelocity;
     bool _groundedPlayer;
-    float _gravityValue = -9.8f;
+    float _gravityValue = -18f;
+    bool _isRunning;
+    public bool _isMoving;
 
+    [SerializeField]Animator _anim;
     [SerializeField] Rigidbody _rb;
     [SerializeField] CharacterController _controller;
 
@@ -26,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _hInput = Input.GetAxisRaw("Horizontal");
         _vInput = Input.GetAxisRaw("Vertical");
+        _runInput = Input.GetAxisRaw("Fire3");
     }
 
     private void MovimentoPlayer()
@@ -39,24 +44,39 @@ public class PlayerMovement : MonoBehaviour
 
         _moveDir = _orientation.forward * _vInput + _orientation.right * _hInput;
 
+        //checkar se esta andando
+        if(_hInput != 0 || _vInput != 0)
+        {
+            _isMoving = true;
+        }
+        else if(_hInput == 0 && _vInput == 0)
+        {
+            _isMoving = false;
+        }
+
         //Correr
-        if (Input.GetAxisRaw("Fire3") > 0)
+        if (_runInput > 0)
         {
             _moveSpeed = 7.6f;
+            _isRunning = true;
         }
         else
         {
             _moveSpeed = 3.8f;
+            _isRunning = false;
         }
 
         _controller.Move(_moveDir * _moveSpeed * Time.deltaTime);
+
+        _anim.SetBool("Correndo", _isRunning);
+        _anim.SetBool("Andando", _isMoving);
     }
 
     private void Pulo()
     {
         if (Input.GetAxisRaw("Jump") > 0 && _groundedPlayer)
         {
-            _playerVelocity.y = _playerVelocity.y + Mathf.Sqrt(_jumpHeight * -3f * _gravityValue);
+            _playerVelocity.y = _playerVelocity.y + Mathf.Sqrt(_jumpHeight * -2.5f * _gravityValue);
         }
     }
     
