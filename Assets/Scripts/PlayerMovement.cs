@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     bool _isRunning;
     bool _isMoving;
 
-    [SerializeField]Animator _anim;
+    [SerializeField] Animator _anim;
     [SerializeField] Rigidbody _rb;
     [SerializeField] CharacterController _controller;
 
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         //Correr
         if (_runInput > 0)
         {
-            _moveSpeed = 7.6f;
+            _moveSpeed = 5f;
             _isRunning = true;
         }
         else
