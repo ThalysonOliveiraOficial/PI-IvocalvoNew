@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(_moveDir * _moveSpeed * Time.deltaTime);
 
 
-        _anim.SetFloat("Andando", Mathf.Abs(_moveZ + _moveX));
+        _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
     }
 
     void GroundCheck()
