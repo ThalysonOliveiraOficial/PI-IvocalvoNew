@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 _moveDir;
 
-    [SerializeField] float _jumpHeight = 1f, _moveSpeed = 3.5f, _gravityValue = -9.81f;
+    [SerializeField] float _jumpHeight = 1f, _moveSpeed = 2.35f, _gravityValue = -9.81f;
 
     Vector3 _playerVelocity;
 
     [SerializeField] bool _groundedPlayer;
-    [SerializeField ]bool _checkJump;
+    [SerializeField] bool _checkJump;
+    [SerializeField] bool _checkRunnig;
+    [SerializeField] float _correndo = 0;
 
     [SerializeField] Animator _anim;
     
@@ -39,6 +41,27 @@ public class PlayerMovement : MonoBehaviour
 
 
         _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
+
+        //checkar se o botao de correr foi apertado e mudar o _moveSpeed
+        if (_checkRunnig)
+        {
+            _moveSpeed = 5.75f;
+        }
+        else
+        {
+            _moveSpeed = 2.35f;
+        }
+
+        // checkar se esta correndo e ativar a animação
+        if (_moveSpeed > 4)
+        {
+            _anim.SetFloat("Correndo", _correndo =1);
+        }
+        else
+        {
+            _anim.SetFloat("Correndo", _correndo = 0);
+        }
+        
     }
 
     void GroundCheck()
@@ -61,6 +84,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _checkJump = true;
 
+    }
+    public void SetRun(InputAction.CallbackContext value)
+    {
+        _checkRunnig = true;
     }
 
     private void Pulo()
@@ -97,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
                 _timer = _timerValue;
             }
         }
+        
         Gravidade();
         GroundCheck();
         MovimentoPlayer();
