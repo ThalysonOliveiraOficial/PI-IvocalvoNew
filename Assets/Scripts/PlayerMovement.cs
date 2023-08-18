@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,21 +21,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool _groundedPlayer;
     [SerializeField] bool _checkJump;
     [SerializeField] bool _checkRunnig;
-    [SerializeField] float _correndo = 0;
+    
 
     [SerializeField] Animator _anim;
+    [SerializeField] float _correndo = 0;
+    [SerializeField] float _pulando = 0;
     
     CharacterController _controller;
 
     float _timer;
     [SerializeField] float _timerValue;
+
+    
     
     private void MovimentoPlayer()
     {
         //orientação do movimento
-        _moveDir = _orientation.forward * _moveZ + _orientation.right * _moveX;
-
-        
+        _moveDir = _orientation.forward * _moveZ + _orientation.right * _moveX;       
 
         //movimento
         _controller.Move(_moveDir * _moveSpeed * Time.deltaTime);
@@ -61,7 +64,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _anim.SetFloat("Correndo", _correndo = 0);
         }
-        
+
+        //fazer as animações de pulo saberem quando o y do player estiver aumentando, para por a animação dele subindo e quando o y estiver diminuindo para por descendo
+
+        _pulando = _playerVelocity.y;
+
     }
 
     void GroundCheck()
@@ -72,12 +79,14 @@ public class PlayerMovement : MonoBehaviour
         {
             _playerVelocity.y = 0f;
         }
+        
     }
     public void SetMove(InputAction.CallbackContext value)
     {
         Vector3 m = value.ReadValue<Vector3>();
         _moveX = m.x;
         _moveZ = m.y;
+       
     }
 
     public void SetJump(InputAction.CallbackContext value)
@@ -87,7 +96,8 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetRun(InputAction.CallbackContext value)
     {
-        _checkRunnig = true;
+        
+         _checkRunnig = value.performed;
     }
 
     private void Pulo()
