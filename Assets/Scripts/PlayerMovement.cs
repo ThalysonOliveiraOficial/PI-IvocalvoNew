@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator _anim;
     [SerializeField] float _correndo = 0;
     [SerializeField] float _pulando = 0;
+    [SerializeField] bool _pulandoCheck;
     
     CharacterController _controller;
 
@@ -37,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
     private void MovimentoPlayer()
     {
         //orientação do movimento
-        _moveDir = _orientation.forward * _moveZ + _orientation.right * _moveX;       
+        _moveDir = (_orientation.forward * _moveZ + _orientation.right * _moveX) * _moveSpeed;       
 
         //movimento
-        _controller.Move(_moveDir * _moveSpeed * Time.deltaTime);
+        _controller.Move(new Vector3(_moveDir.x, _controller.velocity.y, _moveDir.z) * Time.deltaTime);
 
 
         _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
@@ -67,8 +68,10 @@ public class PlayerMovement : MonoBehaviour
 
         //fazer as animações de pulo saberem quando o y do player estiver aumentando, para por a animação dele subindo e quando o y estiver diminuindo para por descendo
 
-        _pulando = _playerVelocity.y;
+        _pulando = _controller.velocity.y;
 
+        _anim.SetBool("Chao", _pulandoCheck);
+        _anim.SetFloat("Pulando", _pulando);
     }
 
     void GroundCheck()
@@ -78,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if (_groundedPlayer && _playerVelocity.y < 0)
         {
             _playerVelocity.y = 0f;
+            _pulandoCheck = true;
         }
         
     }
@@ -106,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _checkJump = false;
             _playerVelocity.y = _playerVelocity.y + Mathf.Sqrt(_jumpHeight * -2.5f * _gravityValue);
+            _pulandoCheck = false;
 
         }
     }
