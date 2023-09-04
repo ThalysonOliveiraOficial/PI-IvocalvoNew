@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1802834, g: 0.2257135, b: 0.3069223, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997709900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1745.9683, y: 0.9, z: 1936.1243}
+  m_LocalPosition: {x: 1745.9683, y: 6.3, z: 1936.1243}
   m_LocalScale: {x: 360.9, y: 1, z: 360}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,6 +428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4972617375433846741, guid: 513401971b9ed2448980070c37fbe52f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7395155851042041754, guid: 513401971b9ed2448980070c37fbe52f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -475,5 +479,44 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2757739987136838102, guid: 513401971b9ed2448980070c37fbe52f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5588033855897275631}
   m_SourcePrefab: {fileID: 100100000, guid: 513401971b9ed2448980070c37fbe52f, type: 3}
+--- !u!1 &5588033855897275630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2757739987136838102, guid: 513401971b9ed2448980070c37fbe52f, type: 3}
+  m_PrefabInstance: {fileID: 5588033855897275629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5588033855897275631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588033855897275630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 5.353333
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 0}
+  m_BuildHeightMesh: 0
