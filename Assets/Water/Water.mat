@@ -190,6 +190,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GradientNoise: 1.9
     - _HeightTransition: 0
     - _HueVariationKwToggle: 0
     - _Metallic: 0
@@ -205,6 +206,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _RippleDensity: 11.31
+    - _RippleSeed: 0.44
+    - _RippleSlimness: 5
     - _Smoothness: 0.5
     - _Smoothness0: 0.5
     - _Smoothness1: 0.5
@@ -220,16 +224,17 @@ Material:
     - _Surface: 0
     - _TwoSided: 2
     - _UVSec: 0
+    - _WaterSpeed: -0.31
     - _WindQuality: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DWcolor: {r: 0.8018868, g: 0.6278003, b: 0.049172305, a: 0.8980392}
+    - _DWcolor: {r: 0.46226418, g: 0.3834012, b: 0.11992704, a: 0.8980392}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.1}
-    - _SWcolor: {r: 0.8773585, g: 0.6876383, b: 0.053800277, a: 0.84313726}
+    - _SWcolor: {r: 0.6415094, g: 0.5067029, b: 0.11196155, a: 0.84313726}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
