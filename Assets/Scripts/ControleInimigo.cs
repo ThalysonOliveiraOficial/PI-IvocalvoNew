@@ -8,24 +8,40 @@ public class ControleInimigo : MonoBehaviour
     [SerializeField] Transform[] _pos;
     [SerializeField] int _numberPos;
     [SerializeField] bool _checkPos;
+
+    [SerializeField] float _velocAnim;
+    [SerializeField] Animator _anima;
+
+    [SerializeField] Transform _player;
+    [SerializeField] float _distPlayer;
+    [SerializeField] bool _segPlayer;
+
+    Hit _hit;
+
     void Start()
     {
         _agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        _anima = GetComponent<Animator>();
+        _hit = GetComponent<Hit>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _agent.destination = _pos[_numberPos].transform.position;
+        Movimento();
+        SeguirPlayer();
+        Anima();
 
-        //remainingDistance para medir a distancia entre o inimigo e o alvo
-        //boleana que usamos para entrar somente uma vez no if
-        //Invoke � a fun��o nativa para delay da fun��o
-        //_numberPos numero da posi��o que tem q seguir
+    }
+
+    void Movimento()
+    {
+        _agent.SetDestination(_pos[_numberPos].transform.position);
 
         if (_agent.remainingDistance < 5 && _checkPos == false)
         {
             _checkPos = true;
+            _segPlayer = true;
             _numberPos++;
             Invoke("TimeCheckPos", 1f);
         }
@@ -33,6 +49,37 @@ public class ControleInimigo : MonoBehaviour
         {
             _numberPos = 0;
         }
+    }
+
+    void SeguirPlayer()
+    {
+        _distPlayer = Vector3.Distance(transform.position, _player.position);
+
+        if (_distPlayer < 6.5 && _segPlayer)
+        {
+            _agent.SetDestination(_player.position);
+
+        }
+        else if (_distPlayer > 6.5 && !_segPlayer)
+        {
+
+            _agent.SetDestination(_pos[_numberPos].transform.position);
+            _segPlayer = false;
+        }
+        if ( _distPlayer <= 1.6)
+        {
+            _agent.isStopped = true;
+        }else if (_distPlayer > 2)
+        {
+            _agent.isStopped = false;
+        }
+    }
+
+    void Anima()
+    {
+        _velocAnim = Mathf.Abs(_agent.velocity.x + _agent.velocity.z);
+        _anima.SetFloat("Veloc", _velocAnim);
+        _anima.SetBool("Hit", _hit._isHit);
     }
 
     void TimeCheckPos()
