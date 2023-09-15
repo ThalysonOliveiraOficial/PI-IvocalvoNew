@@ -13,29 +13,68 @@ public class CameraTerceiraPessoa : MonoBehaviour
 
     public float _rotationSpeed;
 
+    public Transform _olharCombate;
+
+    public CameraEstilo _estiloAtual;
+
+    public GameObject _cameraBasica;
+    public GameObject _cameraCombate;
+
+    public enum CameraEstilo
+    {
+        Basic,
+        Combat,
+    }
 
     private void Start()
     {
         //Cursor ficar invisivel
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        TrocarEstiloCamera(CameraEstilo.Basic);
     }
 
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) TrocarEstiloCamera(CameraEstilo.Basic);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) TrocarEstiloCamera(CameraEstilo.Combat);
+
         //Orientação da rotação
         Vector3 _viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
         _orientation.forward = _viewDir.normalized;
 
         //Rotacionar o Objeto Player
-        float _hInput = Input.GetAxisRaw("Horizontal");
-        float _vInput = Input.GetAxisRaw("Vertical");
-        Vector3 _InputDir = _orientation.forward * _vInput + _orientation.right * _hInput;
-
-        if (_InputDir != Vector3.zero)
+        if(_estiloAtual == CameraEstilo.Basic)
         {
-            _playerObj.forward = Vector3.Slerp(_playerObj.forward, _InputDir.normalized, Time.deltaTime * _rotationSpeed);
+            float _hInput = Input.GetAxisRaw("Horizontal");
+            float _vInput = Input.GetAxisRaw("Vertical");
+            Vector3 _InputDir = _orientation.forward * _vInput + _orientation.right * _hInput;
+
+            if (_InputDir != Vector3.zero)
+            {
+                _playerObj.forward = Vector3.Slerp(_playerObj.forward, _InputDir.normalized, Time.deltaTime * _rotationSpeed);
+            }
+        }else if(_estiloAtual == CameraEstilo.Combat)
+        {
+            Vector3 _dirCombate = _olharCombate.position - new Vector3(transform.position.x, _olharCombate.position.y, transform.position.z);
+            _orientation.forward = _dirCombate.normalized;
+
+            _playerObj.forward = _dirCombate.normalized;
         }
+        
     }
+
+    private void TrocarEstiloCamera(CameraEstilo novoEstilo)
+    {
+        _cameraBasica.SetActive(false);
+        _cameraCombate.SetActive(false);
+
+        if (novoEstilo == CameraEstilo.Basic) _cameraBasica.SetActive(true);
+        if (novoEstilo == CameraEstilo.Combat) _cameraCombate.SetActive(true);
+
+        _estiloAtual = novoEstilo;
+    }
+
 }
