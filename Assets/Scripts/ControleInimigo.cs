@@ -21,6 +21,9 @@ public class ControleInimigo : MonoBehaviour
     // HitCheck depois mudar pra morte,
     public bool _hitCheck;
 
+    float _checkTime;
+    [SerializeField] float _timeLimit; // corpo seco 1.4 segundos tempLimit
+
     void Start()
     {
         _agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -38,10 +41,22 @@ public class ControleInimigo : MonoBehaviour
         }
         else
         {
-            Morte();
+            Hit(true);
         }
         
         Anima();
+
+        //Script de contagem regressiva
+        if (_hitCheck)
+        {
+            _checkTime -= Time.deltaTime;
+            if( _checkTime < 0)
+            {
+                Hit(false);
+                _hitCheck = false;
+                _checkTime = _timeLimit;
+            }
+        }
 
     }
 
@@ -90,8 +105,8 @@ public class ControleInimigo : MonoBehaviour
     {
         _velocAnim = Mathf.Abs(_agent.velocity.x + _agent.velocity.z);
         _anima.SetFloat("Veloc", _velocAnim);
-        _anima.SetBool("Hit", _hit._isHit);
-        _anima.SetBool("Morte", _hitCheck);
+        _anima.SetBool("Hit", _hitCheck);
+        //_anima.SetBool("Morte", _hitCheck);
     }
 
     void TimeCheckPos()
@@ -102,6 +117,18 @@ public class ControleInimigo : MonoBehaviour
         }
     }
 
+    void Hit(bool on)
+    {
+        if (on)
+        {
+            _agent.velocity = new Vector3(0, 0, 0);
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        }
+    }
     private void Morte()
     {
         

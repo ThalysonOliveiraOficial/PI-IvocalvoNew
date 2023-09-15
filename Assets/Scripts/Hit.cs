@@ -21,22 +21,9 @@ public class Hit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "AtackCol")
-        {
-            _isHit = true;
-           // Morte();
-        } 
+        
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.name == "AtackCol")
-        {
-            _isHit = false;
-        }
-    }
-
-    
-
+   
     void Morte()
     {
        transform.parent.gameObject.SetActive(false);

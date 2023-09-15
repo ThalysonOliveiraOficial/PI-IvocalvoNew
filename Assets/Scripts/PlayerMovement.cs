@@ -48,8 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
         _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
 
+        float _Velocparar = Mathf.Abs(_moveZ) + Mathf.Abs(_moveX);
+
         //checkar se o botao de correr foi apertado e mudar o _moveSpeed
-        if (_checkRunnig)
+        if (_checkRunnig && _Velocparar != 0)
         {
             _moveSpeed = 5.75f;
         }
@@ -58,8 +60,9 @@ public class PlayerMovement : MonoBehaviour
             _moveSpeed = 2.35f;
         }
 
-       
-            // checkar se esta correndo e ativar a animação
+        
+
+        // checkar se esta correndo e ativar a animação
         if (_moveSpeed > 4)
         {
            _anim.SetFloat("Correndo", _correndo = 1);
@@ -117,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(!_checkAim)
         {
-            CamBasicReturn();
+            _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Basic);
         }
        
     }
@@ -137,11 +140,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerVelocity.y = _playerVelocity.y + _gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
-    }
-
-    private void CamBasicReturn()
-    {
-        _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Basic);
     }
 
     private void Start()
