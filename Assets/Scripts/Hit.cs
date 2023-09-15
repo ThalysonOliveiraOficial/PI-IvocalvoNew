@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Hit : MonoBehaviour
@@ -33,6 +34,8 @@ public class Hit : MonoBehaviour
             _isHit = false;
         }
     }
+
+    
 
     void Morte()
     {

@@ -33,7 +33,9 @@ public class PlayerMovement : MonoBehaviour
     float _timer;
     [SerializeField] float _timerValue;
 
-    
+    [SerializeField] CameraTerceiraPessoa _controleCam;
+
+    [SerializeField] bool _checkAim;
     
     private void MovimentoPlayer()
     {
@@ -56,16 +58,17 @@ public class PlayerMovement : MonoBehaviour
             _moveSpeed = 2.35f;
         }
 
-        // checkar se esta correndo e ativar a animação
+       
+            // checkar se esta correndo e ativar a animação
         if (_moveSpeed > 4)
         {
-            _anim.SetFloat("Correndo", _correndo =1);
+           _anim.SetFloat("Correndo", _correndo = 1);
         }
         else
         {
-            _anim.SetFloat("Correndo", _correndo = 0);
+           _anim.SetFloat("Correndo", _correndo = 0);
         }
-
+        
         //fazer as animações de pulo saberem quando o y do player estiver aumentando, para por a animação dele subindo e quando o y estiver diminuindo para por descendo
 
         _pulando = _controller.velocity.y;
@@ -104,6 +107,21 @@ public class PlayerMovement : MonoBehaviour
          _checkRunnig = value.performed;
     }
 
+    public void SetCombatAim(InputAction.CallbackContext value)
+    {
+        _checkAim = value.performed;
+        if(_checkAim)
+        {
+            _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Combat);
+
+        }
+        if(!_checkAim)
+        {
+            CamBasicReturn();
+        }
+       
+    }
+
     private void Pulo()
     {
         if (_groundedPlayer  && _checkJump)
@@ -121,10 +139,17 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
+    private void CamBasicReturn()
+    {
+        _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Basic);
+    }
+
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         _timer = _timerValue;
+
+        
     }
 
     private void Update()
@@ -145,5 +170,7 @@ public class PlayerMovement : MonoBehaviour
         MovimentoPlayer();
         Pulo();
     }
+
+    
 
 }

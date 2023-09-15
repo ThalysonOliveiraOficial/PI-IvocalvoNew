@@ -18,6 +18,9 @@ public class ControleInimigo : MonoBehaviour
 
     Hit _hit;
 
+    // HitCheck depois mudar pra morte,
+    public bool _hitCheck;
+
     void Start()
     {
         _agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -28,8 +31,16 @@ public class ControleInimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movimento();
-        SeguirPlayer();
+        if (!_hitCheck)
+        {
+            Movimento();
+            SeguirPlayer();
+        }
+        else
+        {
+            Morte();
+        }
+        
         Anima();
 
     }
@@ -80,6 +91,7 @@ public class ControleInimigo : MonoBehaviour
         _velocAnim = Mathf.Abs(_agent.velocity.x + _agent.velocity.z);
         _anima.SetFloat("Veloc", _velocAnim);
         _anima.SetBool("Hit", _hit._isHit);
+        _anima.SetBool("Morte", _hitCheck);
     }
 
     void TimeCheckPos()
@@ -90,4 +102,16 @@ public class ControleInimigo : MonoBehaviour
         }
     }
 
+    private void Morte()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("AtaqueMelee"))
+        {
+            _hitCheck = true;
+        }
+    }
 }

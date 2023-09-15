@@ -20,6 +20,8 @@ public class CameraTerceiraPessoa : MonoBehaviour
     public GameObject _cameraBasica;
     public GameObject _cameraCombate;
 
+    public CameraTerceiraPessoa _camScript;
+
     public enum CameraEstilo
     {
         Basic,
@@ -31,6 +33,8 @@ public class CameraTerceiraPessoa : MonoBehaviour
         //Cursor ficar invisivel
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        _camScript = GetComponent<CameraTerceiraPessoa>();
 
         TrocarEstiloCamera(CameraEstilo.Basic);
     }
@@ -66,7 +70,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
         
     }
 
-    private void TrocarEstiloCamera(CameraEstilo novoEstilo)
+    public void TrocarEstiloCamera(CameraEstilo novoEstilo)
     {
         _cameraBasica.SetActive(false);
         _cameraCombate.SetActive(false);
