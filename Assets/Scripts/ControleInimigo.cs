@@ -13,6 +13,7 @@ public class ControleInimigo : MonoBehaviour
     [SerializeField] Animator _anima;
 
     [SerializeField] Transform _player;
+    [SerializeField] GameControl _gameControl;
     [SerializeField] float _distPlayer;
     [SerializeField] bool _segPlayer;
 
@@ -29,6 +30,8 @@ public class ControleInimigo : MonoBehaviour
         _agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         _anima = GetComponent<Animator>();
         _hit = GetComponent<Hit>();
+        _gameControl = Camera.main.GetComponent<GameControl>();
+        _player = _gameControl._player;
     }
 
     // Update is called once per frame
