@@ -35,8 +35,13 @@ public class InimigoContrPool : MonoBehaviour
         GameObject bullet = InimigoPool_1.SharedInstance.GetPooledObject();
         if (bullet != null)
         {
-            bullet.transform.position = _posIniSpawn[0].transform.localPosition;  
-            // bullet.transform.rotation = turret.transform.rotation;
+
+            _numbPosSpawn = Random.Range(0, _posIniSpawn.Length);
+            bullet.transform.localPosition = _posIniSpawn[_numbPosSpawn].transform.position;  
+            /*
+            bullet.transform.SetParent(_posIniSpawn[0]);
+            bullet.transform.position = new Vector3(0, 0, 0);
+            */
             bullet.SetActive(true);
         }
     }

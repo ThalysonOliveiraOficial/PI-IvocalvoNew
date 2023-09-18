@@ -17,7 +17,7 @@ public class ControleInimigo : MonoBehaviour
     [SerializeField] float _distPlayer;
     [SerializeField] bool _segPlayer;
 
-    Hit _hit;
+    public float _iniLife;
 
     // HitCheck depois mudar pra morte,
     public bool _hitCheck;
@@ -29,7 +29,7 @@ public class ControleInimigo : MonoBehaviour
     {
         _agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         _anima = GetComponent<Animator>();
-        _hit = GetComponent<Hit>();
+        
         _gameControl = Camera.main.GetComponent<GameControl>();
         _player = _gameControl._player;
     }
@@ -60,6 +60,7 @@ public class ControleInimigo : MonoBehaviour
                 _checkTime = _timeLimit;
             }
         }
+        
 
     }
 
@@ -126,15 +127,18 @@ public class ControleInimigo : MonoBehaviour
         {
             _agent.velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            
         }
         else
         {
             gameObject.GetComponent<CapsuleCollider>().enabled = true;
         }
     }
-    private void Morte()
+    void Morte()
     {
-        
+        transform.parent.gameObject.SetActive(false);
+        _agent.velocity = new Vector3(0, 0, 0);
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
