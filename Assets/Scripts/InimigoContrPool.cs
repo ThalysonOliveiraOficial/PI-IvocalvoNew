@@ -10,9 +10,6 @@ public class InimigoContrPool : MonoBehaviour
     public Transform[] _posIniSpawn;
     public int _numbPosSpawn;
 
-    public List<GameObject> _iniVivoL;
-    public List<GameObject> _iniMortoL;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,17 +37,11 @@ public class InimigoContrPool : MonoBehaviour
         {
 
             _numbPosSpawn = Random.Range(0, _posIniSpawn.Length);
-            bullet.transform.localPosition = _posIniSpawn[_numbPosSpawn].transform.position;
+            bullet.transform.localPosition = _posIniSpawn[_numbPosSpawn].transform.position;  
             /*
             bullet.transform.SetParent(_posIniSpawn[0]);
             bullet.transform.position = new Vector3(0, 0, 0);
             */
-
-            _iniVivoL.Add(bullet);
-            _iniMortoL.Remove(bullet);
-
-            bullet.GetComponent<ControleInimigo>().Restart();
-
             bullet.SetActive(true);
         }
     }

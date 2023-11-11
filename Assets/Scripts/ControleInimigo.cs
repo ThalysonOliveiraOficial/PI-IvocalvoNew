@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControleInimigo : MonoBehaviour
 {
     [SerializeField] UnityEngine.AI.NavMeshAgent _agent;
+    [SerializeField] Transform[] _pos;
     [SerializeField] int _numberPos;
     [SerializeField] bool _checkPos;
 
@@ -16,17 +17,13 @@ public class ControleInimigo : MonoBehaviour
     [SerializeField] float _distPlayer;
     [SerializeField] bool _segPlayer;
 
-    float _iniLife;
-    public float _iLifeini = 3;
+    public float _iniLife;
 
     // HitCheck depois mudar pra morte,
     public bool _hitCheck;
 
-    public bool _deathCheck;
-
     float _checkTime;
     [SerializeField] float _timeLimit; // corpo seco 1.4 segundos tempLimit
-
 
     void Start()
     {
@@ -35,8 +32,6 @@ public class ControleInimigo : MonoBehaviour
         
         _gameControl = Camera.main.GetComponent<GameControl>();
         _player = _gameControl._player;
-
-        _segPlayer = true;
     }
 
     // Update is called once per frame
@@ -47,7 +42,7 @@ public class ControleInimigo : MonoBehaviour
             Movimento();
             SeguirPlayer();
         }
-        else if(_iniLife==0)
+        else
         {
             Hit(true);
         }
@@ -71,18 +66,16 @@ public class ControleInimigo : MonoBehaviour
 
     void Movimento()
     {
-        float _distMovp = Vector3.Distance(transform.position, _gameControl._iniMovPos[_numberPos].transform.position);
+        _agent.SetDestination(_pos[_numberPos].transform.position);
 
-        _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
-
-        if (_distMovp < 5 && _checkPos == false)
+        if (_agent.remainingDistance < 5 && _checkPos == false)
         {
             _checkPos = true;
             _segPlayer = true;
             _numberPos++;
             Invoke("TimeCheckPos", 1f);
         }
-        if (_numberPos >= _gameControl._iniMovPos.Length)
+        if (_numberPos > 3)
         {
             _numberPos = 0;
         }
@@ -100,8 +93,15 @@ public class ControleInimigo : MonoBehaviour
         else if (_distPlayer > 6.5 && !_segPlayer)
         {
 
-            _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
+            _agent.SetDestination(_pos[_numberPos].transform.position);
             _segPlayer = false;
+        }
+        if ( _distPlayer <= 1.6)
+        {
+            _agent.isStopped = true;
+        }else if (_distPlayer > 2)
+        {
+            _agent.isStopped = false;
         }
     }
 
@@ -110,8 +110,7 @@ public class ControleInimigo : MonoBehaviour
         _velocAnim = Mathf.Abs(_agent.velocity.x + _agent.velocity.z);
         _anima.SetFloat("Veloc", _velocAnim);
         _anima.SetBool("Hit", _hitCheck);
-        _anima.SetBool("Morte", _deathCheck);
-        
+        //_anima.SetBool("Morte", _hitCheck);
     }
 
     void TimeCheckPos()
@@ -128,25 +127,25 @@ public class ControleInimigo : MonoBehaviour
         {
             _agent.velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            transform.gameObject.SetActive(false);
-            //Debug.Log("morte");
+            
         }
-      
+        else
+        {
+            gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        }
     }
-    
+    void Morte()
+    {
+        transform.parent.gameObject.SetActive(false);
+        _agent.velocity = new Vector3(0, 0, 0);
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AtaqueMelee"))
         {
             _hitCheck = true;
-            _iniLife--;
         }
-    }
-
-    public void Restart() 
-    {
-        _iniLife = _iLifeini;
-        gameObject.GetComponent<CapsuleCollider>().enabled = true;
     }
 }

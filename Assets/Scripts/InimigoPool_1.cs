@@ -9,8 +9,6 @@ public class InimigoPool_1 : MonoBehaviour
     public GameObject objectToPool;
     public int amountToPool;
 
-    public InimigoContrPool _IniCtrlPool;
-
     void Awake()
     {
         SharedInstance = this;
@@ -18,8 +16,6 @@ public class InimigoPool_1 : MonoBehaviour
 
     void Start()
     {
-        _IniCtrlPool = Camera.main.GetComponent<InimigoContrPool>();
-
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)
