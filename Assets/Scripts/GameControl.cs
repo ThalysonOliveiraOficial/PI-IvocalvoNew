@@ -6,6 +6,7 @@ public class GameControl : MonoBehaviour
 {
     public Transform _player;
     public Transform[] _iniMovPos;
-
+    public GameObject InimigosPai;
+    public GameObject TiroBala;
    
 }

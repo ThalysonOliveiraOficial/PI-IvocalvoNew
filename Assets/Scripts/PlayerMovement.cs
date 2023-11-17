@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -36,7 +34,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] CameraTerceiraPessoa _controleCam;
 
     [SerializeField] bool _checkAim;
-    
+
+    public GameControl _gameCtrl;
+    public Transform _posPedra;
+    public GameObject _bala;
+
+    public CinemachineFreeLook _cine;
+    public Vector3 _camV;
+
+
+
+
+   
     private void MovimentoPlayer()
     {
         //orientação do movimento
@@ -44,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         //movimento
         _controller.Move(new Vector3(_moveDir.x, _controller.velocity.y, _moveDir.z) * Time.deltaTime);
+        //_cine.m_XAxis.Value
 
 
         _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
@@ -99,6 +109,17 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    public void SetCam(InputAction.CallbackContext value)
+    {
+        Vector3 m = value.ReadValue<Vector3>();
+        _camV.x = m.x;
+        _camV.y = m.y;
+        _cine.m_XAxis.m_InputAxisValue *= m.x;
+        _cine.m_YAxis.m_InputAxisValue *= m.y;
+
+    }
+
+
     public void SetJump(InputAction.CallbackContext value)
     {
         _checkJump = true;
@@ -125,6 +146,14 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    public void SetTiro(InputAction.CallbackContext value)
+    {
+        if (_checkAim)
+        {
+            _bala.GetComponent<TiroBaladeira>().Pedrada();
+        }
+    } 
+
     private void Pulo()
     {
         if (_groundedPlayer  && _checkJump)
@@ -144,10 +173,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
         _timer = _timerValue;
+        _bala = _gameCtrl.TiroBala;
 
-        
+
+
+
     }
 
     private void Update()

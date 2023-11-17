@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - AtaqueMelee
+  - AtaqueDistancia
   layers:
   - Default
   - TransparentFX

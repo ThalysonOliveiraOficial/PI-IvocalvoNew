@@ -10,12 +10,15 @@ public class InimigoContrPool : MonoBehaviour
     public Transform[] _posIniSpawn;
     public int _numbPosSpawn;
 
+    public GameControl _gameCrtl;
+
     public List<GameObject> _iniVivoL;
     public List<GameObject> _iniMortoL;
 
     // Start is called before the first frame update
     void Start()
     {
+        _gameCrtl = GetComponent<GameControl>();
         _checkTime = _timeLimit;
         
     }
@@ -49,9 +52,12 @@ public class InimigoContrPool : MonoBehaviour
             _iniVivoL.Add(bullet);
             _iniMortoL.Remove(bullet);
 
-            bullet.GetComponent<ControleInimigo>().Restart();
+            bullet.GetComponent<ControleInimigo>()._iniLife = bullet.GetComponent<ControleInimigo>()._iLifeini;
+            bullet.GetComponent<ControleInimigo>()._player = _gameCrtl._player;
 
             bullet.SetActive(true);
+
+            bullet.GetComponent<HitInimigo>().RestartIni();
         }
     }
 }

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ControleInimigo : MonoBehaviour
 {
-    [SerializeField] UnityEngine.AI.NavMeshAgent _agent;
+    public UnityEngine.AI.NavMeshAgent _agent;
     [SerializeField] int _numberPos;
     [SerializeField] bool _checkPos;
 
     [SerializeField] float _velocAnim;
     [SerializeField] Animator _anima;
 
-    [SerializeField] Transform _player;
+    public Transform _player;
     [SerializeField] GameControl _gameControl;
     [SerializeField] float _distPlayer;
     [SerializeField] bool _segPlayer;
 
-    float _iniLife;
+    public float _iniLife;
     public float _iLifeini = 3;
 
     // HitCheck depois mudar pra morte,
@@ -34,7 +34,6 @@ public class ControleInimigo : MonoBehaviour
         _anima = GetComponent<Animator>();
         
         _gameControl = Camera.main.GetComponent<GameControl>();
-        _player = _gameControl._player;
 
         _segPlayer = true;
     }
@@ -49,7 +48,7 @@ public class ControleInimigo : MonoBehaviour
         }
         else if(_iniLife==0)
         {
-            Hit(true);
+           // Hit(true);
         }
         
         Anima();
@@ -57,10 +56,11 @@ public class ControleInimigo : MonoBehaviour
         //Script de contagem regressiva
         if (_hitCheck)
         {
+            _agent.velocity = new Vector3(0,0,0);
             _checkTime -= Time.deltaTime;
             if( _checkTime < 0)
             {
-                Hit(false);
+                //Hit(false);
                 _hitCheck = false;
                 _checkTime = _timeLimit;
             }
@@ -122,31 +122,5 @@ public class ControleInimigo : MonoBehaviour
         }
     }
 
-    void Hit(bool on)
-    {
-        if (on)
-        {
-            _agent.velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            transform.gameObject.SetActive(false);
-            //Debug.Log("morte");
-        }
-      
-    }
     
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("AtaqueMelee"))
-        {
-            _hitCheck = true;
-            _iniLife--;
-        }
-    }
-
-    public void Restart() 
-    {
-        _iniLife = _iLifeini;
-        gameObject.GetComponent<CapsuleCollider>().enabled = true;
-    }
 }
