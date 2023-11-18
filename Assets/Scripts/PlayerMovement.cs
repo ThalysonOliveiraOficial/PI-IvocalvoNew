@@ -112,10 +112,10 @@ public class PlayerMovement : MonoBehaviour
     public void SetCam(InputAction.CallbackContext value)
     {
         Vector3 m = value.ReadValue<Vector3>();
-        _camV.x = m.x;
-        _camV.y = m.y;
-        _cine.m_XAxis.m_InputAxisValue *= m.x;
-        _cine.m_YAxis.m_InputAxisValue *= m.y;
+       // _camV.x = _cine.m_XAxis.m_InputAxisValue+m.x;
+        //_camV.y = _cine.m_XAxis.m_InputAxisValue+m.y;
+        //_cine.m_XAxis.m_InputAxisValue *= m.x;
+        //_cine.m_YAxis.m_InputAxisValue *= m.y;
 
     }
 
