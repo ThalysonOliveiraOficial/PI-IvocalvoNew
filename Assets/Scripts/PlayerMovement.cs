@@ -88,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
         _anim.SetBool("Chao", _pulandoCheck);
         _anim.SetFloat("Pulando", _pulando);
+        _anim.SetBool("Mirar", _checkAim);
+
     }
 
     void GroundCheck()
