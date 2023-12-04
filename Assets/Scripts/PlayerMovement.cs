@@ -90,6 +90,15 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetFloat("Pulando", _pulando);
         _anim.SetBool("Mirar", _checkAim);
 
+        if(_checkAim )
+        {
+            _gameCtrl.MiraCano.SetActive(true);
+        }
+        else
+        {
+            _gameCtrl.MiraCano.SetActive(false);
+        }
+
     }
 
     void GroundCheck()
@@ -114,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetCam(InputAction.CallbackContext value)
     {
         Vector3 m = value.ReadValue<Vector3>();
-       // _camV.x = _cine.m_XAxis.m_InputAxisValue+m.x;
+        //_camV.x = _cine.m_XAxis.m_InputAxisValue+m.x;
         //_camV.y = _cine.m_XAxis.m_InputAxisValue+m.y;
         //_cine.m_XAxis.m_InputAxisValue *= m.x;
         //_cine.m_YAxis.m_InputAxisValue *= m.y;
@@ -148,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+   /* 
     public void SetTiro(InputAction.CallbackContext value)
     {
         if (_checkAim)
@@ -155,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
             _bala.GetComponent<TiroBaladeira>().Pedrada();
         }
     } 
+   */
 
     private void Pulo()
     {
@@ -178,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
         _timer = _timerValue;
-        _bala = _gameCtrl.TiroBala;
+        
 
 
 
