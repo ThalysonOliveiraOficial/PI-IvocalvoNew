@@ -22,7 +22,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
 
     public CameraTerceiraPessoa _camScript;
 
-    public Vector3 _camRota;
+    //public Vector3 _camRota;
 
     public enum CameraEstilo
     {
@@ -48,6 +48,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.Alpha2)) TrocarEstiloCamera(CameraEstilo.Combat);
 
         //como conservar a rotação da camera, na troca de estilos de camera
+        /*
         if (_cameraBasica)
         {
             _camRota =  Camera.main.transform.eulerAngles;
@@ -56,6 +57,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
         {
             Camera.main.transform.eulerAngles = _camRota;
         }
+        */
         
 
         //Orientação da rotação

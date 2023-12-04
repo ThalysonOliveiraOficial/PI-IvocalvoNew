@@ -19,7 +19,6 @@ public class HitInimigo : MonoBehaviour
     void Start()
     {
         _ctrlInimigo = GetComponent<ControleInimigo>();
-        //_renderIni = GetComponent<MeshRenderer>();
         _colliderIni = GetComponent<Collider>();
         
     }

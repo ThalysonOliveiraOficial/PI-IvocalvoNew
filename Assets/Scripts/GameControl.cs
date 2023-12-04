@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour
     public GameObject InimigosPai;
     
     public GameObject MiraCano;
+    public GameObject MiraMarker;
+    public GameObject BaladeiraOBJ;
 
    
 }

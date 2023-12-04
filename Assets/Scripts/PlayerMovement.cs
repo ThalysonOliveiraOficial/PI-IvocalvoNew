@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform _posPedra;
     public GameObject _bala;
 
-    public CinemachineFreeLook _cine;
-    public Vector3 _camV;
+    //public CinemachineFreeLook _cine;
+    //public Vector3 _camV;
 
 
 
@@ -93,10 +93,14 @@ public class PlayerMovement : MonoBehaviour
         if(_checkAim )
         {
             _gameCtrl.MiraCano.SetActive(true);
+            _gameCtrl.MiraMarker.SetActive(true);
+            _gameCtrl.BaladeiraOBJ.SetActive(true);
         }
         else
         {
             _gameCtrl.MiraCano.SetActive(false);
+            _gameCtrl.MiraMarker.SetActive(false);
+            _gameCtrl.BaladeiraOBJ.SetActive(false);
         }
 
     }
