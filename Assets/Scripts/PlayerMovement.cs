@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] CameraTerceiraPessoa _controleCam;
 
     [SerializeField] bool _checkAim;
+    [SerializeField] bool _checkTiro;
+    int _ctrlTiro;
 
     public GameControl _gameCtrl;
     public Transform _posPedra;
@@ -42,10 +44,34 @@ public class PlayerMovement : MonoBehaviour
     //public CinemachineFreeLook _cine;
     //public Vector3 _camV;
 
+    private void Start()
+    {
+        _gameCtrl = Camera.main.GetComponent<GameControl>();
+        _controller = GetComponent<CharacterController>();
+        _timer = _timerValue;
+
+    }
+
+    private void Update()
+    {
+        //desbugar o pulo
+        if (_checkJump)
+        {
+            _timer -= Time.deltaTime;
+            if (_timer < 0)
+            {
+                _checkJump = false;
+                _timer = _timerValue;
+            }
+        }
+
+        Gravidade();
+        GroundCheck();
+        MovimentoPlayer();
+        Pulo();
+    }
 
 
-
-   
     private void MovimentoPlayer()
     {
         //orientação do movimento
@@ -89,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetBool("Chao", _pulandoCheck);
         _anim.SetFloat("Pulando", _pulando);
         _anim.SetBool("Mirar", _checkAim);
+        _anim.SetBool("Atirar", _checkTiro);
 
         if(_checkAim )
         {
@@ -161,15 +188,11 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-   /* 
     public void SetTiro(InputAction.CallbackContext value)
     {
-        if (_checkAim)
-        {
-            _bala.GetComponent<TiroBaladeira>().Pedrada();
-        }
+        _checkTiro = value.performed;
     } 
-   */
+   
 
     private void Pulo()
     {
@@ -188,36 +211,7 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
-    private void Start()
-    {
-        _gameCtrl = Camera.main.GetComponent<GameControl>();
-        _controller = GetComponent<CharacterController>();
-        _timer = _timerValue;
-        
-
-
-
-
-    }
-
-    private void Update()
-    {
-        //desbugar o pulo
-        if (_checkJump)
-        {
-            _timer -= Time.deltaTime;
-            if(_timer < 0)
-            {
-                _checkJump = false;
-                _timer = _timerValue;
-            }
-        }
-        
-        Gravidade();
-        GroundCheck();
-        MovimentoPlayer();
-        Pulo();
-    }
+    
 
     
 

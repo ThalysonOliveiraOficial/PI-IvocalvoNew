@@ -27,6 +27,8 @@ public class ControleInimigo : MonoBehaviour
     float _checkTime;
     [SerializeField] float _timeLimit; // corpo seco 1.4 segundos tempLimit
 
+    [SerializeField] bool _atacando;
+    [SerializeField] BoxCollider _ataqueColl;
 
     void Start()
     {
@@ -36,6 +38,8 @@ public class ControleInimigo : MonoBehaviour
         _gameControl = Camera.main.GetComponent<GameControl>();
 
         _segPlayer = true;
+
+        _ataqueColl = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -123,4 +127,12 @@ public class ControleInimigo : MonoBehaviour
     }
 
     
+    private void AtivarCollAtk()
+    {
+
+    }
+    private void DesativarCollAtk()
+    {
+
+    }
 }

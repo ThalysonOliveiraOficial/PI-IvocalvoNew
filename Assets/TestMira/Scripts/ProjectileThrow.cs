@@ -52,6 +52,7 @@ public class ProjectileThrow : MonoBehaviour
         return properties;
     }
 
+    
     void ThrowObject(InputAction.CallbackContext ctx)
     {
         Rigidbody thrownObject = Instantiate(objectToThrow, StartPosition.position, Quaternion.identity);
