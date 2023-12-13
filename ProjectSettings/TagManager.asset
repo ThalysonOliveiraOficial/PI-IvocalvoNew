@@ -8,6 +8,8 @@ TagManager:
   - AtaqueMelee
   - AtaqueDistancia
   - Inimigo
+  - FxTemporaire
+  - AtkInimigo
   layers:
   - Default
   - TransparentFX

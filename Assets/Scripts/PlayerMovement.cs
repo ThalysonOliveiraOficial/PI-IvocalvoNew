@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,20 +36,25 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool _checkAim;
     [SerializeField] bool _checkTiro;
+    [SerializeField] bool _checkMorte;
+    [SerializeField] bool _checkHitMo;
     int _ctrlTiro;
 
     public GameControl _gameCtrl;
     public Transform _posPedra;
     public GameObject _bala;
 
-    //public CinemachineFreeLook _cine;
-    //public Vector3 _camV;
+    public float _vidaInicialPlayer;
+    float _vidaPlayer = 3;
+
+    
 
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
         _timer = _timerValue;
+        _vidaInicialPlayer = _vidaPlayer;
 
     }
 
@@ -107,8 +113,7 @@ public class PlayerMovement : MonoBehaviour
         {
            _anim.SetFloat("Correndo", _correndo = 0);
         }
-        
-        //fazer as animações de pulo saberem quando o y do player estiver aumentando, para por a animação dele subindo e quando o y estiver diminuindo para por descendo
+       
 
         _pulando = _controller.velocity.y;
 
@@ -116,7 +121,10 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetFloat("Pulando", _pulando);
         _anim.SetBool("Mirar", _checkAim);
         _anim.SetBool("Atirar", _checkTiro);
+        _anim.SetBool("Morto", _checkMorte);
 
+
+        //mira
         if(_checkAim )
         {
             _gameCtrl.MiraCano.SetActive(true);
@@ -211,8 +219,34 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("AtkInimigo") && !_checkHitMo)
+        {
+            _checkHitMo = true;
+            _vidaInicialPlayer--;
+            if (_vidaInicialPlayer <= 0)
+            {
+                StartCoroutine(Morte());
+            }
+            StartCoroutine(HitTime());
+        }
+    }
 
-    
+    IEnumerator Morte()
+    {
+        _checkMorte = true;
+        yield return new WaitForSeconds(4.4f);
+        gameObject.SetActive(false);
+        _checkMorte = false;
+    }
+
+    IEnumerator HitTime()
+    {
+       
+        yield return new WaitForSeconds(1.4f);
+        _checkHitMo = false;
+    }
+
 
 }

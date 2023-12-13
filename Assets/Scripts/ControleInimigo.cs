@@ -38,8 +38,10 @@ public class ControleInimigo : MonoBehaviour
         _gameControl = Camera.main.GetComponent<GameControl>();
 
         _segPlayer = true;
+        _atacando = false;
 
-        _ataqueColl = GetComponent<BoxCollider>();
+        
+        
     }
 
     // Update is called once per frame
@@ -81,6 +83,7 @@ public class ControleInimigo : MonoBehaviour
 
         if (_distMovp < 5 && _checkPos == false)
         {
+            _atacando = false;
             _checkPos = true;
             _segPlayer = true;
             _numberPos++;
@@ -100,10 +103,24 @@ public class ControleInimigo : MonoBehaviour
         {
             _agent.SetDestination(_player.position);
 
+            if(_distPlayer <= 2.1)
+            {
+                if(_gameControl._player.gameObject.GetComponent<PlayerMovement>()._vidaInicialPlayer > 0)
+                {
+                    _atacando = true;
+                    
+                }
+                else
+                {
+                    _atacando = false;
+                }
+            }
+            //else _atacando = false;
+
         }
         else if (_distPlayer > 6.5 && !_segPlayer)
         {
-
+            _atacando = false;
             _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
             _segPlayer = false;
         }
@@ -115,6 +132,7 @@ public class ControleInimigo : MonoBehaviour
         _anima.SetFloat("Veloc", _velocAnim);
         _anima.SetBool("Hit", _hitCheck);
         _anima.SetBool("Morte", _deathCheck);
+        _anima.SetBool("Atacar", _atacando);
         
     }
 
