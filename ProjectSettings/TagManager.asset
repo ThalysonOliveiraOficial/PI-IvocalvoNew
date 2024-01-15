@@ -10,6 +10,7 @@ TagManager:
   - Inimigo
   - FxTemporaire
   - AtkInimigo
+  - Arvre
   layers:
   - Default
   - TransparentFX
