@@ -20,7 +20,6 @@ public class CameraTerceiraPessoa : MonoBehaviour
     public GameObject _cameraBasica;
     public GameObject _cameraCombate;
 
-    public CameraTerceiraPessoa _camScript;
 
     //public Vector3 _camRota;
 
@@ -35,8 +34,6 @@ public class CameraTerceiraPessoa : MonoBehaviour
         //Cursor ficar invisivel
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        _camScript = GetComponent<CameraTerceiraPessoa>();
 
         TrocarEstiloCamera(CameraEstilo.Basic);
     }

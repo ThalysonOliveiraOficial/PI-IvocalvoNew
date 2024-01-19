@@ -384,7 +384,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.44
+  m_Height: 1.18
   m_Radius: 0.29
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef32ed5a507391d459a8233c2d9b1446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitMarker: {fileID: 0}
+  hitMarker: {fileID: 4010598902099914031}
   maxPoints: 50
   increment: 0.04
   rayOverlap: 1.1
@@ -1437,7 +1437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 97b5d05dacea53f41812333c7dcf3ea9, type: 3}
       propertyPath: m_Name
-      value: PersonagemUnity
+      value: Player Obj
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 97b5d05dacea53f41812333c7dcf3ea9, type: 3}
       propertyPath: m_TagString
