@@ -33,6 +33,7 @@ public class HitInimigo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AtaqueDistancia"))
         {
+            other.gameObject.SetActive(false);
             _ctrlInimigo._hitCheck = true;
             _ctrlInimigo._iniLife--;
             StartCoroutine(HitPorrada());

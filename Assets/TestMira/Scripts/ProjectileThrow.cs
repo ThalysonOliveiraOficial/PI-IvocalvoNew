@@ -18,6 +18,7 @@ public class ProjectileThrow : MonoBehaviour
     public InputAction fire;
 
     AtirarPool _atirarPool;
+    bool _tiro;
 
     private void Start()
     {
@@ -62,18 +63,26 @@ public class ProjectileThrow : MonoBehaviour
     
     void ThrowObject(InputAction.CallbackContext ctx)
     {
-        GameObject bullet = AtirarPool.SharedInstance.GetPooledObject();
-        if (bullet != null)
+        if (!_tiro)
         {
-            bullet.transform.position = StartPosition.position;
-            bullet.SetActive(true);
-            bullet.GetComponent<Rigidbody>().AddForce(StartPosition.forward * force, ForceMode.Impulse);
+            _tiro = true;
+            Invoke("TiroON", 1);
+            GameObject bullet = AtirarPool.SharedInstance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = StartPosition.position;
+                bullet.SetActive(true);
+                bullet.GetComponent<Rigidbody>().AddForce(StartPosition.forward * force, ForceMode.Impulse);
+            }
         }
-
         /*
         Rigidbody thrownObject = Instantiate(objectToThrow, StartPosition.position, Quaternion.identity);
         thrownObject.AddForce(StartPosition.forward * force, ForceMode.Impulse);
         */
 
     }
+
+    void TiroON() {
+        _tiro = false;
+            }
 }
