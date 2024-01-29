@@ -17,6 +17,13 @@ public class ProjectileThrow : MonoBehaviour
 
     public InputAction fire;
 
+    AtirarPool _atirarPool;
+
+    private void Start()
+    {
+        _atirarPool = GetComponent<AtirarPool>();
+    }
+
     void OnEnable()
     {
         trajectoryPredictor = GetComponent<TrajectoryPredictor>();
@@ -55,7 +62,18 @@ public class ProjectileThrow : MonoBehaviour
     
     void ThrowObject(InputAction.CallbackContext ctx)
     {
+        GameObject bullet = AtirarPool.SharedInstance.GetPooledObject();
+        if (bullet != null)
+        {
+            bullet.transform.position = StartPosition.position;
+            bullet.SetActive(true);
+            bullet.GetComponent<Rigidbody>().AddForce(StartPosition.forward * force, ForceMode.Impulse);
+        }
+
+        /*
         Rigidbody thrownObject = Instantiate(objectToThrow, StartPosition.position, Quaternion.identity);
         thrownObject.AddForce(StartPosition.forward * force, ForceMode.Impulse);
+        */
+
     }
 }
