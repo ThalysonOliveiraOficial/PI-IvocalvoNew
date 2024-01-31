@@ -84,5 +84,6 @@ public class ProjectileThrow : MonoBehaviour
 
     void TiroON() {
         _tiro = false;
-            }
+    }
+
 }

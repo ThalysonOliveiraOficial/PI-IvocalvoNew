@@ -9,6 +9,9 @@ public class AtirarPool : MonoBehaviour
     public GameObject objectToPool;
     public int amountToPool;
 
+    [SerializeField] float _timer;
+    [SerializeField] float _timerValue = 10;
+
     void Awake()
     {
         SharedInstance = this;
@@ -35,6 +38,20 @@ public class AtirarPool : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private void Update()
+    {
+        _timer -= Time.deltaTime;
+        if (_timer < 0)
+        {
+            for (int i = 0; i < amountToPool; i++)
+            {
+                pooledObjects[i].SetActive(false);
+            }
+
+            _timer = _timerValue;
+        }
     }
 
 }
