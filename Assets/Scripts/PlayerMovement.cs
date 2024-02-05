@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     float _vidaPlayer = 3;
 
     [SerializeField] ParticleSystem _hitPlayerPartc;
+    [SerializeField] ParticleSystem _RestartPlayerPartc;
 
 
     private void Start()
@@ -236,7 +237,6 @@ public class PlayerMovement : MonoBehaviour
         _checkMorte = true;
         yield return new WaitForSeconds(4.4f);
         gameObject.SetActive(false);
-        _checkMorte = false;
     }
 
     IEnumerator HitTime()
@@ -252,6 +252,21 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1);
         _hitPlayerPartc.gameObject.SetActive(false);
 
+    }
+
+    IEnumerator RestartPlayerTime()
+    {
+        _RestartPlayerPartc.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        //gameObject.SetActive(true);
+        _checkMorte = false;
+        _RestartPlayerPartc.gameObject.SetActive(false);
+
+    }
+
+    public void RestartPlayer()
+    {
+        StartCoroutine(RestartPlayerTime());
     }
 
 }

@@ -106,22 +106,14 @@ public class ControleInimigo : MonoBehaviour
         {
             _agent.SetDestination(_player.position);
 
-            if(_distPlayer <= 2.1)
+            if(_distPlayer <= 1 && _gameControl._player.gameObject.GetComponent<PlayerMovement>()._vidaInicialPlayer > 0)
             {
-                if(_gameControl._player.gameObject.GetComponent<PlayerMovement>()._vidaInicialPlayer > 0)
-                {
-                    _atacando = true;
-                    
-                }
-                else
-                {
-                    _atacando = false;
-                }
+                _atacando = true;
             }
-            //else _atacando = false;
+            else _atacando = false;
 
         }
-        else if (_distPlayer > 4.5 && !_segPlayer)
+        else if (_distPlayer > 4.8 && !_segPlayer)
         {
             _atacando = false;
             _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
@@ -147,13 +139,4 @@ public class ControleInimigo : MonoBehaviour
         }
     }
 
-    
-    private void AtivarCollAtk()
-    {
-
-    }
-    private void DesativarCollAtk()
-    {
-
-    }
 }
