@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
     public float _vidaInicialPlayer;
     float _vidaPlayer = 3;
 
-    
+    [SerializeField] ParticleSystem _hitPlayerPartc;
+
 
     private void Start()
     {
@@ -71,10 +72,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        AnimacaoPlayer();
         Gravidade();
         GroundCheck();
-        MovimentoPlayer();
-        Pulo();
+
+        if (!_checkMorte)
+        {
+            MovimentoPlayer();
+            Pulo();
+        }
+        
     }
 
 
@@ -87,9 +94,6 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(new Vector3(_moveDir.x, _controller.velocity.y, _moveDir.z) * Time.deltaTime);
         //_cine.m_XAxis.Value
 
-
-        _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
-
         float _Velocparar = Mathf.Abs(_moveZ) + Mathf.Abs(_moveX);
 
         //checkar se o botao de correr foi apertado e mudar o _moveSpeed
@@ -101,28 +105,8 @@ public class PlayerMovement : MonoBehaviour
         {
             _moveSpeed = 2.35f;
         }
-
-        
-
-        // checkar se esta correndo e ativar a animação
-        if (_moveSpeed > 4)
-        {
-           _anim.SetFloat("Correndo", _correndo = 1);
-        }
-        else
-        {
-           _anim.SetFloat("Correndo", _correndo = 0);
-        }
        
-
         _pulando = _controller.velocity.y;
-
-        _anim.SetBool("Chao", _pulandoCheck);
-        _anim.SetFloat("Pulando", _pulando);
-        _anim.SetBool("Mirar", _checkAim);
-        _anim.SetBool("Atirar", _checkTiro);
-        _anim.SetBool("Morto", _checkMorte);
-
 
         //mira
         if(_checkAim )
@@ -138,6 +122,29 @@ public class PlayerMovement : MonoBehaviour
             _gameCtrl.BaladeiraOBJ.SetActive(false);
         }
 
+    }
+
+    void AnimacaoPlayer()
+    {
+        _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
+
+        // checkar se esta correndo e ativar a animação
+        if (_moveSpeed > 4)
+        {
+            _anim.SetFloat("Correndo", _correndo = 1);
+        }
+        else
+        {
+            _anim.SetFloat("Correndo", _correndo = 0);
+        }
+
+        _anim.SetBool("Chao", _pulandoCheck);
+        _anim.SetFloat("Pulando", _pulando);
+        _anim.SetBool("Mirar", _checkAim);
+        _anim.SetBool("Atirar", _checkTiro);
+        _anim.SetBool("Morto", _checkMorte);
+        _anim.SetBool("Apanhar", _checkHitMo);
+        _anim.SetFloat("Vida", _vidaPlayer);
     }
 
     void GroundCheck()
@@ -214,6 +221,8 @@ public class PlayerMovement : MonoBehaviour
         {
             _checkHitMo = true;
             _vidaInicialPlayer--;
+            
+            StartCoroutine(HitPartcPlayer());
             if (_vidaInicialPlayer <= 0)
             {
                 StartCoroutine(Morte());
@@ -237,5 +246,12 @@ public class PlayerMovement : MonoBehaviour
         _checkHitMo = false;
     }
 
+    IEnumerator HitPartcPlayer()
+    {
+        _hitPlayerPartc.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        _hitPlayerPartc.gameObject.SetActive(false);
+
+    }
 
 }

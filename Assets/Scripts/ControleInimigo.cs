@@ -81,7 +81,7 @@ public class ControleInimigo : MonoBehaviour
 
         _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
 
-        if (_distMovp < 5 && _checkPos == false)
+        if (_distMovp < 4 && _checkPos == false)
         {
             _atacando = false;
             _checkPos = true;
@@ -97,9 +97,12 @@ public class ControleInimigo : MonoBehaviour
 
     void SeguirPlayer()
     {
+        //Preciso fazer Inimigo ficar parado enquanto ataca
+
+
         _distPlayer = Vector3.Distance(transform.position, _player.position);
 
-        if (_distPlayer < 6.5 && _segPlayer)
+        if (_distPlayer < 4.5 && _segPlayer)
         {
             _agent.SetDestination(_player.position);
 
@@ -118,7 +121,7 @@ public class ControleInimigo : MonoBehaviour
             //else _atacando = false;
 
         }
-        else if (_distPlayer > 6.5 && !_segPlayer)
+        else if (_distPlayer > 4.5 && !_segPlayer)
         {
             _atacando = false;
             _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
