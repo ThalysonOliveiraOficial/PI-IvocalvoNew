@@ -1,4 +1,5 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem _hitPlayerPartc;
     [SerializeField] ParticleSystem _RestartPlayerPartc;
 
+    [SerializeField] Transform _TelaGameOver;
 
     private void Start()
     {
@@ -226,6 +228,12 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(HitPartcPlayer());
             if (_vidaInicialPlayer <= 0)
             {
+                //
+
+                _TelaGameOver.DOScale(1f, 1.95f);
+
+                //
+
                 StartCoroutine(Morte());
             }
             StartCoroutine(HitTime());
