@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem _RestartPlayerPartc;
 
     [SerializeField] Transform _TelaGameOver;
+    [SerializeField] Button _reiniciarBT;
 
     private void Start()
     {
@@ -231,6 +233,8 @@ public class PlayerMovement : MonoBehaviour
                 //
 
                 _TelaGameOver.DOScale(1f, 1.95f);
+                //Criar um Script separado
+                _reiniciarBT.Select();
 
                 //
 

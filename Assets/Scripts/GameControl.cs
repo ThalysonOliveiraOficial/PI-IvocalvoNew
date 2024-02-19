@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
@@ -12,5 +14,10 @@ public class GameControl : MonoBehaviour
     public GameObject MiraMarker;
     public GameObject BaladeiraOBJ;
 
-   
+    public void GameReiniciar()
+    {
+        SceneManager.LoadScene("Mapa_Arborizado");
+    }
 }
+
+

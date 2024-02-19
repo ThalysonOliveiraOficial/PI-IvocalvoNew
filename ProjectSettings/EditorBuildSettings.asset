@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Mapa_Arborizado.unity
+    guid: c0744ac85b092e74dbc4a73f57b9d08f
   m_configObjects: {}
