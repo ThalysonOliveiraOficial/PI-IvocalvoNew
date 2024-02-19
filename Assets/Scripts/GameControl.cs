@@ -14,6 +14,8 @@ public class GameControl : MonoBehaviour
     public GameObject MiraMarker;
     public GameObject BaladeiraOBJ;
 
+    public Canvas _hudCanvas;
+
     public void GameReiniciar()
     {
         SceneManager.LoadScene("Mapa_Arborizado");

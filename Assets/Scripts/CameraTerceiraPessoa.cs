@@ -41,22 +41,6 @@ public class CameraTerceiraPessoa : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha1)) TrocarEstiloCamera(CameraEstilo.Basic);
-        //if (Input.GetKeyDown(KeyCode.Alpha2)) TrocarEstiloCamera(CameraEstilo.Combat);
-
-        //como conservar a rotação da camera, na troca de estilos de camera
-        /*
-        if (_cameraBasica)
-        {
-            _camRota =  Camera.main.transform.eulerAngles;
-        }
-        if (_cameraCombate)
-        {
-            Camera.main.transform.eulerAngles = _camRota;
-        }
-        */
-        
-
         //Orientação da rotação
         Vector3 _viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
         _orientation.forward = _viewDir.normalized;
@@ -87,8 +71,14 @@ public class CameraTerceiraPessoa : MonoBehaviour
         _cameraBasica.SetActive(false);
         _cameraCombate.SetActive(false);
 
-        if (novoEstilo == CameraEstilo.Basic) _cameraBasica.SetActive(true);
-        if (novoEstilo == CameraEstilo.Combat) _cameraCombate.SetActive(true);
+        if (novoEstilo == CameraEstilo.Basic)
+        {
+            _cameraBasica.SetActive(true);
+        }
+        if (novoEstilo == CameraEstilo.Combat)
+        {
+            _cameraCombate.SetActive(true);
+        }
 
         _estiloAtual = novoEstilo;
     }

@@ -233,6 +233,7 @@ public class PlayerMovement : MonoBehaviour
                 //
 
                 _TelaGameOver.DOScale(1f, 1.95f);
+                
                 //Criar um Script separado
                 _reiniciarBT.Select();
 
