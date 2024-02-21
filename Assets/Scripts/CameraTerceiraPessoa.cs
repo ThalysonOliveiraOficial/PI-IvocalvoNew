@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class CameraTerceiraPessoa : MonoBehaviour
@@ -20,8 +21,8 @@ public class CameraTerceiraPessoa : MonoBehaviour
     public GameObject _cameraBasica;
     public GameObject _cameraCombate;
 
-
-    //public Vector3 _camRota;
+    //[SerializeField] GameControl _gameControl;
+    
 
     public enum CameraEstilo
     {
@@ -35,18 +36,34 @@ public class CameraTerceiraPessoa : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        //_gameControl = GetComponent<GameControl>();
+
         TrocarEstiloCamera(CameraEstilo.Basic);
     }
 
 
     private void Update()
     {
+        CameraRotacao();
+
+        // Liberar e mostrar o Cursor quando o player estiver morto
+        if(_player.gameObject.GetComponent<PlayerMovement>()._playerVivo == false)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+        
+    }
+
+    public void CameraRotacao()
+    {
         //Orientação da rotação
         Vector3 _viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
         _orientation.forward = _viewDir.normalized;
 
         //Rotacionar o Objeto Player
-        if(_estiloAtual == CameraEstilo.Basic)
+        if (_estiloAtual == CameraEstilo.Basic)
         {
             float _hInput = Input.GetAxisRaw("Horizontal");
             float _vInput = Input.GetAxisRaw("Vertical");
@@ -56,14 +73,14 @@ public class CameraTerceiraPessoa : MonoBehaviour
             {
                 _playerObj.forward = Vector3.Slerp(_playerObj.forward, _InputDir.normalized, Time.deltaTime * _rotationSpeed);
             }
-        }else if(_estiloAtual == CameraEstilo.Combat)
+        }
+        else if (_estiloAtual == CameraEstilo.Combat)
         {
             Vector3 _dirCombate = _olharCombate.position - new Vector3(transform.position.x, _olharCombate.position.y, transform.position.z);
             _orientation.forward = _dirCombate.normalized;
 
             _playerObj.forward = _dirCombate.normalized;
         }
-        
     }
 
     public void TrocarEstiloCamera(CameraEstilo novoEstilo)

@@ -55,12 +55,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform _TelaGameOver;
     [SerializeField] Button _reiniciarBT;
 
+    public bool _playerVivo;
+
+
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
         _timer = _timerValue;
         _vidaInicialPlayer = _vidaPlayer;
+        _playerVivo = true;
 
     }
 
@@ -233,7 +237,9 @@ public class PlayerMovement : MonoBehaviour
                 //
 
                 _TelaGameOver.DOScale(1f, 1.95f);
-                
+                _playerVivo = false;
+
+
                 //Criar um Script separado
                 _reiniciarBT.Select();
 
