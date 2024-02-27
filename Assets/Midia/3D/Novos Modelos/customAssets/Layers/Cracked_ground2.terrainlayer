@@ -7,16 +7,16 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cracked_ground2
-  m_DiffuseTexture: {fileID: 2800000, guid: 0e4cb14faedb65a4c899bbdc9304069b, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: af5d8a637252654458c60eba7ad36bae, type: 3}
-  m_MaskMapTexture: {fileID: 2800000, guid: 96f1166d467c48c4b8e84ca5f71af563, type: 3}
-  m_TileSize: {x: 1, y: 1}
-  m_TileOffset: {x: 1, y: 0}
+  m_DiffuseTexture: {fileID: 2800000, guid: ad4106e1a46f6124392c817ae025e260, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 1aade7404dfd59347afc573be4d5e833, type: 3}
+  m_MaskMapTexture: {fileID: 2800000, guid: 15f4d9c825f551648a3ea8debad42b83, type: 3}
+  m_TileSize: {x: 19, y: 19}
+  m_TileOffset: {x: 19, y: 19}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
   m_Smoothness: 0
-  m_NormalScale: 1.92
+  m_NormalScale: 0.69
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
-  m_DiffuseRemapMax: {x: 0.9433962, y: 0.7139618, z: 0.33374867, w: 1}
+  m_DiffuseRemapMax: {x: 0.764151, y: 0.52013195, z: 0.11894804, w: 1}
   m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_MaskMapRemapMax: {x: 1, y: 0.8095238, z: 0.9281, w: 0.5702076}
