@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuControl : MonoBehaviour
@@ -37,6 +38,10 @@ public class MenuControl : MonoBehaviour
             _ItensMenu[i].transform.localScale = Vector3.zero;
         }
 
+    }
+    public void GameIniciar()
+    {
+        SceneManager.LoadScene("Mapa_Arborizado");
     }
 
     // Update is called once per frame
