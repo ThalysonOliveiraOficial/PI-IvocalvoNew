@@ -16,6 +16,6 @@ public class StartPosCamer : MonoBehaviour
     void Update()
     {
         _rot = Camera.main.transform.eulerAngles;
-        transform.eulerAngles = new Vector3(_rot.x, transform.eulerAngles.y, transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(_rot.x -8, transform.eulerAngles.y, transform.eulerAngles.z);
     }
 }

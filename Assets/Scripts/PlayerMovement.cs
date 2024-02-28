@@ -57,15 +57,22 @@ public class PlayerMovement : MonoBehaviour
 
     public bool _playerVivo;
 
+    //timer pra criar delay no pulo pra não ter spam
+    float _delayJumpTimer;
+    [SerializeField] float _delayJumpTimerValue;
+
 
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
+
         _timer = _timerValue;
+
         _vidaInicialPlayer = _vidaPlayer;
         _playerVivo = true;
 
+        _delayJumpTimer = _delayJumpTimerValue;
     }
 
     private void Update()
@@ -209,6 +216,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Pulo()
     {
+        
+
         if (_groundedPlayer  && _checkJump)
         {
             _checkJump = false;

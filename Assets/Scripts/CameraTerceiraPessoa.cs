@@ -58,13 +58,13 @@ public class CameraTerceiraPessoa : MonoBehaviour
 
     public void CameraRotacao()
     {
-        //Orientação da rotação
-        Vector3 _viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
-        _orientation.forward = _viewDir.normalized;
-
-        //Rotacionar o Objeto Player
         if (_estiloAtual == CameraEstilo.Basic)
         {
+            //Orientação da rotação
+            Vector3 _viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
+            _orientation.forward = _viewDir.normalized;
+
+            //Rotacionar o Objeto Player
             float _hInput = Input.GetAxisRaw("Horizontal");
             float _vInput = Input.GetAxisRaw("Vertical");
             Vector3 _InputDir = _orientation.forward * _vInput + _orientation.right * _hInput;
@@ -74,6 +74,8 @@ public class CameraTerceiraPessoa : MonoBehaviour
                 _playerObj.forward = Vector3.Slerp(_playerObj.forward, _InputDir.normalized, Time.deltaTime * _rotationSpeed);
             }
         }
+
+        //camera de combate
         else if (_estiloAtual == CameraEstilo.Combat)
         {
             Vector3 _dirCombate = _olharCombate.position - new Vector3(transform.position.x, _olharCombate.position.y, transform.position.z);
