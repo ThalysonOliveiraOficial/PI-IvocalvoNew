@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     //timer pra criar delay no pulo pra não ter spam
     float _delayJumpTimer;
     [SerializeField] float _delayJumpTimerValue;
+    [SerializeField] bool _pularDelay;
 
 
     private void Start()
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         _vidaInicialPlayer = _vidaPlayer;
         _playerVivo = true;
 
+        _pularDelay = true;
         _delayJumpTimer = _delayJumpTimerValue;
     }
 
@@ -85,6 +87,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 _checkJump = false;
                 _timer = _timerValue;
+            }
+        }
+        //Delay Pulo
+
+        if (!_pularDelay)
+        {
+            _delayJumpTimer -= Time.deltaTime;
+            if ( _delayJumpTimer < 0)
+            {
+                _pularDelay = true;
+                _delayJumpTimer = _delayJumpTimerValue;
             }
         }
 
@@ -171,6 +184,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _playerVelocity.y = 0f;
             _pulandoCheck = true;
+            
         }
         
     }
@@ -216,14 +230,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Pulo()
     {
-        
-
-        if (_groundedPlayer  && _checkJump)
+        if (_groundedPlayer && _checkJump && _pularDelay)
         {
             _checkJump = false;
             _playerVelocity.y = _playerVelocity.y + Mathf.Sqrt(_jumpHeight * -2.5f * _gravityValue);
             _pulandoCheck = false;
-
+            _pularDelay = false;
         }
     }
     
