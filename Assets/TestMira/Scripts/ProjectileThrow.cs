@@ -79,7 +79,7 @@ public class ProjectileThrow : MonoBehaviour
         Rigidbody thrownObject = Instantiate(objectToThrow, StartPosition.position, Quaternion.identity);
         thrownObject.AddForce(StartPosition.forward * force, ForceMode.Impulse);
         */
-
+        
     }
 
     void TiroON() {
