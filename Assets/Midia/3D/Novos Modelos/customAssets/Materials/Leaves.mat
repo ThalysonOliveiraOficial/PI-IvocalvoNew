@@ -95,7 +95,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _HueVariationKwToggle: 1
-    - _Metallic: 0.53
+    - _Metallic: 0
     - _Mode: 2
     - _NormalMapKwToggle: 0
     - _OcclusionStrength: 1

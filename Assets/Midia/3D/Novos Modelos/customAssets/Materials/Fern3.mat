@@ -25,12 +25,13 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _WINDQUALITY_NONE
+  - EFFECT_BUMP
+  - _WINDQUALITY_BETTER
   m_InvalidKeywords:
   - _ALPHABLEND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -85,28 +86,28 @@ Material:
     m_Ints: []
     m_Floats:
     - _BillboardKwToggle: 0
-    - _BillboardShadowFade: 0.5
+    - _BillboardShadowFade: 0.371
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0.082
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _HueVariationKwToggle: 0
-    - _Metallic: 0.606
+    - _Metallic: 0
     - _Mode: 2
-    - _NormalMapKwToggle: 0
+    - _NormalMapKwToggle: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
-    - _SubsurfaceIndirect: 0.25
+    - _SubsurfaceIndirect: 1
     - _SubsurfaceKwToggle: 0
-    - _TwoSided: 2
+    - _TwoSided: 0
     - _UVSec: 0
-    - _WindQuality: 0
+    - _WindQuality: 3
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0.12588999, g: 0.6509434, b: 0.13201316, a: 1}
