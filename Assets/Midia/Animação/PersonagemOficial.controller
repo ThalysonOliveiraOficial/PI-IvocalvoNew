@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fb5ca5c8bf6168749aa6813b26b6aff7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 684298c0a0ab5374282a344713aa3e27, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -438,7 +438,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 74a1f05ca2e6c304a95643ab787a6463, type: 2}
+  m_Motion: {fileID: 7400000, guid: c580196644cef0147b47aa0a03d0ba4c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -452,7 +452,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PulandoPerna
-  m_Speed: 1.25
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8034570167318336550}
@@ -465,7 +465,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 39060dac189750a4a804252e8e428ba3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 32f5138f18f75c3439f0a170add2b6f8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -599,7 +599,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cf2cde5dc8eecc94eb56b811a4bc5dfb, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8c622736c68f3a14399024a744ace398, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
