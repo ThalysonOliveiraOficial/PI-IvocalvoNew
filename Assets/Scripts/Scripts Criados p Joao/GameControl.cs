@@ -16,6 +16,35 @@ public class GameControl : MonoBehaviour
 
     public Canvas _hudCanvas;
 
+    //Audio
+    public List<AudioSource> _somHud;
+    public List<AudioSource> _somGame;
+    public List<AudioSource> _somMusic;
+    public bool _muteHud;
+    public bool _muteGame;
+    public bool _muteMusic;
+
+    //
+
+    void Update()
+    {
+        for (int i = 0; i < _somHud.Count; i++)
+        {
+            _somHud[i].mute = _muteHud;
+        }
+
+        for (int i = 0; i < _somGame.Count; i++)
+        {
+            _somGame[i].mute = _muteGame;
+        }
+
+        for (int i = 0; i < _somMusic.Count; i++)
+        {
+            _somMusic[i].mute = _muteMusic;
+        }
+
+    }
+
     public void GameReiniciar()
     {
         SceneManager.LoadScene("Mapa_Arborizado");
