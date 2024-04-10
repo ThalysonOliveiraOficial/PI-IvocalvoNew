@@ -37,6 +37,8 @@ public class ControleInimigo : MonoBehaviour
         
         _gameControl = Camera.main.GetComponent<GameControl>();
 
+        _player = _gameControl._player;
+
         _segPlayer = true;
         _atacando = false;
 
