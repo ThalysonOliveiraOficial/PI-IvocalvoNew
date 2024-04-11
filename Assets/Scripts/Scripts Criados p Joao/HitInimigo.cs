@@ -34,9 +34,14 @@ public class HitInimigo : MonoBehaviour
         if (other.gameObject.CompareTag("AtaqueDistancia"))
         {
             other.gameObject.SetActive(false);
-            _ctrlInimigo._hitCheck = true;
             _ctrlInimigo._iniLife--;
-            StartCoroutine(HitPorrada());
+
+            if(_ctrlInimigo._iniLife >= 1)
+            {
+                _ctrlInimigo._hitCheck = true;
+                StartCoroutine(HitPorrada());
+            }
+            
 
             if ( _ctrlInimigo._iniLife == 0)
             {
@@ -55,9 +60,10 @@ public class HitInimigo : MonoBehaviour
     IEnumerator Morte()
     {
         _ctrlInimigo._agent.velocity = new Vector3(0, 0, 0);
-        yield return new WaitForSeconds(1);
-        _renderIni.enabled = false;
+        _ctrlInimigo._deathCheck = true;
+        yield return new WaitForSeconds(4.3f);
         _colliderIni.enabled = false;
+        _renderIni.enabled = false;
         _mortePart.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
         _mortePart.gameObject.SetActive(false);
@@ -66,6 +72,7 @@ public class HitInimigo : MonoBehaviour
 
     IEnumerator RestartTime()
     {
+        _ctrlInimigo._deathCheck = false;
         _Ressurgir.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         _renderIni.enabled = true;
