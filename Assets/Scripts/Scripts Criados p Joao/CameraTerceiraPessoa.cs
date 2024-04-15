@@ -14,7 +14,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
 
     public float _rotationSpeed;
 
-    public Transform _olharCombate;
+    public Transform _LookAtCombate;
 
     public CameraEstilo _estiloAtual;
 
@@ -78,7 +78,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
         //camera de combate
         else if (_estiloAtual == CameraEstilo.Combat)
         {
-            Vector3 _dirCombate = _olharCombate.position - new Vector3(transform.position.x, _olharCombate.position.y, transform.position.z);
+            Vector3 _dirCombate = _LookAtCombate.position - new Vector3(transform.position.x, _LookAtCombate.position.y, transform.position.z);
             _orientation.forward = _dirCombate.normalized;
 
             _playerObj.forward = _dirCombate.normalized;

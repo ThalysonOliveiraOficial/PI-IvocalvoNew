@@ -13,7 +13,11 @@ public class PlayerMovement : MonoBehaviour
 
     float _moveX,_moveZ;
 
+    private CharacterController _controller;
+
     Vector3 _moveDir;
+
+    [SerializeField] Animator _anim;
 
     [SerializeField] float _jumpHeight = 1f, _moveSpeed = 2.35f, _gravityValue = -9.81f;
 
@@ -22,14 +26,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool _groundedPlayer;
     [SerializeField] bool _checkJump;
     [SerializeField] bool _checkRunnig;
-    
 
-    [SerializeField] Animator _anim;
     [SerializeField] float _correndo = 0;
     [SerializeField] float _pulando = 0;
     [SerializeField] bool _pulandoCheck;
-    
-    CharacterController _controller;
 
     float _timer;
     [SerializeField] float _timerValue;
