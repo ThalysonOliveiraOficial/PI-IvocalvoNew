@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 480f14e7d9bf8b142a0c999a0663f60d
+guid: 3480e57982b18534999038639fbd765b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "op\xE7oes imagens_0"
+      name: "bot\xF5es_0"
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 791
-        height: 815
+        x: 1
+        y: 788
+        width: 99
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca5f317894674234d9cb3a1dfc24d61d
-      internalID: -286450253
+      spriteID: 3c477c950425b784aa7b6a279de4d373
+      internalID: 1012751812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xF5es_1"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 635
+        width: 105
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc005d9e9db6b149aaaa4d57c474214
+      internalID: -1549801211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xF5es_2"
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 495
+        width: 99
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762cfb1359ecfdc45a136a757509bc02
+      internalID: -1253625984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xF5es_3"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 343
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164eb82d54eda4d40be37c0e11fdbf77
+      internalID: 1113773641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xF5es_4"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 156
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5399b9240c367e84d87b09cd39e824db
+      internalID: -555847965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xF5es_5"
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 109
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb428de436b5f04d8f211a7668e54b2
+      internalID: -983197210
       vertices: []
       indices: 
       edges: []
@@ -133,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e9d9bd0e2148e9e43951efe0b07ccc6b
+    spriteID: 2b6725575beec5e4ca1f9e728bd2d8fa
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "op\xE7oes imagens_0": -286450253
+      "bot\xF5es_0": 1012751812
+      "bot\xF5es_1": -1549801211
+      "bot\xF5es_2": -1253625984
+      "bot\xF5es_3": 1113773641
+      "bot\xF5es_4": -555847965
+      "bot\xF5es_5": -983197210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
