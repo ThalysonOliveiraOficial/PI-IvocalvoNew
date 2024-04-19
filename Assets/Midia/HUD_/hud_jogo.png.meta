@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27c1e2ce4eed88a48b25153fac0f0c4a
+guid: cbed67b36f2c6a1428d7bb65c5b182d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_0"
+      name: hud_jogo_0
       rect:
         serializedVersion: 2
-        x: 155
-        y: 251
-        width: 792
-        height: 817
+        x: 0
+        y: 1807
+        width: 549
+        height: 549
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 423f1de6a32e345408652cd6d77bb26f
-      internalID: -111292189
+      spriteID: 703d83570d96a10469790cc29fe0e70c
+      internalID: -1293013572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_1"
+      name: hud_jogo_1
       rect:
         serializedVersion: 2
-        x: 1045
-        y: 787
-        width: 89
-        height: 84
+        x: 2575
+        y: 1907
+        width: 337
+        height: 449
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b69d394ef5059b43a4096a0aa280834
-      internalID: 893756717
+      spriteID: 47829f0687d49314bb0d0e9f3c89f414
+      internalID: 2132222248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_2"
+      name: hud_jogo_2
       rect:
         serializedVersion: 2
-        x: 1262
-        y: 334
-        width: 699
-        height: 699
+        x: 3150
+        y: 2039
+        width: 316
+        height: 317
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c5e02093fd70be43ade4f50cd8bebdb
-      internalID: 740912807
+      spriteID: bd0bd4fb96583da49b2cc9615af8812d
+      internalID: 336258622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_3"
+      name: hud_jogo_3
       rect:
         serializedVersion: 2
-        x: 1041
-        y: 691
-        width: 97
-        height: 88
+        x: 1451
+        y: 1516
+        width: 413
+        height: 391
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e79d1e93410e9e47a9203ef0503ce29
-      internalID: -1508360436
+      spriteID: 0301985433777504fa6260bee3c5c74b
+      internalID: 133271958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_4"
+      name: hud_jogo_4
       rect:
         serializedVersion: 2
-        x: 1096
-        y: 680
-        width: 39
-        height: 34
+        x: 1233
+        y: 1377
+        width: 816
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a7b9ca8d64a9654595867353159eafa
-      internalID: -1083038874
+      spriteID: 54183baa14471624e9f06ca88522892d
+      internalID: -1849447906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_5"
+      name: hud_jogo_5
       rect:
         serializedVersion: 2
-        x: 1060
-        y: 680
-        width: 15
-        height: 6
+        x: 900
+        y: 1192
+        width: 1448
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56f5b933eccc12b4b822243383614c45
-      internalID: 1324103600
+      spriteID: 9e8be1ca1b05cde449318b8ef2199ba0
+      internalID: -1222223825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_6"
+      name: hud_jogo_6
       rect:
         serializedVersion: 2
-        x: 1010
-        y: 286
-        width: 113
-        height: 111
+        x: 386
+        y: 852
+        width: 255
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 726e9d541f939da46a4f9f3438c16079
-      internalID: -1319747625
+      spriteID: 1961c5c5552c4e345b196028ca233451
+      internalID: -983359083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_7"
+      name: hud_jogo_7
       rect:
         serializedVersion: 2
-        x: 93
-        y: 32
-        width: 235
-        height: 214
+        x: 1560
+        y: 727
+        width: 283
+        height: 284
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a20fefb6f3d6ae4f9182e36a1d0a1b2
-      internalID: -366599006
+      spriteID: 5b5a815507612c04f983d889024f8f1d
+      internalID: -116854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_8"
+      name: hud_jogo_8
       rect:
         serializedVersion: 2
-        x: 434
-        y: 171
-        width: 419
-        height: 74
+        x: 2318
+        y: 852
+        width: 181
+        height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a97fefa81146dcc479d4de44f0967797
-      internalID: 2034122559
+      spriteID: 85cb44492418aa14b99373ad94e5810f
+      internalID: -1407776868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_9"
+      name: hud_jogo_9
       rect:
         serializedVersion: 2
-        x: 1006
-        y: 152
-        width: 111
-        height: 119
+        x: 0
+        y: 0
+        width: 833
+        height: 634
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,40 +313,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2db43495f44a7a498f17a48fee1ec50
-      internalID: -616078055
+      spriteID: d9dc85de3a2ad194e828a2e4e31a6d11
+      internalID: 1862877906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_10"
+      name: hud_jogo_10
       rect:
         serializedVersion: 2
-        x: 1149
-        y: 36
-        width: 220
-        height: 205
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46e37d12d90afb94eadaa9ec6d6e4f3d
-      internalID: -861361847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_11"
-      rect:
-        serializedVersion: 2
-        x: 1010
-        y: 13
-        width: 116
+        x: 1250
+        y: 490
+        width: 68
         height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -355,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 732df01ecad5ff944a3e42bc94502945
-      internalID: -1749165862
+      spriteID: 73e5680be60010b41a61d7e81afed7be
+      internalID: 1921331297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_12"
+      name: hud_jogo_11
       rect:
         serializedVersion: 2
-        x: 1367
-        y: 119
-        width: 4
-        height: 26
+        x: 2330
+        y: 510
+        width: 179
+        height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e04c7ee2663547443a91dee783d90b34
-      internalID: 582526255
+      spriteID: 3fdb5b62c41735d41a44dc040f5cdf18
+      internalID: 1730430998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "op\xE7oes e creditos imagens_13"
+      name: hud_jogo_12
       rect:
         serializedVersion: 2
-        x: 426
-        y: 41
-        width: 425
-        height: 74
+        x: 2759
+        y: 0
+        width: 707
+        height: 537
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,8 +376,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e363a294487f2434bb2b0f976df451fe
-      internalID: -766505509
+      spriteID: f02c670bdc6b80f4983881da961f51fd
+      internalID: -617546406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud_jogo_13
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 168
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b92b59804268714fa1a115f611dafc7
+      internalID: 1498333417
       vertices: []
       indices: 
       edges: []
@@ -406,7 +406,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e92ae769cd92a9c4884347c884502095
+    spriteID: a58a5bda52a0fec4e9f8dfb20de21a4b
     internalID: 0
     vertices: []
     indices: 
@@ -414,20 +414,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "op\xE7oes e creditos imagens_0": -111292189
-      "op\xE7oes e creditos imagens_1": 893756717
-      "op\xE7oes e creditos imagens_10": -861361847
-      "op\xE7oes e creditos imagens_11": -1749165862
-      "op\xE7oes e creditos imagens_12": 582526255
-      "op\xE7oes e creditos imagens_13": -766505509
-      "op\xE7oes e creditos imagens_2": 740912807
-      "op\xE7oes e creditos imagens_3": -1508360436
-      "op\xE7oes e creditos imagens_4": -1083038874
-      "op\xE7oes e creditos imagens_5": 1324103600
-      "op\xE7oes e creditos imagens_6": -1319747625
-      "op\xE7oes e creditos imagens_7": -366599006
-      "op\xE7oes e creditos imagens_8": 2034122559
-      "op\xE7oes e creditos imagens_9": -616078055
+      hud_jogo_0: -1293013572
+      hud_jogo_1: 2132222248
+      hud_jogo_10: 1921331297
+      hud_jogo_11: 1730430998
+      hud_jogo_12: -617546406
+      hud_jogo_13: 1498333417
+      hud_jogo_2: 336258622
+      hud_jogo_3: 133271958
+      hud_jogo_4: -1849447906
+      hud_jogo_5: -1222223825
+      hud_jogo_6: -983359083
+      hud_jogo_7: -116854
+      hud_jogo_8: -1407776868
+      hud_jogo_9: 1862877906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
