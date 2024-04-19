@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4ced606c81f2e274885eca3acd2bdd41
+guid: b2a1a302db1bce94cb0e52cdc13d5c0d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventario_0
+      name: menu principal sprites_0
       rect:
         serializedVersion: 2
-        x: 216
-        y: 2113
-        width: 253
-        height: 318
+        x: 53
+        y: 589
+        width: 1037
+        height: 460
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f19571baaef2594fa6768fa359782f2
-      internalID: -1506523766
+      spriteID: c4a7b93afdcc3de4aa59c8c2cc1e63ce
+      internalID: -1018911771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_1
+      name: menu principal sprites_1
       rect:
         serializedVersion: 2
-        x: 496
-        y: 2113
-        width: 245
-        height: 259
+        x: 1355
+        y: 637
+        width: 533
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed5c86456cbe3ec4a8110ba64e58c9db
-      internalID: -365471386
+      spriteID: 74b512176d98e3e439df32988670a349
+      internalID: 1068228186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_2
+      name: menu principal sprites_2
       rect:
         serializedVersion: 2
-        x: 817
-        y: 2072
-        width: 243
-        height: 325
+        x: 1372
+        y: 375
+        width: 521
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3a728b0f02d6e64d909d31984695a3f
-      internalID: 1673397121
+      spriteID: 38b9431d6f3d78c408fbb88206c1bbe8
+      internalID: 1447152921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_3
+      name: menu principal sprites_3
       rect:
         serializedVersion: 2
-        x: 1131
-        y: 2104
-        width: 242
-        height: 351
+        x: 1064
+        y: 172
+        width: 149
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 875b7b5ecb3420e41b43a632f7f5519f
-      internalID: 1891414622
+      spriteID: 6380d054159bb6848b2e4a5fd28c7683
+      internalID: 1713862642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_4
+      name: menu principal sprites_4
       rect:
         serializedVersion: 2
-        x: 1419
-        y: 2110
-        width: 244
-        height: 258
+        x: 1383
+        y: 101
+        width: 516
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,29 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e62941212339c2428bf6542cb95a278
-      internalID: -1344423823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventario_5
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 3126
-        height: 2030
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e39f427c0117474eafe71a296491a92
-      internalID: 706839878
+      spriteID: 137fc95a290c83a4283051e6c14c3c95
+      internalID: 937487025
       vertices: []
       indices: 
       edges: []
@@ -238,7 +217,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 00f866c25825da843969833ed9b4b856
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -246,12 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      inventario_0: -1506523766
-      inventario_1: -365471386
-      inventario_2: 1673397121
-      inventario_3: 1891414622
-      inventario_4: -1344423823
-      inventario_5: 706839878
+      menu principal sprites_0: -1018911771
+      menu principal sprites_1: 1068228186
+      menu principal sprites_2: 1447152921
+      menu principal sprites_3: 1713862642
+      menu principal sprites_4: 937487025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
