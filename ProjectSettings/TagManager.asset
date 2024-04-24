@@ -12,6 +12,7 @@ TagManager:
   - AtkInimigo
   - Arvre
   - agua
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

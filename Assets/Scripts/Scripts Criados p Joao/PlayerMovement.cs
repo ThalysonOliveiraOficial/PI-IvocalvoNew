@@ -62,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _delayJumpTimerValue;
     [SerializeField] bool _pularDelay;
 
+    //variavel pra salvar posição p/ checkpoint
+    public Vector3 _posSalva;
 
     private void Start()
     {
@@ -75,6 +77,14 @@ public class PlayerMovement : MonoBehaviour
 
         _pularDelay = true;
         _delayJumpTimer = _delayJumpTimerValue;
+
+
+        _posSalva.x = PlayerPrefs.GetFloat("posX");
+        _posSalva.y = PlayerPrefs.GetFloat("posY");
+        _posSalva.z = PlayerPrefs.GetFloat("posZ");
+
+        transform.localPosition = _posSalva;
+
     }
 
     private void Update()
@@ -269,6 +279,12 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Morte());
             }
             StartCoroutine(HitTime());
+        }
+
+        if (other.CompareTag("Checkpoint"))
+        {
+            UnityEngine.Debug.Log(other.transform.localPosition);
+            _gameCtrl.CheckpointSalvarPos(other.transform.localPosition);
         }
     }
 

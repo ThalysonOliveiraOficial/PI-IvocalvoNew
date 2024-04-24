@@ -45,6 +45,14 @@ public class GameControl : MonoBehaviour
 
     }
 
+    public void CheckpointSalvarPos(Vector3 pos)
+    {
+        PlayerPrefs.SetFloat("posX", pos.x);
+        PlayerPrefs.SetFloat("posY", pos.y);
+        PlayerPrefs.SetFloat("posZ", pos.z);
+
+    }
+
     public void GameReiniciar()
     {
         SceneManager.LoadScene("Mapa_Arborizado");
