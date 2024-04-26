@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject _bala;
 
     public float _vidaInicialPlayer;
-    float _vidaPlayer = 3;
+    float _vidaPlayer = 5;
 
     [SerializeField] ParticleSystem _hitPlayerPartc;
     [SerializeField] ParticleSystem _RestartPlayerPartc;
@@ -62,8 +62,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _delayJumpTimerValue;
     [SerializeField] bool _pularDelay;
 
-    //variavel pra salvar posição p/ checkpoint
+    //variavel pra salvar checkpoint
     public Vector3 _posSalva;
+    public float _vidaSalva;
+
 
     private void Start()
     {
@@ -72,18 +74,25 @@ public class PlayerMovement : MonoBehaviour
 
         _timer = _timerValue;
 
-        _vidaInicialPlayer = _vidaPlayer;
-        _playerVivo = true;
-
         _pularDelay = true;
         _delayJumpTimer = _delayJumpTimerValue;
 
+        _vidaInicialPlayer = _vidaPlayer;
+        _playerVivo = true;
 
-        _posSalva.x = PlayerPrefs.GetFloat("posX");
-        _posSalva.y = PlayerPrefs.GetFloat("posY");
-        _posSalva.z = PlayerPrefs.GetFloat("posZ");
+        if(PlayerPrefs.GetInt("StartSalve") ==1)
+        {
+            //posiçao
+            _posSalva.x = PlayerPrefs.GetFloat("posX");
+            _posSalva.y = PlayerPrefs.GetFloat("posY");
+            _posSalva.z = PlayerPrefs.GetFloat("posZ");
+            transform.localPosition = _posSalva;
+            //vida
+            _vidaSalva = PlayerPrefs.GetFloat("VidaPlayer");
+            _vidaPlayer = _vidaSalva;
+            //
+        }
 
-        transform.localPosition = _posSalva;
 
     }
 

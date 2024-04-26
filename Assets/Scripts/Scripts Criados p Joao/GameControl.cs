@@ -23,8 +23,21 @@ public class GameControl : MonoBehaviour
     public bool _muteHud;
     public bool _muteGame;
     public bool _muteMusic;
+    public int _fase;
 
     //
+
+    void Start()
+    {
+
+        Debug.Log(PlayerPrefs.GetInt("StartSalve"));
+        if (PlayerPrefs.GetInt("StartSalve") == 0)
+        {
+            PlayerPrefs.SetInt("StartSalve", 0);
+        }
+
+
+    }
 
     void Update()
     {
@@ -51,7 +64,19 @@ public class GameControl : MonoBehaviour
         PlayerPrefs.SetFloat("posY", pos.y);
         PlayerPrefs.SetFloat("posZ", pos.z);
 
+
+        Salvar();
+        Debug.Log(PlayerPrefs.GetInt("StartSalve"));
+
     }
+
+    public void Salvar()
+    {
+        PlayerPrefs.SetInt("StartSalve", 1);
+        PlayerPrefs.SetInt("fase", _fase);
+
+    }
+
 
     public void GameReiniciar()
     {
