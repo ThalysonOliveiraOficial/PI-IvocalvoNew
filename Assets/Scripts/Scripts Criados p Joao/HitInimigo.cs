@@ -72,13 +72,15 @@ public class HitInimigo : MonoBehaviour
 
     IEnumerator RestartTime()
     {
-        _ctrlInimigo._deathCheck = false;
-        _Ressurgir.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        _renderIni.enabled = true;
-        _colliderIni.enabled = true;
-        _Ressurgir.gameObject.SetActive(false);
-
+        if(_ctrlInimigo != null)
+        {
+            _ctrlInimigo._deathCheck = false;
+            _Ressurgir.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.3f);
+            _renderIni.enabled = true;
+            _colliderIni.enabled = true;
+            _Ressurgir.gameObject.SetActive(false);
+        }
 
     }
 
