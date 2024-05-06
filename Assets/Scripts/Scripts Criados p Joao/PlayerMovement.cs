@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             _posSalva.x = PlayerPrefs.GetFloat("posX");
             _posSalva.y = PlayerPrefs.GetFloat("posY");
             _posSalva.z = PlayerPrefs.GetFloat("posZ");
-            transform.localPosition = _posSalva;
+            transform.position = _posSalva;
             //vida
             _vidaSalva = PlayerPrefs.GetFloat("VidaPlayer");
             _vidaPlayer = _vidaSalva;
@@ -293,7 +293,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Checkpoint"))
         {
             UnityEngine.Debug.Log(other.transform.localPosition);
-            _gameCtrl.CheckpointSalvarPos(other.transform.localPosition);
+            _gameCtrl.CheckpointSalvarPos(other.transform.position);
         }
     }
 
