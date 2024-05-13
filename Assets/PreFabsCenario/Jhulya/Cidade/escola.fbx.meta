@@ -3,7 +3,37 @@ guid: 7e2937131e563f24aa1126c145286b30
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete Cast
+    second: {fileID: 2100000, guid: f454345afcca16c4ea6026bd8f085bee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 11e78c2a7db440d448b65fa4d1f8b800, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 53186a164fa69234d948fbea6171f233, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof Tile
+    second: {fileID: 2100000, guid: a05cf8b96da9f904e8bd5040bad53fad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vermelho
+    second: {fileID: 2100000, guid: c06fc40eda2514f499e6240a9c3bb440, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: telhado quadra
+    second: {fileID: 2100000, guid: 40b590fde7d0fea489bb919cda9d103e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
