@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6bebf60505585f40b4317cee92e9c56
+guid: 1303f6f1b4f7e62409425ce088266dff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -162,13 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventario_0
+      name: fim_de_jogo_painel_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 2198
-        width: 254
-        height: 316
+        x: 0
+        y: 1344
+        width: 2200
+        height: 873
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5268c98980796b042b1b2ef9b96fe2d3
-      internalID: -375295968
+      spriteID: 83cf41b90b72cd941879fdeec1c32285
+      internalID: -1080355671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_1
+      name: fim_de_jogo_painel_1
       rect:
         serializedVersion: 2
-        x: 613
-        y: 2207
-        width: 244
-        height: 260
+        x: 564
+        y: 145
+        width: 1234
+        height: 599
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,92 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a97eba42e104be9438bbf14b0a9e1837
-      internalID: -310177165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventario_2
-      rect:
-        serializedVersion: 2
-        x: 1042
-        y: 2161
-        width: 242
-        height: 324
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07c005a05e6bf52489e7ece18d101692
-      internalID: -134653715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventario_3
-      rect:
-        serializedVersion: 2
-        x: 1486
-        y: 2122
-        width: 242
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6723184e7c7b08644ba9d7d971a06549
-      internalID: 425485066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventario_4
-      rect:
-        serializedVersion: 2
-        x: 2587
-        y: 2175
-        width: 242
-        height: 325
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62b7a963913efe34da40c03b20be3336
-      internalID: 19446124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: inventario_5
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 98
-        width: 3244
-        height: 2011
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d70adcdefc8f01479fbbb989ac807f4
-      internalID: -827282132
+      spriteID: 6bd3006d09dd3a14083f06c93efd6e73
+      internalID: -977188163
       vertices: []
       indices: 
       edges: []
@@ -290,7 +206,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fe95953a4183cd2488d03145e84be9f7
+    spriteID: 67c4d75bce03cb141b2cc6f9ef7716f4
     internalID: 0
     vertices: []
     indices: 
@@ -298,12 +214,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      inventario_0: -375295968
-      inventario_1: -310177165
-      inventario_2: -134653715
-      inventario_3: 425485066
-      inventario_4: 19446124
-      inventario_5: -827282132
+      fim_de_jogo_painel_0: -1080355671
+      fim_de_jogo_painel_1: -977188163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

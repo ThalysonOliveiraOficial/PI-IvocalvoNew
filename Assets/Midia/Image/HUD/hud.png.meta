@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbed67b36f2c6a1428d7bb65c5b182d7
+guid: 75fef451634069045a8ec48f552da421
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,46 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,17 +145,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hud_jogo_0
+      name: hud_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1807
-        width: 549
-        height: 549
+        y: 1751
+        width: 557
+        height: 556
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,62 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 703d83570d96a10469790cc29fe0e70c
-      internalID: -1293013572
+      spriteID: 9beb383fba3ead749a4df95d6f25875a
+      internalID: -353870683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_1
+      name: hud_1
       rect:
         serializedVersion: 2
-        x: 2575
-        y: 1907
-        width: 337
-        height: 449
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47829f0687d49314bb0d0e9f3c89f414
-      internalID: 2132222248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hud_jogo_2
-      rect:
-        serializedVersion: 2
-        x: 3150
-        y: 2039
-        width: 316
-        height: 317
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd0bd4fb96583da49b2cc9615af8812d
-      internalID: 336258622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hud_jogo_3
-      rect:
-        serializedVersion: 2
-        x: 1451
-        y: 1516
+        x: 1434
+        y: 1604
         width: 413
-        height: 391
+        height: 437
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0301985433777504fa6260bee3c5c74b
-      internalID: 133271958
+      spriteID: 97541de21a4116e45a2199283e45b589
+      internalID: 2129238078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_4
+      name: hud_2
       rect:
         serializedVersion: 2
-        x: 1233
-        y: 1377
-        width: 816
-        height: 71
+        x: 2902
+        y: 1630
+        width: 489
+        height: 658
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54183baa14471624e9f06ca88522892d
-      internalID: -1849447906
+      spriteID: 20707ca2c9f916e41a3c2c366097d976
+      internalID: -1737521627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_5
+      name: hud_3
       rect:
         serializedVersion: 2
-        x: 900
-        y: 1192
-        width: 1448
-        height: 117
+        x: 1782
+        y: 965
+        width: 414
+        height: 459
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e8be1ca1b05cde449318b8ef2199ba0
-      internalID: -1222223825
+      spriteID: a2d3af3334b311744ade1dfde2d740ae
+      internalID: -215043941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_6
+      name: hud_4
       rect:
         serializedVersion: 2
-        x: 386
-        y: 852
-        width: 255
-        height: 254
+        x: 2814
+        y: 955
+        width: 254
+        height: 253
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1961c5c5552c4e345b196028ca233451
-      internalID: -983359083
+      spriteID: 486752780e6e46a42a46d9ba071efd3a
+      internalID: 1319344094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_7
+      name: hud_5
       rect:
         serializedVersion: 2
-        x: 1560
-        y: 727
-        width: 283
-        height: 284
+        x: 258
+        y: 0
+        width: 575
+        height: 578
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,18 +281,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b5a815507612c04f983d889024f8f1d
-      internalID: -116854
+      spriteID: 4a7cbadd94952584293fa4265166cd68
+      internalID: -1616519430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_8
+      name: hud_6
       rect:
         serializedVersion: 2
-        x: 2318
-        y: 852
+        x: 1326
+        y: 576
+        width: 96
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b7533d0e848a74fb6bcc115d3f80d6
+      internalID: -1164679195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud_7
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 485
         width: 181
         height: 181
       alignment: 0
@@ -292,61 +323,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85cb44492418aa14b99373ad94e5810f
-      internalID: -1407776868
+      spriteID: 29d01e401de78e14cbc82c5dfd774db2
+      internalID: -904619464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_9
+      name: hud_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 833
-        height: 634
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9dc85de3a2ad194e828a2e4e31a6d11
-      internalID: 1862877906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hud_jogo_10
-      rect:
-        serializedVersion: 2
-        x: 1250
-        y: 490
-        width: 68
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73e5680be60010b41a61d7e81afed7be
-      internalID: 1921331297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hud_jogo_11
-      rect:
-        serializedVersion: 2
-        x: 2330
-        y: 510
-        width: 179
+        x: 3194
+        y: 573
+        width: 182
         height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -355,40 +344,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fdb5b62c41735d41a44dc040f5cdf18
-      internalID: 1730430998
+      spriteID: c26cca43be59166418e4119085de943a
+      internalID: -1635961414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hud_jogo_12
+      name: hud_9
       rect:
         serializedVersion: 2
-        x: 2759
-        y: 0
-        width: 707
-        height: 537
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f02c670bdc6b80f4983881da961f51fd
-      internalID: -617546406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hud_jogo_13
-      rect:
-        serializedVersion: 2
-        x: 2330
-        y: 168
-        width: 179
+        x: 2799
+        y: 250
+        width: 181
         height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -397,8 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b92b59804268714fa1a115f611dafc7
-      internalID: 1498333417
+      spriteID: 8a012792f47da2647901418fd1cfe9fb
+      internalID: 1116609921
       vertices: []
       indices: 
       edges: []
@@ -406,7 +374,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a58a5bda52a0fec4e9f8dfb20de21a4b
+    spriteID: ddb80ee54bab35645b6f19e6e316da80
     internalID: 0
     vertices: []
     indices: 
@@ -414,20 +382,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hud_jogo_0: -1293013572
-      hud_jogo_1: 2132222248
-      hud_jogo_10: 1921331297
-      hud_jogo_11: 1730430998
-      hud_jogo_12: -617546406
-      hud_jogo_13: 1498333417
-      hud_jogo_2: 336258622
-      hud_jogo_3: 133271958
-      hud_jogo_4: -1849447906
-      hud_jogo_5: -1222223825
-      hud_jogo_6: -983359083
-      hud_jogo_7: -116854
-      hud_jogo_8: -1407776868
-      hud_jogo_9: 1862877906
+      hud_0: -353870683
+      hud_1: 2129238078
+      hud_2: -1737521627
+      hud_3: -215043941
+      hud_4: 1319344094
+      hud_5: -1616519430
+      hud_6: -1164679195
+      hud_7: -904619464
+      hud_8: -1635961414
+      hud_9: 1116609921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
