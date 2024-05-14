@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject _bala;
 
     public float _vidaInicialPlayer;
-    float _vidaPlayer = 5;
+    float _vidaPlayer = 10;
 
     [SerializeField] ParticleSystem _hitPlayerPartc;
     [SerializeField] ParticleSystem _RestartPlayerPartc;
