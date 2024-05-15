@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bb66c4f917c4224597e4149287c647f
+guid: ea424e1596a518b4595ad658b0f9f6d3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Alamain
+  - Wicked Mouse
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

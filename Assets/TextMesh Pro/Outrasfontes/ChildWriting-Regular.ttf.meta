@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d83d4cb4b9c5ffb409d592c484c4b81e
+guid: f332c89d7c0bd8a49897719e0c54e406
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Kid Learning How To Write
+  - Child Writing
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

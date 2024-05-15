@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4bd4a80ba0a3884c9833d391d8ed3e4
+guid: 906ea2e225c8f5d4c94080c70663cdb1
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - PWScolarpaper
+  - Eraser
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

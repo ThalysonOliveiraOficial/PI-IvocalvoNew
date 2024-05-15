@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3cb3c5cc82dbfe942b3b9cfd50a7e08c
+guid: e84a27fd43cebec46bec1a8c787828ed
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Dream School
+  - Hello Twins - Personal Use
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
