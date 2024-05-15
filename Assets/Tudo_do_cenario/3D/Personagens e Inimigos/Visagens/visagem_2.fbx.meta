@@ -3,7 +3,12 @@ guid: 70270bf521cc7fc4f8a52a7b87599fb7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ghost Red.001
+    second: {fileID: 2100000, guid: a40a06a36e4611149b0a852bd92e9636, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
