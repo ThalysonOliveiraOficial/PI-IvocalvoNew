@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject _bala;
 
     public float _vidaInicialPlayer;
-    float _vidaPlayer = 10;
+    public float _vidaPlayerMax = 10;
 
     [SerializeField] ParticleSystem _hitPlayerPartc;
     [SerializeField] ParticleSystem _RestartPlayerPartc;
@@ -66,18 +66,22 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 _posSalva;
     public float _vidaSalva;
 
+    //Varialveis pra acessar HUD do jogo
+    [SerializeField] VidaHud _SliderVida;
+
 
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
 
+
         _timer = _timerValue;
 
         _pularDelay = true;
         _delayJumpTimer = _delayJumpTimerValue;
 
-        _vidaInicialPlayer = _vidaPlayer;
+        _vidaInicialPlayer = _vidaPlayerMax;
         _playerVivo = true;
 
         if(PlayerPrefs.GetInt("StartSalve") ==1)
@@ -89,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = _posSalva;
             //vida
             _vidaSalva = PlayerPrefs.GetFloat("VidaPlayer");
-            _vidaPlayer = _vidaSalva;
+            _vidaPlayerMax = _vidaSalva;
             //
         }
 
@@ -144,6 +148,24 @@ public class PlayerMovement : MonoBehaviour
 
         float _Velocparar = Mathf.Abs(_moveZ) + Mathf.Abs(_moveX);
 
+        if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 1)
+            _checkRunnig = true;
+        else if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 2)
+            _checkRunnig = false;
+        else if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 0)
+            _checkRunnig = false;
+
+        if(_Velocparar == 0)
+        {
+            if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._sliderEstamina.value < _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._sliderEstamina.maxValue)
+            {
+                _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus = 2;
+            }
+            else _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus = 0;
+            
+            //_checkRunnig = false;
+        }
+
         //checkar se o botao de correr foi apertado e mudar o _moveSpeed
         if (_checkRunnig && _Velocparar != 0)
         {
@@ -192,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetBool("Atirar", _checkTiro);
         _anim.SetBool("Morto", _checkMorte);
         _anim.SetBool("Apanhar", _checkHitMo);
-        _anim.SetFloat("Vida", _vidaPlayer);
+        _anim.SetFloat("Vida", _vidaInicialPlayer);
     }
 
     void GroundCheck()
@@ -222,8 +244,8 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetRun(InputAction.CallbackContext value)
     {
-        
-         _checkRunnig = value.performed;
+        _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus = 1;
+        //_checkRunnig = true;
     }
 
     public void SetCombatAim(InputAction.CallbackContext value)
@@ -270,6 +292,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _checkHitMo = true;
             _vidaInicialPlayer--;
+            _gameCtrl._hudCanvas.GetComponent<VidaHud>().HitSlider();
             
             StartCoroutine(HitPartcPlayer());
             if (_vidaInicialPlayer <= 0)

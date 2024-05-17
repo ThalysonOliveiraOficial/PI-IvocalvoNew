@@ -16,6 +16,8 @@ public class GameControl : MonoBehaviour
 
     public Canvas _hudCanvas;
 
+    public PlayerMovement _playerMovScript;
+
     //Audio
     public List<AudioSource> _somHud;
     public List<AudioSource> _somGame;
@@ -29,6 +31,7 @@ public class GameControl : MonoBehaviour
 
     void Start()
     {
+        
 
         Debug.Log(PlayerPrefs.GetInt("StartSalve"));
         if (PlayerPrefs.GetInt("StartSalve") == 0)

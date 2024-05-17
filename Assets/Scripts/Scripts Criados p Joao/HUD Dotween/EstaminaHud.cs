@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class EstaminaHud : MonoBehaviour
 {
-    [SerializeField] Slider _sliderEstamina;
+    public GameControl _gameControl;
+
+    public Slider _sliderEstamina;
 
     public float timerTotal = 15;
     public float oldTimer;
