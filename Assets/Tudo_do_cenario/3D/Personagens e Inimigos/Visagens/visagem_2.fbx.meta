@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ghost Red.001
-    second: {fileID: 2100000, guid: b77a0800b8162c24da882dea4f475699, type: 2}
+    second: {fileID: 2100000, guid: 3998c1e9dcf9991409b0c16dfe046b14, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
