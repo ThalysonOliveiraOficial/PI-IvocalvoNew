@@ -43,8 +43,6 @@ public class PlayerMovement : MonoBehaviour
     int _ctrlTiro;
 
     public GameControl _gameCtrl;
-    public Transform _posPedra;
-    public GameObject _bala;
 
     public float _vidaInicialPlayer;
     public float _vidaPlayerMax = 10;
@@ -68,12 +66,17 @@ public class PlayerMovement : MonoBehaviour
 
     //Varialveis pra acessar HUD do jogo
     [SerializeField] VidaHud _SliderVida;
-
+    
+    //Variaveis para Mira e tiro
+    private Transform _camTransform;
+    [SerializeField] AtirarPool _AtirarPoolBala;
 
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
+        _camTransform = Camera.main.transform;
+        _AtirarPoolBala = GetComponent<AtirarPool>();
 
 
         _timer = _timerValue;
@@ -142,9 +145,10 @@ public class PlayerMovement : MonoBehaviour
         //orientação do movimento
         _moveDir = (_orientation.forward * _moveZ + _orientation.right * _moveX) * _moveSpeed;       
 
+
         //movimento
         _controller.Move(new Vector3(_moveDir.x, _controller.velocity.y, _moveDir.z) * Time.deltaTime);
-        //_cine.m_XAxis.Value
+        
 
         float _Velocparar = Mathf.Abs(_moveZ) + Mathf.Abs(_moveX);
 
@@ -178,18 +182,15 @@ public class PlayerMovement : MonoBehaviour
        
         _pulando = _controller.velocity.y;
 
-        //mira
-        if(_checkAim )
+        //mira veloc e tiro(Bugado)
+        if (_checkAim)
         {
-            _gameCtrl.MiraCano.SetActive(true);
-            _gameCtrl.MiraMarker.SetActive(true);
-            _gameCtrl.BaladeiraOBJ.SetActive(true);
+            _moveSpeed = 1f;
         }
-        else
+
+        if (_checkAim && _checkTiro)
         {
-            _gameCtrl.MiraCano.SetActive(false);
-            _gameCtrl.MiraMarker.SetActive(false);
-            _gameCtrl.BaladeiraOBJ.SetActive(false);
+            Atirar();
         }
 
     }
@@ -231,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetMove(InputAction.CallbackContext value)
     {
-        Vector3 m = value.ReadValue<Vector3>();
+        Vector3 m = value.ReadValue<Vector2>();
         _moveX = m.x;
         _moveZ = m.y;
        
@@ -248,25 +249,58 @@ public class PlayerMovement : MonoBehaviour
         //_checkRunnig = true;
     }
 
+    //Mira Input
     public void SetCombatAim(InputAction.CallbackContext value)
     {
         _checkAim = value.performed;
         if(_checkAim)
         {
             _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Combat);
+            _gameCtrl.Mira.SetActive(true);
+            _gameCtrl.BaladeiraOBJ.SetActive(true);
 
         }
         if(!_checkAim)
         {
             _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Basic);
+            _gameCtrl.Mira.SetActive(false);
+            _gameCtrl.BaladeiraOBJ.SetActive(false);
         }
        
     }
 
+    //Atirar Input
     public void SetTiro(InputAction.CallbackContext value)
     {
         _checkTiro = value.performed;
+        
+        
     } 
+
+    public void Atirar()
+    {
+        RaycastHit hit;
+        GameObject bullet = AtirarPool.SharedInstance.GetPooledObject();
+        BulletControl _bulletCtrl = bullet.GetComponent<BulletControl>();
+        if (bullet != null)
+        {
+            bullet.transform.position = _gameCtrl.SaidaTiro.transform.position;
+            bullet.SetActive(true);
+        }
+        if (Physics.Raycast(_camTransform.position, _camTransform.forward, out hit, Mathf.Infinity))
+        {
+            _bulletCtrl._target = hit.point;
+            _bulletCtrl._hit = true;
+
+
+        }
+        else
+        {
+            _bulletCtrl._hit = false;
+
+        }
+        _checkTiro = false;
+    }
    
 
     private void Pulo()

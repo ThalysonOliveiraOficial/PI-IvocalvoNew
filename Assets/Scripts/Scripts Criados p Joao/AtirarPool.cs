@@ -12,6 +12,8 @@ public class AtirarPool : MonoBehaviour
     [SerializeField] float _timer;
     [SerializeField] float _timerValue = 10;
 
+    public GameControl _gameCtrl;
+
     void Awake()
     {
         SharedInstance = this;
@@ -19,6 +21,8 @@ public class AtirarPool : MonoBehaviour
 
     void Start()
     {
+        _gameCtrl = Camera.main.GetComponent<GameControl>();
+
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)

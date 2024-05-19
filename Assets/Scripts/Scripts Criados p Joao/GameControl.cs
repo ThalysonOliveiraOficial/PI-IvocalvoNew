@@ -10,9 +10,9 @@ public class GameControl : MonoBehaviour
     public Transform[] _iniMovPos;
     public GameObject InimigosPai;
     
-    public GameObject MiraCano;
-    public GameObject MiraMarker;
+    public GameObject Mira;
     public GameObject BaladeiraOBJ;
+    public GameObject SaidaTiro;
 
     public Canvas _hudCanvas;
 

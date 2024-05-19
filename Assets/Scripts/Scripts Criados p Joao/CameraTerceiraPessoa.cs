@@ -64,7 +64,7 @@ public class CameraTerceiraPessoa : MonoBehaviour
             Vector3 _viewDir = _player.position - new Vector3(transform.position.x, _player.position.y, transform.position.z);
             _orientation.forward = _viewDir.normalized;
 
-            //Rotacionar o Objeto Player
+            //Rotacionar o Objeto Player    
             float _hInput = Input.GetAxisRaw("Horizontal");
             float _vInput = Input.GetAxisRaw("Vertical");
             Vector3 _InputDir = _orientation.forward * _vInput + _orientation.right * _hInput;
@@ -76,13 +76,23 @@ public class CameraTerceiraPessoa : MonoBehaviour
         }
 
         //camera de combate
+        
         else if (_estiloAtual == CameraEstilo.Combat)
         {
+            
+            Quaternion targetRotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+            _player.transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+            _playerObj.transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+
+            /*
             Vector3 _dirCombate = _LookAtCombate.position - new Vector3(transform.position.x, _LookAtCombate.position.y, transform.position.z);
             _orientation.forward = _dirCombate.normalized;
 
             _playerObj.forward = _dirCombate.normalized;
+
+            */
         }
+        
     }
 
     public void TrocarEstiloCamera(CameraEstilo novoEstilo)
