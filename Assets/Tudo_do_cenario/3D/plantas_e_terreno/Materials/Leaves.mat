@@ -123,7 +123,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
-    - _SubsurfaceIndirect: 0.25
+    - _SubsurfaceIndirect: 0.069
     - _SubsurfaceKwToggle: 0
     - _TwoSided: 0
     - _UVSec: 0
