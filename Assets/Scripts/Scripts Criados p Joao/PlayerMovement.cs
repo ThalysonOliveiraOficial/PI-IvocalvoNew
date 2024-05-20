@@ -1,6 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
 using System.Collections;
+using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -71,14 +72,34 @@ public class PlayerMovement : MonoBehaviour
     private Transform _camTransform;
     [SerializeField] AtirarPool _AtirarPoolBala;
 
-    private void Start()
+    public PlayerInput _playerInput;
+    public InputAction _atirarAction;
+
+
+    private void Awake()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
         _camTransform = Camera.main.transform;
         _AtirarPoolBala = GetComponent<AtirarPool>();
+        _playerInput = GetComponent<PlayerInput>();
 
+        _atirarAction = _playerInput.actions["Atirar"];
+        
+    }
 
+    private void OnEnable()
+    {
+        _atirarAction.performed += _ => Atirar();
+
+    }
+    private void OnDisable()
+    {
+        _atirarAction.performed -= _ => Atirar();
+    }
+
+    private void Start()
+    {
         _timer = _timerValue;
 
         _pularDelay = true;
@@ -188,11 +209,12 @@ public class PlayerMovement : MonoBehaviour
             _moveSpeed = 1f;
         }
 
+        /*
         if (_checkAim && _checkTiro)
         {
             Atirar();
         }
-
+        */
     }
 
     void AnimacaoPlayer()
@@ -269,13 +291,13 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    /*
     //Atirar Input
     public void SetTiro(InputAction.CallbackContext value)
     {
         _checkTiro = value.performed;
-        
-        
     } 
+    */
 
     public void Atirar()
     {
@@ -301,7 +323,7 @@ public class PlayerMovement : MonoBehaviour
         }
         _checkTiro = false;
     }
-   
+    
 
     private void Pulo()
     {

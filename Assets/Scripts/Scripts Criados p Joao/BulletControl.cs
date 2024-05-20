@@ -20,6 +20,10 @@ public class BulletControl : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
+        if(Vector3.Distance(transform.position, _target) < .01f)
+        {
+            gameObject.SetActive(false);
+        }
 
     }
 }
