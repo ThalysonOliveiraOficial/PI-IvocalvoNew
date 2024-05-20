@@ -74,32 +74,19 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerInput _playerInput;
     public InputAction _atirarAction;
+    public Rigidbody _rbTiro;
+    public float _forcaTiro = 20;
 
 
-    private void Awake()
+
+    private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _controller = GetComponent<CharacterController>();
         _camTransform = Camera.main.transform;
         _AtirarPoolBala = GetComponent<AtirarPool>();
-        _playerInput = GetComponent<PlayerInput>();
-
-        _atirarAction = _playerInput.actions["Atirar"];
         
-    }
 
-    private void OnEnable()
-    {
-        _atirarAction.performed += _ => Atirar();
-
-    }
-    private void OnDisable()
-    {
-        _atirarAction.performed -= _ => Atirar();
-    }
-
-    private void Start()
-    {
         _timer = _timerValue;
 
         _pularDelay = true;
@@ -209,12 +196,13 @@ public class PlayerMovement : MonoBehaviour
             _moveSpeed = 1f;
         }
 
-        /*
+        
         if (_checkAim && _checkTiro)
         {
             Atirar();
+            _checkTiro = false;
         }
-        */
+        
     }
 
     void AnimacaoPlayer()
@@ -291,37 +279,29 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-    /*
+    
     //Atirar Input
     public void SetTiro(InputAction.CallbackContext value)
     {
         _checkTiro = value.performed;
     } 
-    */
+    
 
     public void Atirar()
     {
-        RaycastHit hit;
         GameObject bullet = AtirarPool.SharedInstance.GetPooledObject();
-        BulletControl _bulletCtrl = bullet.GetComponent<BulletControl>();
         if (bullet != null)
         {
+            
             bullet.transform.position = _gameCtrl.SaidaTiro.transform.position;
+            bullet.transform.rotation = _gameCtrl.SaidaTiro.transform.rotation;
             bullet.SetActive(true);
-        }
-        if (Physics.Raycast(_camTransform.position, _camTransform.forward, out hit, Mathf.Infinity))
-        {
-            _bulletCtrl._target = hit.point;
-            _bulletCtrl._hit = true;
-
+            _rbTiro = bullet.GetComponent<Rigidbody>();
+            _rbTiro.velocity = Vector3.zero;
+            _rbTiro.AddForce(transform.forward* _forcaTiro, ForceMode.Acceleration);
 
         }
-        else
-        {
-            _bulletCtrl._hit = false;
 
-        }
-        _checkTiro = false;
     }
     
 
