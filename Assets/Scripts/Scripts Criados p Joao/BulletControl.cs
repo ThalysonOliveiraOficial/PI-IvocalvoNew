@@ -6,24 +6,23 @@ public class BulletControl : MonoBehaviour
 {
     private float _speed = 50f;
 
-    public Vector3 _target { get; set; }
-
-    public bool _hit {  get; set; }
+    public Rigidbody _rbBullet;
     
     void Start()
     {
-        
+        _rbBullet = GetComponent<Rigidbody>();
     }
 
     
     void Update()
     {
+        /*
         transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
         if(Vector3.Distance(transform.position, _target) < .01f)
         {
-            gameObject.SetActive(false);
+            Debug.Log("tiro Acertado");
         }
-
+        */
     }
 }

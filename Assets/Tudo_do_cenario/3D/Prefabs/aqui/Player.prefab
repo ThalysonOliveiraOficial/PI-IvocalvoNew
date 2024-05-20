@@ -5244,6 +5244,18 @@ MonoBehaviour:
   _vidaSalva: 0
   _SliderVida: {fileID: 0}
   _AtirarPoolBala: {fileID: 0}
+  _playerInput: {fileID: 0}
+  _atirarAction:
+    m_Name: Atirar
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e60785b9-c90b-477f-b6d9-dd95519123ab
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _rbTiro: {fileID: 0}
+  _forcaTiro: 20
 --- !u!114 &7249257969131822989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5484,7 +5496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5886383155688302325
 Transform:
   m_ObjectHideFlags: 0
@@ -5559,8 +5571,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8244671238779051404}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -13}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.0002659284, y: 4.9999766, z: -12.999025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

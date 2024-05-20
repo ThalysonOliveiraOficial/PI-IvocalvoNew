@@ -11,7 +11,7 @@ public class VidaHud : MonoBehaviour
     [SerializeField] Slider _sliderVida;
     [SerializeField] float _life;
 
-    void Start()
+    private void Awake()
     {
         _gameControl = Camera.main.GetComponent<GameControl>();
 
@@ -21,6 +21,20 @@ public class VidaHud : MonoBehaviour
         _life = _sliderVida.maxValue;
         //_life = System.Convert.ToInt32(_sliderVida.maxValue);
         _sliderVida.value = _sliderVida.maxValue;
+    }
+
+    void Start()
+    {
+        /*
+        _gameControl = Camera.main.GetComponent<GameControl>();
+
+        _sliderVida.maxValue = _gameControl._player.GetComponent<PlayerMovement>()._vidaPlayerMax;
+
+        //vida do slider = vida do personagem
+        _life = _sliderVida.maxValue;
+        //_life = System.Convert.ToInt32(_sliderVida.maxValue);
+        _sliderVida.value = _sliderVida.maxValue;
+        */
     }
 
 

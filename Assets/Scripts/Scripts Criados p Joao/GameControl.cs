@@ -13,6 +13,7 @@ public class GameControl : MonoBehaviour
     public GameObject Mira;
     public GameObject BaladeiraOBJ;
     public GameObject SaidaTiro;
+    public GameObject _municao;
 
     public Canvas _hudCanvas;
 
@@ -26,6 +27,8 @@ public class GameControl : MonoBehaviour
     public bool _muteGame;
     public bool _muteMusic;
     public int _fase;
+
+
 
     //
 
