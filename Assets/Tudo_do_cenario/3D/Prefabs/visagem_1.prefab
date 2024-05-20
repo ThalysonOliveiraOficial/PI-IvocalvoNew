@@ -67,5 +67,145 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8652639675612538385}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2730387183951278653}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6212027746885092873}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4730923537749992224}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8220049909246558832}
   m_SourcePrefab: {fileID: 100100000, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+--- !u!1 &3178141495166602581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 72df92d1b32d4da47b6ea084289cd2ff, type: 3}
+  m_PrefabInstance: {fileID: 2367326634645172228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8652639675612538385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178141495166602581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d64c7c3330b0b4d9af184a4c7f7a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 0}
+  _numberPos: 0
+  _checkPos: 0
+  _velocAnim: 0
+  _anima: {fileID: 0}
+  _player: {fileID: 0}
+  _gameControl: {fileID: 0}
+  _distPlayer: 0
+  _segPlayer: 0
+  _iniLife: 0
+  _iLifeini: 3
+  _hitCheck: 0
+  _deathCheck: 0
+  _timeLimit: 1.4
+  _atacando: 0
+  _ataqueColl: {fileID: 0}
+--- !u!195 &2730387183951278653
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178141495166602581}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.53
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.4
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!95 &-6212027746885092873
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178141495166602581}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cae82a54ef9c975438ec814136537281, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &4730923537749992224
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178141495166602581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.7749417
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.441694, z: 0}
+--- !u!143 &8220049909246558832
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178141495166602581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2.774942
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.441694, z: 0}
