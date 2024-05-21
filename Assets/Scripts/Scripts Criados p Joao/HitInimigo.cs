@@ -14,13 +14,16 @@ public class HitInimigo : MonoBehaviour
 
     public SkinnedMeshRenderer _renderIni;
     public Collider _colliderIni;
-    
+
+    private GameControl _gameControl;
+    public int _pontua;
      
     void Start()
     {
         _ctrlInimigo = GetComponent<ControleInimigo>();
         _colliderIni = GetComponent<Collider>();
-        
+        _gameControl = Camera.main.GetComponent<GameControl>();
+        _pontua = 0;
     }
 
     
@@ -45,6 +48,8 @@ public class HitInimigo : MonoBehaviour
 
             if ( _ctrlInimigo._iniLife == 0)
             {
+                _pontua++;
+                _gameControl._hudPontua.SetText(" " + _pontua);
                 StartCoroutine(Morte());
             }
         }

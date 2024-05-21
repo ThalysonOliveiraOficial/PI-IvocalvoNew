@@ -31,6 +31,8 @@ public class InimigoContrPool : MonoBehaviour
         if (_checkTime < 0)
         {
              InimigoOn_1();
+             InimigoOn_2();
+             InimigoOn_3();
              _checkTime = _timeLimit;
         }
         
@@ -38,7 +40,7 @@ public class InimigoContrPool : MonoBehaviour
 
     void InimigoOn_1()
     {
-        GameObject bullet = InimigoPool_1.SharedInstance.GetPooledObject();
+        GameObject bullet = IniPool1.SharedInstance.GetPooledObject();
         if (bullet != null)
         {
 
@@ -60,4 +62,54 @@ public class InimigoContrPool : MonoBehaviour
             bullet.GetComponent<HitInimigo>().RestartIni();
         }
     }
+
+    void InimigoOn_2()
+    {
+        GameObject bullet = IniPool2.SharedInstance.GetPooledObject();
+        if (bullet != null)
+        {
+
+            _numbPosSpawn = Random.Range(0, _posIniSpawn.Length);
+            bullet.transform.localPosition = _posIniSpawn[_numbPosSpawn].transform.position;
+            /*
+            bullet.transform.SetParent(_posIniSpawn[0]);
+            bullet.transform.position = new Vector3(0, 0, 0);
+            */
+
+            _iniVivoL.Add(bullet);
+            _iniMortoL.Remove(bullet);
+
+            bullet.GetComponent<ControleInimigo>()._iniLife = bullet.GetComponent<ControleInimigo>()._iLifeini;
+            bullet.GetComponent<ControleInimigo>()._player = _gameCrtl._player;
+
+            bullet.SetActive(true);
+
+            bullet.GetComponent<HitInimigo>().RestartIni();
+        }
+    }
+    void InimigoOn_3()
+    {
+        GameObject bullet = IniPool3.SharedInstance.GetPooledObject();
+        if (bullet != null)
+        {
+
+            _numbPosSpawn = Random.Range(0, _posIniSpawn.Length);
+            bullet.transform.localPosition = _posIniSpawn[_numbPosSpawn].transform.position;
+            /*
+            bullet.transform.SetParent(_posIniSpawn[0]);
+            bullet.transform.position = new Vector3(0, 0, 0);
+            */
+
+            _iniVivoL.Add(bullet);
+            _iniMortoL.Remove(bullet);
+
+            bullet.GetComponent<ControleInimigo>()._iniLife = bullet.GetComponent<ControleInimigo>()._iLifeini;
+            bullet.GetComponent<ControleInimigo>()._player = _gameCrtl._player;
+
+            bullet.SetActive(true);
+
+            bullet.GetComponent<HitInimigo>().RestartIni();
+        }
+    }
+
 }

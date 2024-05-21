@@ -1,7 +1,6 @@
 using Cinemachine;
 using DG.Tweening;
 using System.Collections;
-using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -193,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
         //mira veloc e tiro(Bugado)
         if (_checkAim)
         {
-            _moveSpeed = 1f;
+            _moveSpeed = 2f;
         }
 
         
@@ -347,6 +346,27 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Morte());
             }
             StartCoroutine(HitTime());
+        }
+
+        if (other.CompareTag("agua"))
+        {
+            _vidaInicialPlayer = 0;
+
+            if (_vidaInicialPlayer <= 0)
+            {
+                //
+
+                _TelaGameOver.DOScale(1f, 1.95f);
+                _playerVivo = false;
+
+
+                //Criar um Script separado
+                _reiniciarBT.Select();
+
+                //
+
+                StartCoroutine(Morte());
+            }
         }
 
         if (other.CompareTag("Checkpoint"))

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class GameControl : MonoBehaviour
     public GameObject _municao;
 
     public Canvas _hudCanvas;
+
+    public TextMeshProUGUI _hudPontua;
 
     public PlayerMovement _playerMovScript;
 
