@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Orange
+    second: {fileID: 2100000, guid: 4e0977adc4d43404287ac8e738ad44a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: apple.001
     second: {fileID: 2100000, guid: 31aeb9a40e53e2d429157cdaa81da4f6, type: 2}
   - first:
@@ -14,6 +19,31 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: apple_tail
     second: {fileID: 2100000, guid: 2ece83f2321a15e45928fbb3333bc763, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: avocato
+    second: {fileID: 2100000, guid: bac5e5ef8adddb646a31983115c96440, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: banana
+    second: {fileID: 2100000, guid: cb69b5b13d6625c42a7a454a54911d48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: banana_tail
+    second: {fileID: 2100000, guid: 7c1668b25463f874bac034317f26e9ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mango
+    second: {fileID: 2100000, guid: c307139179fb44841a2ba5db826894e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mango_leaf
+    second: {fileID: 2100000, guid: 5586b41f44ce9854aa907d852f199d93, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
