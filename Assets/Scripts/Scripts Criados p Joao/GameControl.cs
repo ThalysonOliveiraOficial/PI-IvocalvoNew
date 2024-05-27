@@ -18,8 +18,6 @@ public class GameControl : MonoBehaviour
 
     public Canvas _hudCanvas;
 
-    public TextMeshProUGUI _hudPontua;
-
     public PlayerMovement _playerMovScript;
 
     //Audio

@@ -49,7 +49,6 @@ public class HitInimigo : MonoBehaviour
             if ( _ctrlInimigo._iniLife == 0)
             {
                 _pontua++;
-                _gameControl._hudPontua.SetText(" " + _pontua);
                 StartCoroutine(Morte());
             }
         }
