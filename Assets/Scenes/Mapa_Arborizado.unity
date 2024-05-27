@@ -69027,12 +69027,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4945853083245110365, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_VoxelSize
-      value: 0.40666667
+      value: 0.036666665
       objectReference: {fileID: 0}
     - target: {fileID: 4945853083245110365, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 23800000, guid: 410549667352e2340a2b7056346e8399, type: 2}
     - target: {fileID: 4945853083245110365, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_BuildHeightMesh
       value: 0
