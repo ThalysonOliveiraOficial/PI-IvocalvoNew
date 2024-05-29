@@ -161,10 +161,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 1)
             _checkRunnig = true;
+        //mudar pra false depois
         else if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 2)
-            _checkRunnig = false;
+            _checkRunnig = true;
         else if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 0)
-            _checkRunnig = false;
+            _checkRunnig = true;
+        //mudar pra false depois
 
         if(_Velocparar == 0)
         {
