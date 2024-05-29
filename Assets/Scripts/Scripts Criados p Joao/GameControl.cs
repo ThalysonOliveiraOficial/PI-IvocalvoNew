@@ -17,6 +17,7 @@ public class GameControl : MonoBehaviour
     public GameObject _municao;
 
     public Canvas _hudCanvas;
+    public Transform _ponteiroMiniMap;
 
     public PlayerMovement _playerMovScript;
 

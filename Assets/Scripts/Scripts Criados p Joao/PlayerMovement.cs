@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     public InputAction _atirarAction;
     public Rigidbody _rbTiro;
     public float _forcaTiro = 20;
+    public Transform _ponteiroMM;
 
 
 
@@ -84,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _camTransform = Camera.main.transform;
         _AtirarPoolBala = GetComponent<AtirarPool>();
+        _ponteiroMM = _gameCtrl._ponteiroMiniMap;
+        
         
 
         _timer = _timerValue;
@@ -112,6 +115,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        _ponteiroMM.eulerAngles = new Vector3(0, 0, -_orientation.transform.eulerAngles.y);
+
         //desbugar o pulo
         if (_checkJump)
         {
