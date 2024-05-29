@@ -28579,32 +28579,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &715698958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8335245077362730543, guid: a4a75bfb726f74b479446419286410a4, type: 3}
-  m_PrefabInstance: {fileID: 1377787092}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &715698962
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715698958}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 6.05, y: 3.18, z: 3.95}
-  m_Center: {x: 0, y: 1.71, z: -0.02}
 --- !u!1 &716754151
 GameObject:
   m_ObjectHideFlags: 0
@@ -52289,9 +52263,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a4a75bfb726f74b479446419286410a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2129561676}
-    - targetCorrespondingSourceObject: {fileID: -8335245077362730543, guid: a4a75bfb726f74b479446419286410a4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 715698962}
   m_SourcePrefab: {fileID: 100100000, guid: a4a75bfb726f74b479446419286410a4, type: 3}
 --- !u!1 &1377906957
 GameObject:
@@ -69867,11 +69838,7 @@ MonoBehaviour:
   - {fileID: 1882816139}
   - {fileID: 1695926039}
   - {fileID: 685731723}
-  - {fileID: 0}
   - {fileID: 1609759844}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   InimigosPai: {fileID: 1154083414}
   Mira: {fileID: 606281750}
   BaladeiraOBJ: {fileID: 436017981}
