@@ -29,6 +29,7 @@ public class GameControl : MonoBehaviour
     public bool _muteGame;
     public bool _muteMusic;
     public int _fase;
+    public Transform _minicamera;
 
 
 
