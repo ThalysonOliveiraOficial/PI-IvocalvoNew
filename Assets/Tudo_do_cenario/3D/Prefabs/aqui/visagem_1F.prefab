@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _miniMapaCam: {fileID: 0}
-  _minimapSize: 12
+  _minimapSize: 10.5
 --- !u!1 &4644901633049828751
 GameObject:
   m_ObjectHideFlags: 0

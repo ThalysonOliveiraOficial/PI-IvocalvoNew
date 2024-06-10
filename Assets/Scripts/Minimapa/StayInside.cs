@@ -21,7 +21,7 @@ public class StayInside : MonoBehaviour
     void Update()
     {
         _tempV3 = transform.parent.transform.position;
-        _tempV3.y = transform.position.y;
+        _tempV3.y = _gameControl._player.localPosition.y + 6;
         transform.position = _tempV3;
     }
 
