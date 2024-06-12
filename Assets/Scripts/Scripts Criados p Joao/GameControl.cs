@@ -31,6 +31,9 @@ public class GameControl : MonoBehaviour
     public int _fase;
     public Transform _minicamera;
 
+    public Transform _hudGameOver;
+    public Transform _hudMissao;
+
 
 
     //

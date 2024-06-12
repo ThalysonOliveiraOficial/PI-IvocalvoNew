@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         _camTransform = Camera.main.transform;
         _AtirarPoolBala = GetComponent<AtirarPool>();
         _ponteiroMM = _gameCtrl._ponteiroMiniMap;
+        _TelaGameOver = _gameCtrl._hudGameOver;
         
         
 
@@ -109,7 +110,6 @@ public class PlayerMovement : MonoBehaviour
             _vidaPlayerMax = _vidaSalva;
             //
         }
-
 
     }
 

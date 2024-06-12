@@ -32,8 +32,8 @@ public class CameraTerceiraPessoa : MonoBehaviour
     private void Start()
     {
         //Cursor ficar invisivel
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         //_gameControl = GetComponent<GameControl>();
 
