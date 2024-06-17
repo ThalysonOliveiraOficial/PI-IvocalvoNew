@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1464040941}
-  m_IndirectSpecularColor: {r: 0.0024823516, g: 0.042889938, b: 0.124420896, a: 1}
+  m_IndirectSpecularColor: {r: 0.0024823202, g: 0.042889096, b: 0.124416634, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -50451,7 +50451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   objectToPool: {fileID: 1643146955634843118, guid: c174f138a6041cb4db615dd67a2baf52, type: 3}
-  amountToPool: 2
+  amountToPool: 1
   _IniCtrlPool: {fileID: 1881254649}
 --- !u!114 &1154083417
 MonoBehaviour:
