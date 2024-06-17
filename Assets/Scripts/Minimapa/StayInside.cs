@@ -9,10 +9,12 @@ public class StayInside : MonoBehaviour
     public float _minimapSize;
     Vector3 _tempV3;
     GameControl _gameControl;
+
     void Start()
     {
         _gameControl=Camera.main.GetComponent<GameControl>();
         _miniMapaCam = _gameControl._minicamera;
+      
 
 
     }

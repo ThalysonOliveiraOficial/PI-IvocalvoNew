@@ -27,14 +27,14 @@ public class HudInventario : MonoBehaviour
 
     public void AbrirHudInvet()
     {
-        _panelInvet.DOScale(1f, 1f);
+        _panelInvet.DOScale(1f, .25f);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
     public void FecharHudInvet()
     {
-        _panelInvet.DOScale(0f, 1f);
+        _panelInvet.DOScale(0f, .25f);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -43,7 +43,7 @@ public class HudInventario : MonoBehaviour
     public void AbrirHudMissao()
     {
         _panelMissao.DOScale(1f,0f);
-        _TelaMissaoIara.DOScale(1f, 1f);
+        _TelaMissaoIara.DOScale(1f, .25f);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -52,11 +52,11 @@ public class HudInventario : MonoBehaviour
 
     public void FecharHudMissao()
     {
-        _TelaMissaoIara.DOScale(0f, 1f);
+        _TelaMissaoIara.DOScale(0f, .25f);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        _panelMissao.DOScale(0f, 1.1f);
+        _panelMissao.DOScale(0f, .25f);
     }
 }

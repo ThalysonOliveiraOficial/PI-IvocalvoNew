@@ -33,6 +33,8 @@ public class GameControl : MonoBehaviour
 
     public Transform _hudGameOver;
     public Transform _hudMissao;
+    public GameObject CamCM;
+  
 
 
 
@@ -40,8 +42,8 @@ public class GameControl : MonoBehaviour
 
     void Start()
     {
-        
 
+        CamCM.SetActive(false);
         Debug.Log(PlayerPrefs.GetInt("StartSalve"));
         if (PlayerPrefs.GetInt("StartSalve") == 0)
         {
