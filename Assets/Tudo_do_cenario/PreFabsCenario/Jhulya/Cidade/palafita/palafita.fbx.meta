@@ -3,7 +3,67 @@ guid: d34b798e8970e084f80324a9ec21fb5f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cartoon Wood
+    second: {fileID: 2100000, guid: a08f91d6ba5f099419e40065f7a54550, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Placa
+    second: {fileID: 2100000, guid: e2444333e08f76d4d99a361a1ee9e17d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 1
+    second: {fileID: 2100000, guid: 6e71381bafb21884b8ab61173620ce1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 2
+    second: {fileID: 2100000, guid: 327b864187703274798b102a977fdc0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 4
+    second: {fileID: 2100000, guid: 68d8fabe93954ce46af18161b18ba781, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 6
+    second: {fileID: 2100000, guid: 18fc75b0b6b004747aeb5278052a85be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 7
+    second: {fileID: 2100000, guid: 5f78508d1559bd14b9afaa37bf79a614, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 8
+    second: {fileID: 2100000, guid: ba72297b5232b52449412faf3c9fcb46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa 9
+    second: {fileID: 2100000, guid: 5c5edad0dfe57f9489eb1e8d4e324f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa.12
+    second: {fileID: 2100000, guid: d5320a09d9a116e4cb97cc5f58cafec3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa.3
+    second: {fileID: 2100000, guid: aa959d779f75bb340b68b49f5a200da4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa5
+    second: {fileID: 2100000, guid: b60c4d573c4550d478188adc5b55d4f0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
