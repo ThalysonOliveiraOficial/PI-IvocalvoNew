@@ -10,6 +10,9 @@ public class BossMovement : MonoBehaviour
     public NavMeshAgent _agentBoss;
     public float _distPlayer;
     public Transform _player;
+    [SerializeField] bool _fixAtPlayer;
+    
+
 
     void Start()
     {
@@ -30,8 +33,16 @@ public class BossMovement : MonoBehaviour
         _distPlayer = Vector3.Distance(transform.position, _player.position);
         Debug.Log(_distPlayer);
 
-        transform.LookAt(_player.position);
+        if(_fixAtPlayer ) transform.LookAt(_player.position);
 
+        if(_distPlayer < 31)
+        {
+            _fixAtPlayer = true;
+        }
+        else
+        {
+            _fixAtPlayer = false;
+        }
 
     }
 
