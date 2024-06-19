@@ -43,7 +43,7 @@ public class GameControl : MonoBehaviour
     void Start()
     {
 
-        CamCM.SetActive(false);
+        StopCamPlayer(false);
         Debug.Log(PlayerPrefs.GetInt("StartSalve"));
         if (PlayerPrefs.GetInt("StartSalve") == 0)
         {
@@ -70,6 +70,11 @@ public class GameControl : MonoBehaviour
             _somMusic[i].mute = _muteMusic;
         }
 
+    }
+
+    public void StopCamPlayer(bool value)
+    {
+        CamCM.SetActive(value);
     }
 
     public void CheckpointSalvarPos(Vector3 pos)
