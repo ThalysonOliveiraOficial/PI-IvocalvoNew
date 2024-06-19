@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
     public Transform _player;
+    public Transform _playerObj;
     public Transform[] _iniMovPos;
     public GameObject InimigosPai;
     
@@ -55,6 +56,8 @@ public class GameControl : MonoBehaviour
 
     void Update()
     {
+        _minicamera.position = new Vector3(_player.position.x, _minicamera.position.y, _player.position.z);
+
         for (int i = 0; i < _somHud.Count; i++)
         {
             _somHud[i].mute = _muteHud;
@@ -69,6 +72,7 @@ public class GameControl : MonoBehaviour
         {
             _somMusic[i].mute = _muteMusic;
         }
+
 
     }
 

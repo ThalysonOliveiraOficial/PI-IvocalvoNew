@@ -14,7 +14,7 @@ public class BossMovement : MonoBehaviour
     void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
-        _agentBoss =GetComponent<NavMeshAgent>();
+        //_agentBoss =GetComponent<NavMeshAgent>();
         _player = _gameCtrl._player;
 
     }
@@ -29,6 +29,8 @@ public class BossMovement : MonoBehaviour
     {
         _distPlayer = Vector3.Distance(transform.position, _player.position);
         Debug.Log(_distPlayer);
+
+        transform.LookAt(_player.position);
 
 
     }

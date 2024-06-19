@@ -19350,10 +19350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9182849048896477826, guid: 71c146e3d67df204997f069d501f49b3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 599790168}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71c146e3d67df204997f069d501f49b3, type: 3}
 --- !u!1 &436017981 stripped
@@ -25254,6 +25251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 599790168}
   - {fileID: 1881254647}
   - {fileID: 1625248884894630513}
   - {fileID: 906875920}
@@ -27356,11 +27354,11 @@ Transform:
   m_GameObject: {fileID: 599790167}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6767579, y: 0.20493615, z: -0.20493612, w: 0.6767579}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
-  m_LocalScale: {x: 1.7857144, y: 1.7857144, z: 1.7857144}
+  m_LocalPosition: {x: 214.99002, y: 48.742172, z: 251.15576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 436017985}
+  m_Father: {fileID: 561325442}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -33.695}
 --- !u!114 &599790169
 MonoBehaviour:
@@ -79110,6 +79108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 436017985}
+  _playerObj: {fileID: 0}
   _iniMovPos:
   - {fileID: 1882816139}
   - {fileID: 1695926039}
