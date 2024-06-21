@@ -9,9 +9,16 @@ public class BossMovement : MonoBehaviour
     public int _vidaChefe = 100;
     public NavMeshAgent _agentBoss;
     public float _distPlayer;
+    public float _distPos;
+    public int _posSelec;
+    public float _speed;
     public Transform _player;
     [SerializeField] bool _fixAtPlayer;
-    
+    [SerializeField] Transform[] _pos;
+    Animator _anim;
+
+    public bool _iara;
+
 
 
     void Start()
@@ -19,6 +26,7 @@ public class BossMovement : MonoBehaviour
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         //_agentBoss =GetComponent<NavMeshAgent>();
         _player = _gameCtrl._player;
+        _anim = GetComponent<Animator>();
 
     }
 
@@ -30,12 +38,32 @@ public class BossMovement : MonoBehaviour
 
     public void MovimentoChefe()
     {
+        if (_iara) {
+            IaraCheck();
+        }
+
+    }
+
+    void IaraCheck()
+    {
         _distPlayer = Vector3.Distance(transform.position, _player.position);
-        Debug.Log(_distPlayer);
+        _distPos = Vector3.Distance(transform.position, _pos[_posSelec].position);
 
-        if(_fixAtPlayer ) transform.LookAt(_player.position);
+        if (_distPos >= 1 + .5f)
+        {
+            //movendo
+            _anim.SetBool("Movendo", true);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(_pos[_posSelec].transform.position.x, transform.position.y, _pos[_posSelec].transform.position.z), _speed * Time.deltaTime);
 
-        if(_distPlayer < 31)
+        }
+        else
+        {
+            _anim.SetBool("Movendo", false);
+            //parado
+        }
+        if (_fixAtPlayer) transform.LookAt(_player.position);
+
+        if (_distPlayer < 31)
         {
             _fixAtPlayer = true;
         }
@@ -43,7 +71,6 @@ public class BossMovement : MonoBehaviour
         {
             _fixAtPlayer = false;
         }
-
     }
 
 }
