@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1464040941}
-  m_IndirectSpecularColor: {r: 0.0024887645, g: 0.042846918, b: 0.12414268, a: 1}
+  m_IndirectSpecularColor: {r: 0.002482841, g: 0.042869985, b: 0.12430694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -45889,7 +45889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &942086544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85986,6 +85986,10 @@ PrefabInstance:
       value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 1012883601390019511, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
+      propertyPath: m_ShadowCastingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012883601390019511, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_DetailObjectDensity
       value: 0.524
       objectReference: {fileID: 0}
@@ -85999,7 +86003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1012883601390019511, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_DetailObjectDistance
-      value: 183
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012883601390019511, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1012883601390019511, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_IgnoreQualitySettings
