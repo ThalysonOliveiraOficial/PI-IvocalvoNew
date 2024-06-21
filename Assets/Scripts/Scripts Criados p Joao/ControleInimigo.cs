@@ -82,6 +82,8 @@ public class ControleInimigo : MonoBehaviour
         float _distMovp = Vector3.Distance(transform.position, _gameControl._iniMovPos[_numberPos].transform.position);
 
         _agent.SetDestination(_gameControl._iniMovPos[_numberPos].transform.position);
+        Debug.Log(_numberPos);
+      
 
         if (_distMovp < 4 && _checkPos == false)
         {

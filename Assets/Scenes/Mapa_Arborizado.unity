@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1464040941}
-  m_IndirectSpecularColor: {r: 0.002482841, g: 0.042869985, b: 0.12430694, a: 1}
+  m_IndirectSpecularColor: {r: 0.0024887645, g: 0.042846918, b: 0.12414268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27760,8 +27760,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 599790168}
   - {fileID: 1881254647}
+  - {fileID: 599790168}
   - {fileID: 1625248884894630513}
   - {fileID: 906875920}
   m_Father: {fileID: 0}
@@ -30149,7 +30149,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -43899,7 +43899,7 @@ MonoBehaviour:
     FieldOfView: 20
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 50
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -86080,7 +86080,7 @@ PrefabInstance:
     - target: {fileID: 4945853083245110365, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 410549667352e2340a2b7056346e8399, type: 2}
+      objectReference: {fileID: 23800000, guid: 71231f4bf9cd033419e52aaf08de7df6, type: 2}
     - target: {fileID: 4945853083245110365, guid: efaef8df3a009874b9f50a1b9cc920a0, type: 3}
       propertyPath: m_BuildHeightMesh
       value: 0
@@ -86817,7 +86817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 436017985}
-  _playerObj: {fileID: 0}
+  _playerObj: {fileID: 436017984}
   _iniMovPos:
   - {fileID: 1882816139}
   - {fileID: 1695926039}
@@ -86984,7 +86984,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 5000
+  far clip plane: 50
   field of view: 40
   orthographic: 0
   orthographic size: 10
@@ -103299,7 +103299,7 @@ MonoBehaviour:
     FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 50
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
