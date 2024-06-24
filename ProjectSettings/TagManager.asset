@@ -13,9 +13,6 @@ TagManager:
   - Arvre
   - agua
   - Checkpoint
-  - TriggerIara1
-  - TriggerIara2
-  - TriggerIara3
   layers:
   - Default
   - TransparentFX

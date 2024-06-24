@@ -5256,6 +5256,7 @@ MonoBehaviour:
     m_Flags: 0
   _rbTiro: {fileID: 0}
   _forcaTiro: 20
+  _ponteiroMM: {fileID: 0}
 --- !u!114 &7249257969131822989
 MonoBehaviour:
   m_ObjectHideFlags: 0

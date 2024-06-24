@@ -35,7 +35,10 @@ public class GameControl : MonoBehaviour
     public Transform _hudGameOver;
     public Transform _hudMissao;
     public GameObject CamCM;
-  
+
+
+    //Boss Iara
+    public Transform _iaraModelP;
 
 
 
