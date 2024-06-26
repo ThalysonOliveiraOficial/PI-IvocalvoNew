@@ -68769,7 +68769,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.21173012, g: 0.27629554, b: 0.735849, a: 1}
+  m_Color: {r: 0.7372549, g: 0.7196914, b: 0.21176468, a: 1}
   m_Intensity: 2.83
   m_Range: 10
   m_SpotAngle: 30
@@ -86850,6 +86850,7 @@ MonoBehaviour:
   _hudGameOver: {fileID: 1962962929}
   _hudMissao: {fileID: 799865632}
   CamCM: {fileID: 5690642803527395697}
+  _iaraModelP: {fileID: 0}
 --- !u!114 &1881254649
 MonoBehaviour:
   m_ObjectHideFlags: 0
