@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,6 +24,13 @@ public class BossMovement : MonoBehaviour
 
     float _timer;
     [SerializeField] float _timerValue = 10;
+    float _timerAtk;
+    [SerializeField] float _timerVatk = 1.5f;
+
+    int _ataque;
+    public bool _seMovendo;
+    public bool _atacando;
+
 
     void Start()
     {
@@ -59,7 +67,7 @@ public class BossMovement : MonoBehaviour
         _timer -= Time.deltaTime;
         if (_timer < 0)
         {
-            Debug.Log("TEMPO");
+            //Debug.Log("TEMPO");
             // de 0 a 3 pois variavel maxima do rando.range é "excluida" logo deve por um acima
 
             _posSelec = _posSelecLis[_selecSort];
@@ -70,7 +78,7 @@ public class BossMovement : MonoBehaviour
                 Shuffle(_posSelecLis);
             }
 
-            Debug.Log(_posSelec);
+            //Debug.Log(_posSelec);
             _timer = _timerValue;
 
         }
@@ -80,16 +88,21 @@ public class BossMovement : MonoBehaviour
         if (_distPos >= 1 + .5f)
         {
             //movendo
-            _anim.SetBool("Movendo", true);
+            _seMovendo = true;
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(_pos[_posSelec].transform.position.x, transform.position.y, _pos[_posSelec].transform.position.z), _speed * Time.deltaTime);
 
         }
         else
         {
-            _anim.SetBool("Movendo", false);
+            _seMovendo = false;
             //parado
         }
         if (_fixAtPlayer) transform.LookAt(_player.position);
+
+        //Animações
+        _anim.SetBool("Movendo", _seMovendo);
+        _anim.SetInteger("Ataque", _ataque);
+        _anim.SetBool("Atacando", _atacando);
 
         if (_distPlayer < 35)
         {
@@ -100,7 +113,27 @@ public class BossMovement : MonoBehaviour
         {
             _fixAtPlayer = false;
         }
+
+        if (!_seMovendo)
+        {
+            _timerAtk -= Time.deltaTime;
+            if(_timerAtk < 0)
+            {
+                _atacando = true;
+                _ataque = Random.Range(1, 4);
+               // Debug.Log(_ataque);
+                _timerAtk = _timerVatk;
+            }
+        }
+        else
+        {
+            _atacando = false;
+            _ataque = 0;
+            //Debug.Log("Parou atk :" + _ataque);
+        }
+
     }
+
 
     void Shuffle(List<int> lists)
     {
