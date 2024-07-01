@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc05943e889226e4b9a333696e94c48f
+guid: 41a0c21a512e9b146a1d84da60c5448a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,13 +175,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: notasmusicais-preto_0
+      name: notasmusicais-azul_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 518
-        width: 111
-        height: 93
+        y: 1291
+        width: 274
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da3dcd6450185ac449740d83eb86d0ae
-      internalID: 903069462
+      spriteID: 3bba0101e71ebbe49be3509e5ae1d10d
+      internalID: -1246146727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_1
+      name: notasmusicais-azul_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 519
-        width: 100
-        height: 100
+        x: 405
+        y: 1293
+        width: 245
+        height: 247
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca4904a7ba11d7949901a11a0a3167f7
-      internalID: -1489852374
+      spriteID: d08103dc5bd48ef4e99809bbcd17379d
+      internalID: 1790822934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_2
+      name: notasmusicais-azul_2
       rect:
         serializedVersion: 2
-        x: 330
-        y: 519
-        width: 103
-        height: 104
+        x: 821
+        y: 1293
+        width: 256
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +231,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7cbce6fe5e0319489556814d6543fff
-      internalID: 26879021
+      spriteID: fbd81acff251b0d4da93c06994040975
+      internalID: 566974724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_3
+      name: notasmusicais-azul_3
       rect:
         serializedVersion: 2
-        x: 461
-        y: 519
+        x: 1149
+        y: 1293
+        width: 256
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86615591de175d342ab97e075f320798
+      internalID: 827743762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notasmusicais-azul_4
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1293
+        width: 256
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e8731d12f864c48ac1582ee31e0f4f
+      internalID: -22460107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notasmusicais-azul_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 736
+        width: 501
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc13db763e641341a3a41de6d7b6ba3
+      internalID: 1465300808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notasmusicais-azul_6
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 736
+        width: 501
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d001a4347aee8e948a7a92b10d94479c
+      internalID: -1402055722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notasmusicais-azul_7
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 736
         width: 104
-        height: 104
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +336,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96bb08999a0ebb44fadcaf467cf5bbd8
-      internalID: -61866048
+      spriteID: ed9d9f028db0f8c4e9ecbb8901f80029
+      internalID: -848335960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_4
+      name: notasmusicais-azul_8
       rect:
         serializedVersion: 2
-        x: 617
-        y: 519
-        width: 103
-        height: 104
+        x: 1296
+        y: 736
+        width: 97
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,20 +357,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e27d469be782a5d4994776aa85eccdd0
-      internalID: -179553659
+      spriteID: 044e3687fc1e677468c5767c8179f9af
+      internalID: 1377431833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_5
+      name: notasmusicais-azul_9
       rect:
         serializedVersion: 2
-        x: 2
-        y: 295
-        width: 202
-        height: 105
+        x: 1440
+        y: 736
+        width: 156
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +378,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0696bbe6904ffc24e975a85c4dab9760
-      internalID: -1176678117
+      spriteID: eb2a464f0202ea446af86d8b5ebfd5fd
+      internalID: 1135532717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_6
+      name: notasmusicais-azul_10
       rect:
         serializedVersion: 2
-        x: 231
-        y: 295
-        width: 202
-        height: 105
+        x: 1630
+        y: 736
+        width: 156
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,104 +399,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07aa468dec6719644abb4305740137f4
-      internalID: -355454051
+      spriteID: 800444ef9f5f941478f88ec8e6376e58
+      internalID: 1538932476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: notasmusicais-preto_7
+      name: notasmusicais-azul_11
       rect:
         serializedVersion: 2
-        x: 460
-        y: 295
-        width: 43
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c93c334dedff0d14586dbecccf0a03e0
-      internalID: 2139602367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: notasmusicais-preto_8
-      rect:
-        serializedVersion: 2
-        x: 521
-        y: 295
-        width: 39
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1658b428b5afde340b16bd13d3175f4e
-      internalID: -1627414645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: notasmusicais-preto_9
-      rect:
-        serializedVersion: 2
-        x: 578
-        y: 295
-        width: 64
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 013593c5ffe1f7b4e8faae99f81bce61
-      internalID: 2095667846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: notasmusicais-preto_10
-      rect:
-        serializedVersion: 2
-        x: 655
-        y: 295
-        width: 63
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ce3109138b8f1d48994d012ecce740b
-      internalID: 810773943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: notasmusicais-preto_11
-      rect:
-        serializedVersion: 2
-        x: 22
+        x: 55
         y: 0
-        width: 81
-        height: 219
+        width: 201
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,8 +420,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81021e2f2dbe6b94d89bc1eb9516b7b2
-      internalID: -1167904646
+      spriteID: f7dc1bc29d9d4c045a09d28c8c07197c
+      internalID: 1351283347
       vertices: []
       indices: 
       edges: []
@@ -429,7 +429,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 80795758d0608ed4887b685adce50e7e
     internalID: 0
     vertices: []
     indices: 
@@ -437,18 +437,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      notasmusicais-preto_0: 903069462
-      notasmusicais-preto_1: -1489852374
-      notasmusicais-preto_10: 810773943
-      notasmusicais-preto_11: -1167904646
-      notasmusicais-preto_2: 26879021
-      notasmusicais-preto_3: -61866048
-      notasmusicais-preto_4: -179553659
-      notasmusicais-preto_5: -1176678117
-      notasmusicais-preto_6: -355454051
-      notasmusicais-preto_7: 2139602367
-      notasmusicais-preto_8: -1627414645
-      notasmusicais-preto_9: 2095667846
+      notasmusicais-azul_0: -1246146727
+      notasmusicais-azul_1: 1790822934
+      notasmusicais-azul_10: 1538932476
+      notasmusicais-azul_11: 1351283347
+      notasmusicais-azul_2: 566974724
+      notasmusicais-azul_3: 827743762
+      notasmusicais-azul_4: -22460107
+      notasmusicais-azul_5: 1465300808
+      notasmusicais-azul_6: -1402055722
+      notasmusicais-azul_7: -848335960
+      notasmusicais-azul_8: 1377431833
+      notasmusicais-azul_9: 1135532717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
