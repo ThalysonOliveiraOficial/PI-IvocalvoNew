@@ -92255,9 +92255,11 @@ MonoBehaviour:
   - {fileID: 431553563}
   _iara: 1
   _timerValue: 10
-  _timerVatk: 2
+  _timerVatk: 2.5
   _seMovendo: 0
   _atacando: 0
+  _ataque: 0
+  _ataqueLis: 010000000200000003000000
 --- !u!1 &3283112059905778830
 GameObject:
   m_ObjectHideFlags: 0

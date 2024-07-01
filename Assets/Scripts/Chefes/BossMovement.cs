@@ -11,9 +11,11 @@ public class BossMovement : MonoBehaviour
     public NavMeshAgent _agentBoss;
     public float _distPlayer;
     public float _distPos;
+
     public int _posSelec;
     public List<int> _posSelecLis;
     public int _selecSort;
+
     public float _speed;
     public Transform _player;
     [SerializeField] bool _fixAtPlayer;
@@ -27,9 +29,12 @@ public class BossMovement : MonoBehaviour
     float _timerAtk;
     [SerializeField] float _timerVatk = 1.5f;
 
-    int _ataque;
     public bool _seMovendo;
     public bool _atacando;
+
+    public int _ataque;
+    public List<int> _ataqueLis;
+    int _ataqueSort;
 
 
     void Start()
@@ -63,11 +68,15 @@ public class BossMovement : MonoBehaviour
         _distPlayer = Vector3.Distance(transform.position, _player.position);
         _distPos = Vector3.Distance(transform.position, _pos[_posSelec].position);
 
+        //Animações
+        _anim.SetBool("Movendo", _seMovendo);
+        _anim.SetInteger("Ataque", _ataque);
+        _anim.SetBool("Atacando", _atacando);
+
         //timer pra iara mudar de posição
         _timer -= Time.deltaTime;
         if (_timer < 0)
         {
-            //Debug.Log("TEMPO");
             // de 0 a 3 pois variavel maxima do rando.range é "excluida" logo deve por um acima
 
             _posSelec = _posSelecLis[_selecSort];
@@ -78,12 +87,9 @@ public class BossMovement : MonoBehaviour
                 Shuffle(_posSelecLis);
             }
 
-            //Debug.Log(_posSelec);
             _timer = _timerValue;
 
         }
-
-
 
         if (_distPos >= 1 + .5f)
         {
@@ -99,10 +105,29 @@ public class BossMovement : MonoBehaviour
         }
         if (_fixAtPlayer) transform.LookAt(_player.position);
 
-        //Animações
-        _anim.SetBool("Movendo", _seMovendo);
-        _anim.SetInteger("Ataque", _ataque);
-        _anim.SetBool("Atacando", _atacando);
+        if (!_seMovendo)
+        {
+            _timerAtk -= Time.deltaTime;
+            if (_timerAtk < 0)
+            {
+                _atacando = true;
+
+                _ataque = _ataqueLis[_ataqueSort];
+                _ataqueSort++;
+                if (_ataqueSort > _ataqueLis.Count - 1)
+                {
+                    _ataqueSort = 0;
+                    Shuffle(_ataqueLis);
+                }
+
+                _timerAtk = _timerVatk;
+            }
+        }
+        else
+        {
+            _atacando = false;
+            _ataque = 0;
+        }
 
         if (_distPlayer < 35)
         {
@@ -112,24 +137,6 @@ public class BossMovement : MonoBehaviour
         else
         {
             _fixAtPlayer = false;
-        }
-
-        if (!_seMovendo)
-        {
-            _timerAtk -= Time.deltaTime;
-            if(_timerAtk < 0)
-            {
-                _atacando = true;
-                _ataque = Random.Range(1, 4);
-               // Debug.Log(_ataque);
-                _timerAtk = _timerVatk;
-            }
-        }
-        else
-        {
-            _atacando = false;
-            _ataque = 0;
-            //Debug.Log("Parou atk :" + _ataque);
         }
 
     }
