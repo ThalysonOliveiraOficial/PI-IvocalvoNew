@@ -9,6 +9,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.030
     second: {fileID: 2100000, guid: 27f714f8ed1144c48bfb766f2498abc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.034
+    second: {fileID: 2100000, guid: c41ac936454f8904ba6813c88680a7be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "grade_prote\xE7\xE3o"
+    second: {fileID: 2100000, guid: 5b481ed9d364f9547bdd3aea47da19b8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

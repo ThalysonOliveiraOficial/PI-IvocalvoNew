@@ -3,7 +3,22 @@ guid: 96e51a0ef93f2e14b841468085a1208e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 2957198c89740b1499331705959c8e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa
+    second: {fileID: 2100000, guid: 3fa512a9903101c4399a86c5b53f4368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "grade_prote\xE7\xE3o"
+    second: {fileID: 2100000, guid: 5b481ed9d364f9547bdd3aea47da19b8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
