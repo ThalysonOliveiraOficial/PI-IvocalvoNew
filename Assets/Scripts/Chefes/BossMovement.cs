@@ -8,7 +8,6 @@ public class BossMovement : MonoBehaviour
 {
     public GameControl _gameCtrl;
     public int _vidaChefe = 100;
-    public NavMeshAgent _agentBoss;
     public float _distPlayer;
     public float _distPos;
 
@@ -36,10 +35,13 @@ public class BossMovement : MonoBehaviour
     public List<int> _ataqueLis;
     int _ataqueSort;
 
+    public AtaqueBoss _atkBoss;
+
 
     void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
+        _atkBoss = GetComponent<AtaqueBoss>();
         //_agentBoss =GetComponent<NavMeshAgent>();
         _player = _gameCtrl._player;
         _anim = GetComponent<Animator>();
@@ -77,8 +79,6 @@ public class BossMovement : MonoBehaviour
         _timer -= Time.deltaTime;
         if (_timer < 0)
         {
-            // de 0 a 3 pois variavel maxima do rando.range é "excluida" logo deve por um acima
-
             _posSelec = _posSelecLis[_selecSort];
             _selecSort++;
             if(_selecSort> _posSelecLis.Count - 1)
@@ -105,6 +105,7 @@ public class BossMovement : MonoBehaviour
         }
         if (_fixAtPlayer) transform.LookAt(_player.position);
 
+        // Atacando
         if (!_seMovendo)
         {
             _timerAtk -= Time.deltaTime;
@@ -113,6 +114,9 @@ public class BossMovement : MonoBehaviour
                 _atacando = true;
 
                 _ataque = _ataqueLis[_ataqueSort];
+                //mudar o contador pra ativar o ataque em area
+                if (_ataque == 2 || _ataque == 3) _atkBoss._contadorAtk = 1;
+
                 _ataqueSort++;
                 if (_ataqueSort > _ataqueLis.Count - 1)
                 {
