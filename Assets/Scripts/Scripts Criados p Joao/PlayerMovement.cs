@@ -77,7 +77,8 @@ public class PlayerMovement : MonoBehaviour
     public float _forcaTiro = 20;
     public Transform _ponteiroMM;
 
-
+    //grids Inventario
+    GridItem _gridItem;
 
     private void Start()
     {
@@ -87,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         _AtirarPoolBala = GetComponent<AtirarPool>();
         _ponteiroMM = _gameCtrl._ponteiroMiniMap;
         _TelaGameOver = _gameCtrl._hudGameOver;
-        
+        _gridItem = Camera.main.GetComponent<GridItem>();
         
 
         _timer = _timerValue;
@@ -328,6 +329,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //colider itens
+        if (other.gameObject.CompareTag("ItemTag"))
+        {
+            ItemControl _itemObj = other.GetComponent<ItemControl>();
+
+            for (int i = 0; i < _gridItem._itensPlantas.Count; i++)
+            {
+                if (_gridItem._itensPlantas[i].GetComponent<SlotItem>()._ocupado == false)
+                {
+                    _gridItem._itensPlantas[i].sprite = _itemObj._itemInventario._img;
+                    _gridItem._itensPlantas[i].GetComponent<SlotItem>()._ocupado = true;
+                    break;
+                }
+            }
+
+            Debug.Log(_itemObj._itemInventario._nome);
+        }
+
+        //
         if (other.CompareTag("AtkInimigo") && !_checkHitMo)
         {
             _checkHitMo = true;
