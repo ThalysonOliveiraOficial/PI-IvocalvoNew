@@ -333,18 +333,14 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("ItemTag"))
         {
             ItemControl _itemObj = other.GetComponent<ItemControl>();
+            int tipoItem = _itemObj._itemInventario._tipo;
 
-            for (int i = 0; i < _gridItem._itensPlantas.Count; i++)
-            {
-                if (_gridItem._itensPlantas[i].GetComponent<SlotItem>()._ocupado == false)
-                {
-                    _gridItem._itensPlantas[i].sprite = _itemObj._itemInventario._img;
-                    _gridItem._itensPlantas[i].GetComponent<SlotItem>()._ocupado = true;
-                    break;
-                }
-            }
+            _gridItem._itensEspeciais[tipoItem].GetComponent<SlotItem>()._slotNumber++;
+            _gridItem._itensEspeciais[tipoItem].GetComponent<SlotItem>().NumberItem();
+            //fazer para _itensPlantas
 
-            Debug.Log(_itemObj._itemInventario._nome);
+
+            
         }
 
         //
