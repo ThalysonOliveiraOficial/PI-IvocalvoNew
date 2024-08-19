@@ -700,23 +700,23 @@ MonoBehaviour:
   _depthTex: {fileID: 0}
   bakedDepthTex: {fileID: 0}
   _waves:
-  - amplitude: 0.13872649
+  - amplitude: 0.13410227
     direction: -251.00162
-    wavelength: 2.0440874
+    wavelength: 11.24248
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 0.2945293
+  - amplitude: 0.28471163
     direction: -194.35297
-    wavelength: 6.530865
+    wavelength: 35.919758
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 0.36478713
+  - amplitude: 0.35262755
     direction: -260.07547
-    wavelength: 5.3846555
+    wavelength: 29.615606
     origin:
       x: 0
       y: 0
