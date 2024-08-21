@@ -50,3 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: LayerTornado
+    uniqueID: 2174614335
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 500230315
+    locked: 0
