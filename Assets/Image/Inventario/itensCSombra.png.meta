@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52431351132a4b449a6b1d8f2b0323cb
+guid: 82aba79aebc8c91499522c671fdaddb6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,13 +175,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventario_polaroid - Copia_0
+      name: itensCSombra_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 1561
-        width: 977
-        height: 1052
+        x: 181
+        y: 1842
+        width: 432
+        height: 1234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2ce7b416b697af489a06a7e16fd285c
-      internalID: -1358345293
+      spriteID: 6ab560158f24ec4419e1a9b85f6f80fa
+      internalID: -1330244170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_polaroid - Copia_1
+      name: itensCSombra_1
       rect:
         serializedVersion: 2
-        x: 1182
-        y: 1561
-        width: 978
-        height: 1041
+        x: 907
+        y: 2285
+        width: 729
+        height: 627
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3562b609b31035643babd7d28a068a4b
-      internalID: -452854325
+      spriteID: 4e49bc002f260c043a9f10c310c64766
+      internalID: -90982744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_polaroid - Copia_2
+      name: itensCSombra_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 391
-        width: 1109
-        height: 1137
+        x: 1854
+        y: 2236
+        width: 628
+        height: 644
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1e9e4eac9955fc44a54949b1e514b19
-      internalID: 1347908767
+      spriteID: 82e0365fc3228884abe143339add3cfa
+      internalID: -6470865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventario_polaroid - Copia_3
+      name: itensCSombra_3
       rect:
         serializedVersion: 2
-        x: 1182
-        y: 335
-        width: 1026
-        height: 1106
+        x: 2719
+        y: 2249
+        width: 653
+        height: 849
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,8 +252,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 785b3fc1d8dff9a4eaea693f97a61add
-      internalID: 1282643913
+      spriteID: 7df15e3f28dc83a4f8c260f274a34e8c
+      internalID: 489644629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: itensCSombra_4
+      rect:
+        serializedVersion: 2
+        x: 3594
+        y: 2295
+        width: 649
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72e5c9687c174a42b3f18c583b52878
+      internalID: 519769224
       vertices: []
       indices: 
       edges: []
@@ -261,7 +282,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 636b6c7185ed57a43a81a1d9113293ca
+    spriteID: 53f8047351c4b06458d69e77ed75c4a7
     internalID: 0
     vertices: []
     indices: 
@@ -269,10 +290,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      inventario_polaroid - Copia_0: -1358345293
-      inventario_polaroid - Copia_1: -452854325
-      inventario_polaroid - Copia_2: 1347908767
-      inventario_polaroid - Copia_3: 1282643913
+      itensCSombra_0: -1330244170
+      itensCSombra_1: -90982744
+      itensCSombra_2: -6470865
+      itensCSombra_3: 489644629
+      itensCSombra_4: 519769224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
