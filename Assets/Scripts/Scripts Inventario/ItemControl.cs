@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ItemControl : MonoBehaviour
 {
-    public ItemInventario _itemInventario;
+    public ItemDados _itemDados;
 }

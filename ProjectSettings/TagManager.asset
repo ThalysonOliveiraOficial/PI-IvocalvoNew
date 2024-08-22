@@ -13,6 +13,7 @@ TagManager:
   - Arvre
   - agua
   - Checkpoint
+  - ItemTag
   layers:
   - Default
   - TransparentFX

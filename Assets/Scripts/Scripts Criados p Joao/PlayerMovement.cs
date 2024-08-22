@@ -333,14 +333,13 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("ItemTag"))
         {
             ItemControl _itemObj = other.GetComponent<ItemControl>();
-            int tipoItem = _itemObj._itemInventario._tipo;
+            int tipoItem = _itemObj._itemDados.Tipo;
 
+            //_itensEspeciais não precisa de _slotNumber++ so _itensPlantas
             _gridItem._itensEspeciais[tipoItem].GetComponent<SlotItem>()._slotNumber++;
             _gridItem._itensEspeciais[tipoItem].GetComponent<SlotItem>().NumberItem();
             //fazer para _itensPlantas
 
-
-            
         }
 
         //
