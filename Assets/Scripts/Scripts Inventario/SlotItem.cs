@@ -6,12 +6,12 @@ using UnityEngine;
 public class SlotItem : MonoBehaviour
 {
     public bool _ocupado;
-    public int _slotNumber;
+    public int _contadorNumber;
     public TextMeshProUGUI _textNumber;
 
     public void NumberItem()
     {
-        _textNumber.text = "" + _slotNumber;
+        _textNumber.text = "" + _contadorNumber;
     }
 
 }

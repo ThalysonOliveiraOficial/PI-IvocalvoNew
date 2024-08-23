@@ -335,10 +335,16 @@ public class PlayerMovement : MonoBehaviour
             ItemControl _itemObj = other.GetComponent<ItemControl>();
             int tipoItem = _itemObj._itemDados.Tipo;
 
-            //_itensEspeciais não precisa de _slotNumber++ so _itensPlantas
-            _gridItem._itensEspeciais[tipoItem].GetComponent<SlotItem>()._slotNumber++;
-            _gridItem._itensEspeciais[tipoItem].GetComponent<SlotItem>().NumberItem();
-            //fazer para _itensPlantas
+            //_itensEspeciais não precisa de _contadorNumber++ so _itensPlantas
+            for (int i = 0; i <= 11; i++)
+            {
+                if (i == tipoItem)
+                {
+                    _gridItem._itensPlantas[tipoItem].GetComponent<SlotItem>()._contadorNumber++;
+                    _gridItem._itensPlantas[tipoItem].GetComponent<SlotItem>().NumberItem();
+                }
+            }
+            //fazer para _itensEspeciais
 
         }
 
