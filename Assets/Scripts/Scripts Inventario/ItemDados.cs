@@ -10,11 +10,19 @@ public class ItemDados : ScriptableObject
     [SerializeField] string _nome;
     [SerializeField] int _tipo;
     [SerializeField] Sprite _img;
+    [SerializeField] string _descricaoPlantas;
     
     public string Nome { get { return _nome; } set { _nome = value; } }
 
     public int Tipo { get { return _tipo; } set { _tipo = value; } }
 
     public Sprite Img { get { return _img; } set { _img = value; } }
+
+    public string DescricaoPlantas
+    {
+        get { return _descricaoPlantas; }
+        set { _descricaoPlantas = value; }
+    }
+
 
 }
