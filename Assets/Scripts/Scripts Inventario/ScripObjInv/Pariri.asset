@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Pariri
   m_EditorClassIdentifier: 
   _nome: Pariri
-  _tipo: 6
-  _img: {fileID: 0}
-  _descricaoPlantas: 
+  _tipo: 5
+  _img: {fileID: 1519968887, guid: be538cad61503e4438bdcd0b4d3f0beb, type: 3}
+  _descricaoPlantas: "O pariri, tamb\xE9m conhecido como crajiru,Ela \xE9 conhecida
+    por suas propriedades anti-inflamat\xF3rias, antioxidantes e antimicrobianas
+    pariri, \xE9 pariri \xE9 nativo da Amaz\xF4nia,Os povos ind\xEDgenas da Amaz\xF4nia
+    utilizam o pariri h\xE1 s\xE9culos para tratar uma variedade de condi\xE7\xF5es
+    de sa\xFAde, incluindo infec\xE7\xF5es, inflama\xE7\xF5es e problemas de pele.
+    o pariri \xE9 usado como corante natural,O pariri \xE9 uma planta de f\xE1cil
+    cultivo, que cresce espontaneamente a c\xE9u aberto e n\xE3o \xE9 exigente em
+    rela\xE7\xE3o ao solo e ao clima."

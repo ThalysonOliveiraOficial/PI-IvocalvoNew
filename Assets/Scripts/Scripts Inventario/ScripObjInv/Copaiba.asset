@@ -15,3 +15,8 @@ MonoBehaviour:
   _nome: Copaiba
   _tipo: 0
   _img: {fileID: -90105177, guid: be538cad61503e4438bdcd0b4d3f0beb, type: 3}
+  _descricaoPlantas: "A copa\xEDba \xE9 uma \xE1rvore de grande porte, encontrada
+    principalmente na regi\xE3o amaz\xF4nica do Brasil Dentro do tronco da copa\xEDba,
+    h\xE1 um \xF3leo com propriedades incr\xEDveis. Esse \xF3leo \xE9 conhecido por
+    ser um verdadeiro rem\xE9dio natural, Ele pode ajudar a curar machucados, combater
+    infec\xE7\xF5es e at\xE9 aliviar dores."

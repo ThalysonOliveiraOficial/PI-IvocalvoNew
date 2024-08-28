@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Arnica
   m_EditorClassIdentifier: 
   _nome: Arnica
-  _tipo: 3
-  _img: {fileID: 0}
-  _descricaoPlantas: 
+  _tipo: 2
+  _img: {fileID: -1845418095, guid: be538cad61503e4438bdcd0b4d3f0beb, type: 3}
+  _descricaoPlantas: "A arnica \xE9 usada na regi\xE3o Norte do Brasil por suas propriedades
+    medicinais, a arnica pode ser encontrada facilmente Em algumas \xE1reas da regi\xE3o
+    Norte, tornando-se uma op\xE7\xE3o acess\xEDvel para tratamentos caseiros, tendo
+    Propriedades Anti-inflamat\xF3rias e Analg\xE9sicas, A arnica \xE9 conhecida
+    por ajudar a reduzir a inflama\xE7\xE3o e aliviar a dor, sendo \xFAtil no tratamento
+    de contus\xF5es, dores musculares e articulares."

@@ -15,3 +15,9 @@ MonoBehaviour:
   _nome: Juca
   _tipo: 1
   _img: {fileID: 893480153, guid: be538cad61503e4438bdcd0b4d3f0beb, type: 3}
+  _descricaoPlantas: "O juc\xE1, \xE9 uma planta nativa da Amaz\xF4nia, a planta
+    \xE9 amplamente reconhecida por suas propriedades medicinais e seu uso tradicional
+    em diversas culturas, possui uma gama de propriedades terap\xEAuticas que o tornam
+    valioso na medicina natural para Cicatriza\xE7\xE3o de Feridas,Tratamento de
+    Doen\xE7as Respirat\xF3rias,Controle de Diabetes,Problemas Gastrointestinais.
+    \xE9 muito usado em forma de \xF3leo e ch\xE1s."

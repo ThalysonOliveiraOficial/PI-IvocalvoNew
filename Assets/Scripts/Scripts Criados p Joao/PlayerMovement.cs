@@ -338,13 +338,19 @@ public class PlayerMovement : MonoBehaviour
             //_itensEspeciais não precisa de _contadorNumber++ so _itensPlantas
             for (int i = 0; i <= 11; i++)
             {
-                if (i == tipoItem)
+                if (i == tipoItem && i <= 5)
                 {
                     _gridItem._itensPlantas[tipoItem].GetComponent<SlotItem>()._contadorNumber++;
                     _gridItem._itensPlantas[tipoItem].GetComponent<SlotItem>().NumberItem();
                 }
+
+                if (i == tipoItem && i > 5)
+                {
+
+                }
+
             }
-            //fazer para _itensEspeciais
+            
 
         }
 

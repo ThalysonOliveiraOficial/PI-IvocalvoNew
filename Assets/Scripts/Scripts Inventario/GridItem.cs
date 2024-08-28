@@ -7,5 +7,5 @@ public class GridItem : MonoBehaviour
 {
      public List<Image> _itensPlantas = new List<Image>();
      public List<Image> _itensEspeciais = new List<Image>();
-     //public List<GameObject> _gridSlots = new List<GameObject>();
+     
 }

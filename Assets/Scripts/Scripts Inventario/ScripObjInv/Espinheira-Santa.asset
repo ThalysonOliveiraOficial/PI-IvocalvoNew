@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Espinheira-Santa
   m_EditorClassIdentifier: 
   _nome: Espinheira-Santa
-  _tipo: 5
-  _img: {fileID: 0}
-  _descricaoPlantas: 
+  _tipo: 4
+  _img: {fileID: -869463055, guid: be538cad61503e4438bdcd0b4d3f0beb, type: 3}
+  _descricaoPlantas: "A espinheira-santa \xE9 amplamente utilizada no norte do Brasil
+    devido \xE0s suas propriedades medicinais, especialmente no tratamento de problemas
+    g\xE1stricos como \xFAlceras, gastrite e azia12. A planta \xE9 valorizada por
+    suas propriedades antioxidantes, cicatrizantes e protetoras g\xE1stricas, o que
+    a torna uma escolha popular para tratar dist\xFArbios digestivos  a tradi\xE7\xE3o
+    de uso de plantas medicinais \xE9 forte na regi\xE3o amaz\xF4nica, onde a espinheira-santa
+    \xE9 facilmente encontrada e utilizada por comunidades locais. refor\xE7ando
+    seu uso cont\xEDnuo."

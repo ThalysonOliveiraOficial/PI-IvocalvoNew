@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Sucupira
   m_EditorClassIdentifier: 
   _nome: Sucupira
-  _tipo: 4
-  _img: {fileID: 0}
-  _descricaoPlantas: 
+  _tipo: 3
+  _img: {fileID: 577151539, guid: be538cad61503e4438bdcd0b4d3f0beb, type: 3}
+  _descricaoPlantas: "A sucupira \xE9 uma planta medicinal conhecida por suas propriedades
+    anti-inflamat\xF3rias, analg\xE9sicas e antioxidantes ,A sucupira pode ser consumida
+    na forma de ch\xE1, \xF3leo, tintura, extrato ou c\xE1psulas"
