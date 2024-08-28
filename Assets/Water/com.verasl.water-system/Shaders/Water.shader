@@ -8,10 +8,14 @@
         [KeywordEnum(Off, SSS, Refraction, Reflection, Normal, Fresnel, WaterEffects, Foam, WaterDepth)] _Debug("Debug mode", Float) = 0
         _Color("Main Color", Color) = (1,1,1,0.2) // Define the main color with alpha for transparency
     }
+
         SubShader
         {
-            Tags { "RenderType" = "Transparent" "Queue" = "Transparent-100" "RenderPipeline" = "UniversalPipeline" }
+            Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "RenderPipeline" = "UniversalPipeline" }
+
             ZWrite Off // Disable ZWrite for transparent objects
+
+            ZTest LEqual // Ensure proper depth testing
 
             Blend SrcAlpha OneMinusSrcAlpha // Enable alpha blending
 
@@ -22,6 +26,7 @@
 
                 HLSLPROGRAM
                 #pragma prefer_hlslcc gles
+
             //////////////////SHADER FEATURES//////////////////
             #pragma shader_feature _REFLECTION_CUBEMAP _REFLECTION_PROBES _REFLECTION_PLANARREFLECTION
             #pragma multi_compile _ USE_STRUCTURED_BUFFER
@@ -51,5 +56,6 @@
             ENDHLSL
         }
         }
+
             FallBack "Hidden/InternalErrorShader"
 }

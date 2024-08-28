@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17284ebf5e80436eb6089f8c7459dab, type: 3}
   m_Name: WaterSurfaceData
   m_EditorClassIdentifier: 
-  _waterMaxVisibility: 183
+  _waterMaxVisibility: 3
   _absorptionRamp:
     serializedVersion: 2
     key0: {r: 0.2735849, g: 0.18249747, b: 0.11743503, a: 0.8980392}
@@ -124,7 +124,7 @@ MonoBehaviour:
     direction: 16
     wavelength: 46.9
   _foamSettings:
-    foamType: 0
+    foamType: 1
     basicFoam:
       serializedVersion: 2
       m_Curve:
