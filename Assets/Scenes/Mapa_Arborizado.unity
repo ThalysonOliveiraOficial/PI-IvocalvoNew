@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1464040941}
-  m_IndirectSpecularColor: {r: 0.002482841, g: 0.042869985, b: 0.12430694, a: 1}
+  m_IndirectSpecularColor: {r: 0.0024823516, g: 0.042889938, b: 0.124420896, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14904,10 +14904,7 @@ PrefabInstance:
     - {fileID: 1903708206298082, guid: 2cac2e60f3f6f2447ad9b550450f60ed, type: 3}
     - {fileID: 1980586048504580, guid: 2cac2e60f3f6f2447ad9b550450f60ed, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1015499191777110, guid: 2cac2e60f3f6f2447ad9b550450f60ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cac2e60f3f6f2447ad9b550450f60ed, type: 3}
 --- !u!4 &304729446 stripped
 Transform:
@@ -26580,7 +26577,7 @@ RenderTexture:
   m_TextureSettings:
     serializedVersion: 2
     m_FilterMode: 1
-    m_Aniso: 1
+    m_Aniso: 0
     m_MipBias: 0
     m_WrapU: 1
     m_WrapV: 1
@@ -29368,6 +29365,67 @@ Transform:
   - {fileID: 1686047662}
   m_Father: {fileID: 694939845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &602809302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 156.13443
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 164.44
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 317.99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.031721547
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.031721544
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7063951
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70639473
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -174.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
+      propertyPath: m_Name
+      value: forte do castelo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af5faf60ac7dab34cb86c447f44be678, type: 3}
 --- !u!1 &603732885
 GameObject:
   m_ObjectHideFlags: 0
@@ -58625,44 +58683,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327617227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1278164406
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1278259361
 GameObject:
   m_ObjectHideFlags: 0
@@ -104811,3 +104831,4 @@ SceneRoots:
   - {fileID: 241611796}
   - {fileID: 1462004035}
   - {fileID: 2052407193}
+  - {fileID: 602809302}
