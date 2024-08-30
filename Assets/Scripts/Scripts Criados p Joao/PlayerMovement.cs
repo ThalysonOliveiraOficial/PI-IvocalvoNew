@@ -334,24 +334,35 @@ public class PlayerMovement : MonoBehaviour
         {
             ItemControl _itemObj = other.GetComponent<ItemControl>();
             int tipoItem = _itemObj._itemDados.Tipo;
+            bool bossItem = _itemObj._itemDados.ItemBoss;
 
             //_itensEspeciais não precisa de _contadorNumber++ so _itensPlantas
-            for (int i = 0; i <= 11; i++)
+            for (int i = 0; i <= 10; i++)
             {
-                if (i == tipoItem && i <= 5)
+                if (!bossItem && i == tipoItem)
                 {
-                    _gridItem._itensPlantas[tipoItem].GetComponent<SlotItem>()._contadorNumber++;
-                    _gridItem._itensPlantas[tipoItem].GetComponent<SlotItem>().NumberItem();
+                    _gridItem._itensInvet[tipoItem].GetComponent<SlotItem>()._contadorNumber++;
+                    _gridItem._itensInvet[tipoItem].GetComponent<SlotItem>().NumberItem();
                 }
 
-                if (i == tipoItem && i > 5)
+                if (i == 6 || i == 10 && bossItem)
                 {
-
+                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScale(1.44f, 1f);
                 }
 
+                if (i == 7 || i == 8 && bossItem)
+                {
+                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScale(1.52f, 1f);
+                }
+
+                if (i == 9 && bossItem )
+                {
+                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleX(1.56f, 1f);
+                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleY(1.2f, 1f);
+                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleZ(1.5f, 1f);
+                }
             }
             
-
         }
 
         //
