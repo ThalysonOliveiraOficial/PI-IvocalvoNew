@@ -11,6 +11,7 @@ public class ItemDados : ScriptableObject
     [SerializeField] int _tipo;
     [SerializeField] Sprite _img;
     [SerializeField] string _descricaoPlantas;
+    [SerializeField] bool _itemBoss;
     
     public string Nome { get { return _nome; } set { _nome = value; } }
 
@@ -24,5 +25,10 @@ public class ItemDados : ScriptableObject
         set { _descricaoPlantas = value; }
     }
 
+    public bool ItemBoss
+    {
+        get { return _itemBoss; }
+        set { _itemBoss = value; }
+    }
 
 }

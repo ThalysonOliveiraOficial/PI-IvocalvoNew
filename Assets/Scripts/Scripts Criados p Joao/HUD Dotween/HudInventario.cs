@@ -20,11 +20,6 @@ public class HudInventario : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        
-    }
-
     public void AbrirHudInvet()
     {
         _panelInvet.DOScale(1f, .25f);
