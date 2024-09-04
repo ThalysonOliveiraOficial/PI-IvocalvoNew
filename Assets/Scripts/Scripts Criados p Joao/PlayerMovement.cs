@@ -336,7 +336,6 @@ public class PlayerMovement : MonoBehaviour
             int tipoItem = _itemObj._itemDados.Tipo;
             bool bossItem = _itemObj._itemDados.ItemBoss;
 
-            //_itensEspeciais não precisa de _contadorNumber++ so _itensPlantas
             for (int i = 0; i <= 10; i++)
             {
                 if (!bossItem && i == tipoItem)
@@ -344,22 +343,21 @@ public class PlayerMovement : MonoBehaviour
                     _gridItem._itensInvet[tipoItem].GetComponent<SlotItem>()._contadorNumber++;
                     _gridItem._itensInvet[tipoItem].GetComponent<SlotItem>().NumberItem();
                 }
-
-                if (i == 6 || i == 10 && bossItem)
+                else if (bossItem && (i == 6 || i == 10))
                 {
-                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScale(1.44f, 1f);
+                     _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScale(1.44f, 1f);
                 }
 
-                if (i == 7 || i == 8 && bossItem)
+                else if (bossItem && (i == 7 || i == 8))
                 {
-                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScale(1.52f, 1f);
+                      _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScale(1.52f, 1f);
                 }
 
-                if (i == 9 && bossItem )
+                else if (bossItem && i == 9)
                 {
-                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleX(1.56f, 1f);
-                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleY(1.2f, 1f);
-                    _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleZ(1.5f, 1f);
+                      _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleX(1.56f, 1f);
+                      _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleY(1.2f, 1f);
+                      _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleZ(1.5f, 1f);
                 }
             }
             
