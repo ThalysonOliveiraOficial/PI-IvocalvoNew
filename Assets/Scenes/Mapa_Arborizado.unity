@@ -13007,7 +13007,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 984903345}
         m_TargetAssemblyTypeName: HudInventario, Assembly-CSharp
         m_MethodName: FecharHudInvet
         m_Mode: 1
@@ -22435,7 +22435,7 @@ RenderTexture:
   m_TextureSettings:
     serializedVersion: 2
     m_FilterMode: 1
-    m_Aniso: 1
+    m_Aniso: 0
     m_MipBias: 0
     m_WrapU: 1
     m_WrapV: 1
@@ -38735,7 +38735,8 @@ MonoBehaviour:
   _gameCtrl: {fileID: 0}
   _panelMissao: {fileID: 799865632}
   _TelaMissaoIara: {fileID: 2042563214}
-  _panelInvet: {fileID: 0}
+  _panelInvet: {fileID: 1250894865}
+  _panelDlgQuestNPC: {fileID: 0}
 --- !u!1 &985970236
 GameObject:
   m_ObjectHideFlags: 0

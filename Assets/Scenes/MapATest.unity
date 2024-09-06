@@ -45981,7 +45981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 340acab36aab20647bc79efb730bb34b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e925b985399de4479135681ec25db7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48519,7 +48519,7 @@ MonoBehaviour:
   _panelMissao: {fileID: 799865632}
   _TelaMissaoIara: {fileID: 2042563214}
   _panelInvet: {fileID: 1402291920}
-  _panelDlgQuestNPC: {fileID: 0}
+  _panelDlgQuestNPC: {fileID: 381437304}
 --- !u!1 &985056125
 GameObject:
   m_ObjectHideFlags: 0
