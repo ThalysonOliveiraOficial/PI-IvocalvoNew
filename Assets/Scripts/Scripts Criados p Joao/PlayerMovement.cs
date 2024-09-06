@@ -363,7 +363,9 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        //
+
+
+        // collieder com inimigo
         if (other.CompareTag("AtkInimigo") && !_checkHitMo)
         {
             _checkHitMo = true;

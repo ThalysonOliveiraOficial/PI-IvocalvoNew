@@ -12,6 +12,8 @@ public class HudInventario : MonoBehaviour
 
     public Transform _panelInvet;
 
+    public Transform _panelDlgQuestNPC;
+
     void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
@@ -54,4 +56,21 @@ public class HudInventario : MonoBehaviour
 
         _panelMissao.DOScale(0f, .25f);
     }
+
+    public void AbriDialogNPC()
+    {
+        _panelDlgQuestNPC.DOScale(1, .25f);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void FecharDialogoNPC()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        _panelDlgQuestNPC.DOScale(0, .25f);
+    }
+
 }
