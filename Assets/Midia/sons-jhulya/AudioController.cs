@@ -9,7 +9,11 @@ public class Audiocontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        int IndexDaMusicadefundo = Random.Range(0,Musicasdefundo.Length);
+        AudioClip Musicasdefundo_ = Musicasdefundo[IndexDaMusicadefundo];
+        AudioSourceMusicadefundo.clip = Musicasdefundo_;
+        AudioSourceMusicadefundo.loop = true;
+       AudioSourceMusicadefundo.Play();
     }
 
     // Update is called once per frame
