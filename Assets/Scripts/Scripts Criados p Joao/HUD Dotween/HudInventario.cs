@@ -13,6 +13,7 @@ public class HudInventario : MonoBehaviour
     public Transform _panelInvet;
 
     public Transform _panelDlgQuestNPC;
+    public Transform _imgRepsDialgNPC;
 
     void Start()
     {
@@ -60,6 +61,7 @@ public class HudInventario : MonoBehaviour
     public void AbriDialogNPC()
     {
         _panelDlgQuestNPC.DOScale(1, .25f);
+        _imgRepsDialgNPC.DOScale(1, 1.25f);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -70,6 +72,7 @@ public class HudInventario : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        _imgRepsDialgNPC.DOScale(0, .12f);
         _panelDlgQuestNPC.DOScale(0, .25f);
     }
 

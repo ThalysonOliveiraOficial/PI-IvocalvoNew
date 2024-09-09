@@ -1,6 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -80,6 +81,13 @@ public class PlayerMovement : MonoBehaviour
     //grids Inventario
     GridItem _gridItem;
 
+    //Dialogo NPC
+    DialogNPCMissao _dialogNPCM;
+
+    public Button _btDialogFechar;
+    
+
+
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
@@ -89,7 +97,9 @@ public class PlayerMovement : MonoBehaviour
         _ponteiroMM = _gameCtrl._ponteiroMiniMap;
         _TelaGameOver = _gameCtrl._hudGameOver;
         _gridItem = Camera.main.GetComponent<GridItem>();
-        
+        _dialogNPCM = Camera.main.GetComponent<DialogNPCMissao>();
+        //button fechar dialogo por no script HudInventario depois
+        _btDialogFechar = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._imgRepsDialgNPC.gameObject.GetComponent<Button>();
 
         _timer = _timerValue;
 
@@ -363,6 +373,17 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
+        //Dialogos Com NPCs
+
+        if (other.gameObject.CompareTag("NPCMissao"))
+        {
+            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
+            _btDialogFechar.Select();
+            _dialogNPCM._missaoOn = true;
+
+            _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0];
+
+        }
 
 
         // collieder com inimigo
