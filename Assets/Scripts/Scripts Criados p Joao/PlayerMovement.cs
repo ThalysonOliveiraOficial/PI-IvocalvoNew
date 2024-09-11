@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
         _dialogNPCM = Camera.main.GetComponent<DialogNPCMissao>();
         //button fechar dialogo por no script HudInventario depois
         _btDialogFechar = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._imgRepsDialgNPC.gameObject.GetComponent<Button>();
+        _dialogNPCM._missaoOn = true;
 
         _timer = _timerValue;
 
@@ -373,15 +374,27 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        //Dialogos Com NPCs
-
+        //Dialogos com NPCs que dão missão
         if (other.gameObject.CompareTag("NPCMissao"))
         {
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
-            _dialogNPCM._missaoOn = true;
 
-            _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0];
+            if (_dialogNPCM._missaoOn == true && _dialogNPCM._contadorOrdemQuest == 1)
+            {
+                _dialogNPCM._contadorObjetivo = 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1 + " " + _dialogNPCM._contadorObjetivo + " " + _dialogNPCM._questNPC[0]._dialogo2;
+                _dialogNPCM._missaoOn = false;
+            }
+            else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._contadorOrdemQuest == 1)
+            {
+                Debug.Log("2");
+                _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
+                _dialogNPCM._contadorOrdemQuest = 2;
+                _dialogNPCM._missaoOn = true;
+            }
+            
 
         }
 
