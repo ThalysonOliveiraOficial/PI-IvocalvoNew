@@ -160,6 +160,10 @@ public class PlayerMovement : MonoBehaviour
             MovimentoPlayer();
             Pulo();
         }
+        if(_dialogNPCM._missaoOn == false && _dialogNPCM._contadorOrdemQuest == 2)
+        {
+            _dialogNPCM._contadorObjetivo = _gameCtrl._contKillInimigo;
+        }
         
     }
 
@@ -388,13 +392,21 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._contadorOrdemQuest == 1)
             {
-                Debug.Log("2");
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
                 _dialogNPCM._contadorOrdemQuest = 2;
+                //_dialogNPCM._missaoOn = true;
+            }
+            //talvez seja melhor criar tags por missão
+            if(_dialogNPCM._missaoOn == true && _dialogNPCM._contadorOrdemQuest == 2)
+            {
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo1;
+                _dialogNPCM._contadorObjetivo = 10;
+                _dialogNPCM._missaoOn = false;
+            }else if(_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._contadorOrdemQuest == 2)
+            {
                 _dialogNPCM._missaoOn = true;
             }
-            
 
         }
 

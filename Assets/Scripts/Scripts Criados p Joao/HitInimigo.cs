@@ -48,6 +48,10 @@ public class HitInimigo : MonoBehaviour
 
             if ( _ctrlInimigo._iniLife == 0)
             {
+                if(_gameControl._contKillInimigo > 0)
+                {
+                    _gameControl._contKillInimigo = _gameControl._contKillInimigo - 1;
+                }
                 
                 StartCoroutine(Morte());
             }

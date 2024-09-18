@@ -40,9 +40,9 @@ public class GameControl : MonoBehaviour
     //Boss Iara
     public Transform _iaraModelP;
 
-
-
     //
+    public int _contKillInimigo;
+
 
     void Start()
     {
@@ -54,7 +54,7 @@ public class GameControl : MonoBehaviour
             PlayerPrefs.SetInt("StartSalve", 0);
         }
 
-
+        _contKillInimigo = 10;
     }
 
     void Update()
