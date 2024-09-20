@@ -7403,44 +7403,6 @@ Transform:
   - {fileID: 1809218824}
   m_Father: {fileID: 351203427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &155143552
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &155709263
 GameObject:
   m_ObjectHideFlags: 0
@@ -53812,6 +53774,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096842560}
   m_Mesh: {fileID: 8900391132965810134, guid: e9a2e6ae7defe684b944b70cb35163cf, type: 3}
+--- !u!84 &1098000175
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1099050311
 GameObject:
   m_ObjectHideFlags: 0
@@ -86218,9 +86218,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef9112daf76b7e5439881ce00b0d9a1e, type: 2}
   - {fileID: 11400000, guid: c64c8e144c73695449653537854b869e, type: 2}
   - {fileID: 11400000, guid: 20d3a4a843f108941ab771001c99abcd, type: 2}
+  - {fileID: 11400000, guid: 272be1176f8fdd244a1a65764efe69b9, type: 2}
+  - {fileID: 11400000, guid: 7a09ad7a0e18e6b4884a7acb26617b6d, type: 2}
+  - {fileID: 11400000, guid: a66613b684ebdb04495d180805db6df6, type: 2}
   _missaoOn: 0
   _contadorObjetivo: 0
   _contadorOrdemQuest: 0
+  _missaoConcluida: 000000000000
 --- !u!1 &1881618752
 GameObject:
   m_ObjectHideFlags: 0
@@ -94250,7 +94254,7 @@ GameObject:
   - component: {fileID: 2071469351}
   m_Layer: 0
   m_Name: NPCMissao
-  m_TagString: NPCMissao
+  m_TagString: NPCMissao1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

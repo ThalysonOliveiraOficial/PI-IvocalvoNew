@@ -14,7 +14,12 @@ TagManager:
   - agua
   - Checkpoint
   - ItemTag
-  - NPCMissao
+  - NPCMissao1
+  - NPCMissao2
+  - NPCMissao3
+  - NPCMissao4
+  - NPCMissao5
+  - NPCMissaoIara
   layers:
   - Default
   - TransparentFX

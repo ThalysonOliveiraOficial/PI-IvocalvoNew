@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5228954bff31df74db7ecbb3270fa6c0, type: 3}
-  m_Name: Missao3
+  m_Name: ResMiss3
   m_EditorClassIdentifier: 
   _nome: 
-  _dialogo1: Pegue 8 Juca pra mim
+  _dialogo1: obrigado por trazer os Jucas pra mim
   _dialogo2: 

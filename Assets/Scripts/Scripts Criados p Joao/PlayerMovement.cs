@@ -160,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
             MovimentoPlayer();
             Pulo();
         }
-        if(_dialogNPCM._missaoOn == false && _dialogNPCM._contadorOrdemQuest == 2)
+        if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
         {
             _dialogNPCM._contadorObjetivo = _gameCtrl._contKillInimigo;
         }
@@ -379,35 +379,72 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Dialogos com NPCs que dão missão
-        if (other.gameObject.CompareTag("NPCMissao"))
+        //Missao 1 Pegar 5 Copaiba
+        if (other.gameObject.CompareTag("NPCMissao1"))
         {
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
-            if (_dialogNPCM._missaoOn == true && _dialogNPCM._contadorOrdemQuest == 1)
-            {
-                _dialogNPCM._contadorObjetivo = 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1 + " " + _dialogNPCM._contadorObjetivo + " " + _dialogNPCM._questNPC[0]._dialogo2;
-                _dialogNPCM._missaoOn = false;
-            }
-            else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._contadorOrdemQuest == 1)
+            if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[0] == false)
             {
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
-                _dialogNPCM._contadorOrdemQuest = 2;
-                //_dialogNPCM._missaoOn = true;
+                _dialogNPCM._missaoConcluida[0] = true;
+            }else if (_dialogNPCM._missaoConcluida[0] == false)
+            {
+                _dialogNPCM._contadorObjetivo = 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1 + " " + _dialogNPCM._contadorObjetivo + " " + _dialogNPCM._questNPC[0]._dialogo2;
             }
-            //talvez seja melhor criar tags por missão
-            if(_dialogNPCM._missaoOn == true && _dialogNPCM._contadorOrdemQuest == 2)
+        }
+        //Missao 2 matar monstros
+        if (other.gameObject.CompareTag("NPCMissao2"))
+        {
+            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
+            _btDialogFechar.Select();
+
+            if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[1] == false)
+            {
+                _dialogNPCM._missaoConcluida[1] = true;
+            }
+            else if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
             {
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo1;
                 _dialogNPCM._contadorObjetivo = 10;
-                _dialogNPCM._missaoOn = false;
-            }else if(_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._contadorOrdemQuest == 2)
-            {
-                _dialogNPCM._missaoOn = true;
             }
+        }
+        //missao 3 Pegar 8 Juca
+        if (other.gameObject.CompareTag("NPCMissao3"))
+        {
+            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
+            _btDialogFechar.Select();
 
+            if (_gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[2] == false)
+            {
+                _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber - 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[4]._dialogo1;
+                _dialogNPCM._missaoConcluida[2] = true;
+            }
+            else if (_dialogNPCM._missaoConcluida[1] == true && _dialogNPCM._missaoConcluida[2] == false)
+            {
+                _dialogNPCM._contadorObjetivo = 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[3]._dialogo1;
+            }
+        }
+        //missao 4 Matar mais bixo
+        if (other.gameObject.CompareTag("NPCMissao4"))
+        {
+            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
+            _btDialogFechar.Select();
+
+            if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[4] == false)
+            {
+                _dialogNPCM._missaoConcluida[4] = true;
+            }
+            else if (_dialogNPCM._missaoConcluida[3] == true && _dialogNPCM._missaoConcluida[4] == false)
+            {
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[5]._dialogo1;
+                _dialogNPCM._contadorObjetivo = 10;
+            }
         }
 
 
