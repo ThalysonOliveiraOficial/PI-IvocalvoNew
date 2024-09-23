@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 390238742969875973}
   - component: {fileID: 5623488522575167867}
   - component: {fileID: 2083058692613175062}
+  - component: {fileID: 4360205786431932418}
   m_Layer: 0
   m_Name: arnica
   m_TagString: ItemTag
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0014171421, y: 0.0016755171, z: 0.00261798}
   m_Center: {x: 0.00008914451, y: -0.00041631903, z: 0.0011576499}
+--- !u!114 &4360205786431932418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739257218410396964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9978489fdb17f4aa785f266369c7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemDados: {fileID: 11400000, guid: e74463321f0b37f438524b6e81c677fc, type: 2}

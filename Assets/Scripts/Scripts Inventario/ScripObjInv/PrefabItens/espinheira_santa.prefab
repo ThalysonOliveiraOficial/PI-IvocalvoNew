@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4294396799400660118}
   - component: {fileID: 5097247572918706246}
   - component: {fileID: 4140772019932048626}
+  - component: {fileID: -6075601211827438885}
   m_Layer: 0
   m_Name: espinheira_santa
   m_TagString: ItemTag
@@ -109,3 +110,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.019999998, y: 0.0044074506, z: 0.003728728}
   m_Center: {x: 0, y: 0.0014694368, z: -0.00010165042}
+--- !u!114 &-6075601211827438885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599882164957789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9978489fdb17f4aa785f266369c7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemDados: {fileID: 11400000, guid: f6c2e9376140ec6499af07dba33385aa, type: 2}
