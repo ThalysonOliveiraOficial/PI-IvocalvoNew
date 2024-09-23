@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HudInventario : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class HudInventario : MonoBehaviour
 
     public Transform _panelDlgQuestNPC;
     public Transform _imgRepsDialgNPC;
+
+    public Button _btConfirmStart;
 
     void Start()
     {
@@ -45,6 +48,8 @@ public class HudInventario : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        _btConfirmStart.Select();
 
     }
 
