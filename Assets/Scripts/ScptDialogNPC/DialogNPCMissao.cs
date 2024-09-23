@@ -10,9 +10,4 @@ public class DialogNPCMissao : MonoBehaviour
     public int _contadorObjetivo;
     public List<bool> _missaoConcluida = new List<bool>();
 
-    void Start()
-    {
-       
-    }
-
 }

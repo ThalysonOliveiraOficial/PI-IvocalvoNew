@@ -15,8 +15,11 @@ public class HudInventario : MonoBehaviour
 
     public Transform _panelDlgQuestNPC;
     public Transform _imgRepsDialgNPC;
-
+    //botão de confirmação do panel quando o jogo abre
     public Button _btConfirmStart;
+
+    public Transform _panelConcluirMissao;
+    // criar um enumerator coroutine e uma função pra fazer  _panelConcluirMissao aparecer e desaparecer quando uma missao for concluida
 
     void Start()
     {
@@ -81,4 +84,5 @@ public class HudInventario : MonoBehaviour
         _panelDlgQuestNPC.DOScale(0, .25f);
     }
 
+    //IEnumerator
 }
