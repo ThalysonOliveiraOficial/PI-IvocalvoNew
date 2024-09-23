@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Missao1
   m_EditorClassIdentifier: 
   _nome: 
-  _dialogo1: Traga
-  _dialogo2: 'copaiba pra mim. Estou com dores e quero '
+  _dialogo1: 'Traga 5 copaiba pra mim. Estou com dores e quero '
+  _dialogo2: Obrigado por trazer as copaibas que eu pedi

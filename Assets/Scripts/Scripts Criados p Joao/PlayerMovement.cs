@@ -100,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
         _dialogNPCM = Camera.main.GetComponent<DialogNPCMissao>();
         //button fechar dialogo por no script HudInventario depois
         _btDialogFechar = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._imgRepsDialgNPC.gameObject.GetComponent<Button>();
-        _dialogNPCM._missaoOn = true;
 
         _timer = _timerValue;
 
@@ -388,12 +387,12 @@ public class PlayerMovement : MonoBehaviour
             if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[0] == false)
             {
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo2;
                 _dialogNPCM._missaoConcluida[0] = true;
             }else if (_dialogNPCM._missaoConcluida[0] == false)
             {
                 _dialogNPCM._contadorObjetivo = 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1 + " " + _dialogNPCM._contadorObjetivo + " " + _dialogNPCM._questNPC[0]._dialogo2;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1;
             }
         }
         //Missao 2 matar monstros
@@ -404,11 +403,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[1] == false)
             {
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo2;
                 _dialogNPCM._missaoConcluida[1] = true;
             }
             else if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
             {
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo1;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
                 _dialogNPCM._contadorObjetivo = 10;
             }
         }
@@ -421,13 +421,13 @@ public class PlayerMovement : MonoBehaviour
             if (_gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[2] == false)
             {
                 _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber - 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[4]._dialogo1;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo2;
                 _dialogNPCM._missaoConcluida[2] = true;
             }
             else if (_dialogNPCM._missaoConcluida[1] == true && _dialogNPCM._missaoConcluida[2] == false)
             {
                 _dialogNPCM._contadorObjetivo = 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[3]._dialogo1;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo1;
             }
         }
         //missao 4 Matar mais bixo
@@ -438,14 +438,40 @@ public class PlayerMovement : MonoBehaviour
 
             if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[4] == false)
             {
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[3]._dialogo2;
                 _dialogNPCM._missaoConcluida[4] = true;
             }
             else if (_dialogNPCM._missaoConcluida[3] == true && _dialogNPCM._missaoConcluida[4] == false)
             {
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[5]._dialogo1;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[3]._dialogo1;
                 _dialogNPCM._contadorObjetivo = 10;
             }
         }
+        //missão 5 pegar arnica
+        if (other.gameObject.CompareTag("NPCMissao5"))
+        {
+            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
+            _btDialogFechar.Select();
+
+            if (_gridItem._itensInvet[2].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[5] == false)
+            {
+                _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber - 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[4]._dialogo2;
+                _dialogNPCM._missaoConcluida[5] = true;
+            }
+            else if (_dialogNPCM._missaoConcluida[4] == true && _dialogNPCM._missaoConcluida[5] == false)
+            {
+                _dialogNPCM._contadorObjetivo = 5;
+                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[4]._dialogo1;
+            }
+        }
+        //missão Iara PRIMEIRO FAZER A IARA MORRER NO SCRIPT
+        //if (other.gameObject.CompareTag("NPCMissaoIara"))
+        //{
+        //  _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
+        //  _btDialogFechar.Select();
+        //
+        //}
 
 
         // collieder com inimigo
