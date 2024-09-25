@@ -15,6 +15,10 @@ public class HudInventario : MonoBehaviour
 
     public Transform _panelDlgQuestNPC;
     public Transform _imgRepsDialgNPC;
+
+    public bool _inventHudAberto;
+    public Button _btInvHudInicial;
+
     //botão de confirmação do panel quando o jogo abre
     public Button _btConfirmStart;
 
@@ -24,6 +28,7 @@ public class HudInventario : MonoBehaviour
     void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
+        _inventHudAberto = false;
 
         AbrirHudMissao();
 
@@ -32,14 +37,15 @@ public class HudInventario : MonoBehaviour
     public void AbrirHudInvet()
     {
         _panelInvet.DOScale(1f, .25f);
-
+        _inventHudAberto = true;
+        _btInvHudInicial.Select();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
     public void FecharHudInvet()
     {
         _panelInvet.DOScale(0f, .25f);
-
+        _inventHudAberto = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
