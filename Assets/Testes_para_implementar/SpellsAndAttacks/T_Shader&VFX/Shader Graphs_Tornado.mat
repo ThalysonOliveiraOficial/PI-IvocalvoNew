@@ -61,7 +61,7 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Dissolve: 0.441
+    - _Dissolve: 0.784
     - _DstBlend: 0
     - _Glossiness: 32
     - _NoisePower: 1
@@ -73,7 +73,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _TwirlAmmount: -1.62
-    - _ZTest: 2
+    - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
