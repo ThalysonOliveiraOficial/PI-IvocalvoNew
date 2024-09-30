@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     DialogNPCMissao _dialogNPCM;
 
     public Button _btDialogFechar;
+    public bool _inventAberto;
     
 
 
@@ -100,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         _dialogNPCM = Camera.main.GetComponent<DialogNPCMissao>();
         //button fechar dialogo por no script HudInventario depois
         _btDialogFechar = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._imgRepsDialgNPC.gameObject.GetComponent<Button>();
+        _inventAberto = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._inventHudAberto;
 
         _timer = _timerValue;
 
@@ -127,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         _ponteiroMM.eulerAngles = new Vector3(0, 0, -_orientation.transform.eulerAngles.y);
+        _inventAberto = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._inventHudAberto;
 
         //desbugar o pulo
         if (_checkJump)
@@ -153,8 +156,9 @@ public class PlayerMovement : MonoBehaviour
         AnimacaoPlayer();
         Gravidade();
         GroundCheck();
-
-        if (!_checkMorte)
+        
+        //fazer personagem para de se mexer quando morrer ou abrir o inventario(não funcionou, tentar outra coisa)
+        if (!_checkMorte || !_inventAberto)
         {
             MovimentoPlayer();
             Pulo();

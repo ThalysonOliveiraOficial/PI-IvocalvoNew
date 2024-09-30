@@ -28,7 +28,7 @@ public class HudInventario : MonoBehaviour
     void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
-        _inventHudAberto = false;
+        _inventHudAberto = true;
 
         AbrirHudTutorial();
 
@@ -54,6 +54,7 @@ public class HudInventario : MonoBehaviour
     {
         _panelMissao.DOScale(1f,0f);
         _TelaTutorial.DOScale(1f, .25f);
+        _inventHudAberto = true;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -68,6 +69,7 @@ public class HudInventario : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _inventHudAberto = false;
 
         _panelMissao.DOScale(0f, .25f);
     }
@@ -76,6 +78,7 @@ public class HudInventario : MonoBehaviour
     {
         _panelDlgQuestNPC.DOScale(1, .25f);
         _imgRepsDialgNPC.DOScale(1, 1.25f);
+        _inventHudAberto = true;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -86,6 +89,7 @@ public class HudInventario : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        _inventHudAberto = false;
         _imgRepsDialgNPC.DOScale(0, .12f);
         _panelDlgQuestNPC.DOScale(0, .25f);
     }

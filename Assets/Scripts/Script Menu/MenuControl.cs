@@ -8,10 +8,12 @@ using UnityEngine.UI;
 public class MenuControl : MonoBehaviour
 {
     [SerializeField] List<Transform> _ItensMenu;
-    [SerializeField]
+    [SerializeField] Transform _nomeDoJogo;
+    
     // Start is called before the first frame update
     void Start()
     {
+        ChamarMenu();
         // StartCoroutine(TimeItens());
     }
 
@@ -24,6 +26,15 @@ public class MenuControl : MonoBehaviour
             _ItensMenu[i].DOScale(1f, 0.25f);
         }
     }
+
+    //fazer o nome do jogo balançar
+    /*
+    private IEnumerator NomeDoJogo()
+    {
+        _nomeDoJogo.DO
+
+    }
+    */
 
     public void ChamarMenu()
     {
@@ -44,9 +55,8 @@ public class MenuControl : MonoBehaviour
         SceneManager.LoadScene("Mapa_Arborizado");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GameFechar()
     {
-
+        Application.Quit();
     }
 }
