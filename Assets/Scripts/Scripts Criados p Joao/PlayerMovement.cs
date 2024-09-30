@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
             //_checkRunnig = false;
         }
 
-        //checkar se o botao de correr foi apertado e mudar o _moveSpeed
+        //checkar se o botao de correr foi apertado e mudar o _moveSpeed / mudamos o _checkrunning pra ser um chek andar
         if (_checkRunnig && _Velocparar != 0)
         {
             _moveSpeed = 5.75f;

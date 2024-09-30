@@ -9,7 +9,7 @@ public class HudInventario : MonoBehaviour
     [SerializeField] GameControl _gameCtrl;
 
     public Transform _panelMissao;
-    public Transform _TelaMissaoIara;
+    public Transform _TelaTutorial;
 
     public Transform _panelInvet;
 
@@ -30,7 +30,7 @@ public class HudInventario : MonoBehaviour
         _gameCtrl = Camera.main.GetComponent<GameControl>();
         _inventHudAberto = false;
 
-        AbrirHudMissao();
+        AbrirHudTutorial();
 
     }
 
@@ -50,10 +50,10 @@ public class HudInventario : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public void AbrirHudMissao()
+    public void AbrirHudTutorial()
     {
         _panelMissao.DOScale(1f,0f);
-        _TelaMissaoIara.DOScale(1f, .25f);
+        _TelaTutorial.DOScale(1f, .25f);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -62,9 +62,9 @@ public class HudInventario : MonoBehaviour
 
     }
 
-    public void FecharHudMissao()
+    public void FecharHudTutorial()
     {
-        _TelaMissaoIara.DOScale(0f, .25f);
+        _TelaTutorial.DOScale(0f, .25f);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -90,5 +90,6 @@ public class HudInventario : MonoBehaviour
         _panelDlgQuestNPC.DOScale(0, .25f);
     }
 
-    //IEnumerator
+    //IEnumerator para tela de conclusão de missão
+
 }
