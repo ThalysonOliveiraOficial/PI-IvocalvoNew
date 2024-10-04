@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] CameraTerceiraPessoa _controleCam;
 
-    [SerializeField] bool _checkAim;
+    public bool _checkAim;
     [SerializeField] bool _checkTiro;
     [SerializeField] bool _checkMorte;
     [SerializeField] bool _checkHitMo;
@@ -157,8 +157,12 @@ public class PlayerMovement : MonoBehaviour
         Gravidade();
         GroundCheck();
         
-        //fazer personagem para de se mexer quando morrer ou abrir o inventario(não funcionou, tentar outra coisa)
-        if (!_checkMorte || !_inventAberto)
+        //fazer personagem para de se mexer quando morrer ou abrir o inventario provavelmente ta errado, mas tá funcionando
+        if (_inventAberto)
+        {
+            Debug.Log("Inventario aberto" );
+        }
+        else if (!_checkMorte || !_inventAberto)
         {
             MovimentoPlayer();
             Pulo();
@@ -286,20 +290,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetCombatAim(InputAction.CallbackContext value)
     {
         _checkAim = value.performed;
-        if(_checkAim)
-        {
-            _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Combat);
-            _gameCtrl.Mira.SetActive(true);
-            _gameCtrl.BaladeiraOBJ.SetActive(true);
 
-        }
-        if(!_checkAim)
-        {
-            _controleCam.TrocarEstiloCamera(CameraTerceiraPessoa.CameraEstilo.Basic);
-            _gameCtrl.Mira.SetActive(false);
-            _gameCtrl.BaladeiraOBJ.SetActive(false);
-        }
-       
     }
 
     

@@ -20,33 +20,49 @@ public class CameraTerceiraPessoa : MonoBehaviour
     public GameObject _cameraBasica;
     public GameObject _cameraCombate;
 
-    //[SerializeField] GameControl _gameControl;
-    
+    [SerializeField] GameControl _gameControl;
+
+    public bool _invAberto;
 
     public enum CameraEstilo
     {
         Basic,
         Combat,
+        Parada,
     }
 
     private void Start()
     {
-        //Cursor ficar invisivel
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        _gameControl = GetComponent<GameControl>();
+        _invAberto = _player.gameObject.GetComponent<PlayerMovement>()._inventAberto;
 
-        //_gameControl = GetComponent<GameControl>();
-
-        TrocarEstiloCamera(CameraEstilo.Basic);
+        TrocarEstiloCamera(CameraEstilo.Parada);
     }
 
 
     private void Update()
     {
+        _invAberto = _player.gameObject.GetComponent<PlayerMovement>()._inventAberto;
+
+        if (_invAberto)
+        {
+            TrocarEstiloCamera(CameraEstilo.Parada);
+        }
+        else if(_player.gameObject.GetComponent<PlayerMovement>()._checkAim)
+        {
+            TrocarEstiloCamera(CameraEstilo.Combat);
+            _gameControl.Mira.SetActive(true);
+            _gameControl.BaladeiraOBJ.SetActive(true);
+        }else if (!_player.gameObject.GetComponent<PlayerMovement>()._checkAim)
+        {
+            TrocarEstiloCamera(CameraEstilo.Basic);
+            _gameControl.Mira.SetActive(false);
+            _gameControl.BaladeiraOBJ.SetActive(false);
+        }
         CameraRotacao();
 
         // Liberar e mostrar o Cursor quando o player estiver morto
-        if(_player.gameObject.GetComponent<PlayerMovement>()._playerVivo == false)
+        if (_player.gameObject.GetComponent<PlayerMovement>()._playerVivo == false)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -106,6 +122,11 @@ public class CameraTerceiraPessoa : MonoBehaviour
         if (novoEstilo == CameraEstilo.Combat)
         {
             _cameraCombate.SetActive(true);
+        }
+        if(novoEstilo == CameraEstilo.Parada)
+        {
+            _cameraBasica.SetActive(false);
+            _cameraCombate.SetActive(false);
         }
 
         _estiloAtual = novoEstilo;

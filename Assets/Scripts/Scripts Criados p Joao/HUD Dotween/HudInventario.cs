@@ -94,6 +94,10 @@ public class HudInventario : MonoBehaviour
         _panelDlgQuestNPC.DOScale(0, .25f);
     }
 
+    public void SelecionarBTMissao()
+    {
+        _btInvHudInicial.Select();
+    }
     //IEnumerator para tela de conclusão de missão
 
 }
