@@ -3,7 +3,12 @@ guid: d95e72d8ca8a93f48969505db8383187
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Painted Plaster Wall.001
+    second: {fileID: 2100000, guid: d9495b94de4a08a45b14eebf72608364, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
