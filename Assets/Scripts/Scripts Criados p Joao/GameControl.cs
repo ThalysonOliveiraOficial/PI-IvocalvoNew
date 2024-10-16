@@ -39,6 +39,7 @@ public class GameControl : MonoBehaviour
 
     //Boss Iara
     public Transform _iaraModelP;
+    public bool _bossOn;
 
     //
     public int _contKillInimigo;
@@ -46,7 +47,7 @@ public class GameControl : MonoBehaviour
 
     void Start()
     {
-
+        _bossOn = false;
         StopCamPlayer(false);
         Debug.Log(PlayerPrefs.GetInt("StartSalve"));
         if (PlayerPrefs.GetInt("StartSalve") == 0)
@@ -108,6 +109,5 @@ public class GameControl : MonoBehaviour
     {
         SceneManager.LoadScene("Mapa_Arborizado");
     }
+
 }
-
-
