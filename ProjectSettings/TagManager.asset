@@ -16,10 +16,8 @@ TagManager:
   - ItemTag
   - NPCMissao1
   - NPCMissao2
-  - NPCMissao3
-  - NPCMissao4
-  - NPCMissao5
-  - NPCMissaoIara
+  - Missao iara
+  - Bloco
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@
             "id": "9d3178c5-d2e5-4693-aca1-dd85cb5d2599",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "MoveJoao",
                     "type": "Value",
                     "id": "a7559d5f-6604-4f53-b122-f57b1cc8b6e8",
                     "expectedControlType": "Vector2",
@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveIvo",
+                    "type": "Value",
+                    "id": "bda45372-cb45-4697-a1e8-7a95fe4097ba",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -77,7 +86,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -88,7 +97,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -99,7 +108,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -110,7 +119,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -121,7 +130,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -132,7 +141,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -143,7 +152,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -154,7 +163,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -165,7 +174,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -176,7 +185,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -187,7 +196,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -198,7 +207,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -209,7 +218,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -220,7 +229,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -231,7 +240,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -242,7 +251,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -253,7 +262,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -264,7 +273,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -275,7 +284,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -286,7 +295,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveJoao",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -465,6 +474,61 @@
                     "action": "AbrirMenu-pausa",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "3D Vector",
+                    "id": "997d626e-d0b8-4487-95fa-e14c3b7184cd",
+                    "path": "3DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveIvo",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "dc9a6469-981c-4629-90ef-c2a1d586f317",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveIvo",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "65a5bbde-2fed-49f7-80ea-351c0678624c",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveIvo",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ddef91b1-fd68-43e9-9c4f-cbab753ba9bd",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveIvo",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1a86fec9-44c7-46ba-a852-0916b3a7388c",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveIvo",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
