@@ -37,18 +37,9 @@ public class VidaHud : MonoBehaviour
         */
     }
 
-
-
-    void Update()
-    {
-
-
-    }
-
     public void HitSlider()
     {
         _life = _gameControl._player.GetComponent<PlayerMovement>()._vidaInicialPlayer;
-        //_life--;
         _sliderVida.DOValue(_life, .5f, false);
     }
 }

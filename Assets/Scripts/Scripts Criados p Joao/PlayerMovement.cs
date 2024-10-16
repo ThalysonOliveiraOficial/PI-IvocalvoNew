@@ -373,7 +373,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Dialogos com NPCs que dão missão
-        //Missao 1 Pegar 5 Copaiba
+        //Missao 1 Pegar 8 Copaiba
         if (other.gameObject.CompareTag("NPCMissao1"))
         {
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
@@ -407,59 +407,7 @@ public class PlayerMovement : MonoBehaviour
                 _dialogNPCM._contadorObjetivo = 10;
             }
         }
-        //missao 3 Pegar 8 Juca
-        if (other.gameObject.CompareTag("NPCMissao3"))
-        {
-            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
-            _btDialogFechar.Select();
 
-            if (_gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[2] == false)
-            {
-                _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber - 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo2;
-                _dialogNPCM._missaoConcluida[2] = true;
-            }
-            else if (_dialogNPCM._missaoConcluida[1] == true && _dialogNPCM._missaoConcluida[2] == false)
-            {
-                _dialogNPCM._contadorObjetivo = 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[2]._dialogo1;
-            }
-        }
-        //missao 4 Matar mais bixo
-        if (other.gameObject.CompareTag("NPCMissao4"))
-        {
-            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
-            _btDialogFechar.Select();
-
-            if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[4] == false)
-            {
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[3]._dialogo2;
-                _dialogNPCM._missaoConcluida[4] = true;
-            }
-            else if (_dialogNPCM._missaoConcluida[3] == true && _dialogNPCM._missaoConcluida[4] == false)
-            {
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[3]._dialogo1;
-                _dialogNPCM._contadorObjetivo = 10;
-            }
-        }
-        //missão 5 pegar arnica
-        if (other.gameObject.CompareTag("NPCMissao5"))
-        {
-            _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
-            _btDialogFechar.Select();
-
-            if (_gridItem._itensInvet[2].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[5] == false)
-            {
-                _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[1].GetComponent<SlotItem>()._contadorNumber - 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[4]._dialogo2;
-                _dialogNPCM._missaoConcluida[5] = true;
-            }
-            else if (_dialogNPCM._missaoConcluida[4] == true && _dialogNPCM._missaoConcluida[5] == false)
-            {
-                _dialogNPCM._contadorObjetivo = 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[4]._dialogo1;
-            }
-        }
         //missão Iara PRIMEIRO FAZER A IARA MORRER NO SCRIPT
         //if (other.gameObject.CompareTag("NPCMissaoIara"))
         //{
