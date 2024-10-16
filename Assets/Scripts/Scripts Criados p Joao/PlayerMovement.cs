@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool _groundedPlayer;
     [SerializeField] bool _checkJump;
     [SerializeField] bool _checkRunnig;
+    [SerializeField] bool _checkAndar;
 
     [SerializeField] float _correndo = 0;
     [SerializeField] float _pulando = 0;
@@ -124,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
             //
         }
 
+        _checkRunnig = true;
+        _checkAndar = false;
     }
 
     private void Update()
@@ -187,30 +190,16 @@ public class PlayerMovement : MonoBehaviour
 
         float _Velocparar = Mathf.Abs(_moveZ) + Mathf.Abs(_moveX);
 
-        if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 1)
-            _checkRunnig = true;
-        else if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 2)
-            _checkRunnig = false;   //mudar pra false depois
-        else if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus == 0)
-            _checkRunnig = false;   //mudar pra false depois
 
-        if (_Velocparar == 0)
+        if(_Velocparar == 0)
         {
-            if(_gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._sliderEstamina.value < _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._sliderEstamina.maxValue)
-            {
-                _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus = 2;
-            }
-            else _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus = 0;
-            
-            //_checkRunnig = false;
+            _checkRunnig = false;
         }
-
-        //checkar se o botao de correr foi apertado e mudar o _moveSpeed / mudamos o _checkrunning pra ser um chek andar
         if (_checkRunnig && _Velocparar != 0)
         {
             _moveSpeed = 5.75f;
         }
-        else
+        else if (_checkAndar && !_checkRunnig && _Velocparar != 0)
         {
             _moveSpeed = 2.35f;
         }
@@ -220,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
         //mira veloc e tiro(Bugado)
         if (_checkAim)
         {
-            _moveSpeed = 2f;
+            _moveSpeed = 2.35f;
         }
 
         
@@ -282,8 +271,8 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetRun(InputAction.CallbackContext value)
     {
-        _gameCtrl._hudCanvas.GetComponent<EstaminaHud>()._estaminaStatus = 1;
-        //_checkRunnig = true;
+        _checkAndar = value.performed;
+        
     }
 
     //Mira Input
@@ -369,6 +358,7 @@ public class PlayerMovement : MonoBehaviour
                       _gridItem._itensInvet[tipoItem].GetComponent<Transform>().DOScaleZ(1.5f, 1f);
                 }
             }
+            other.gameObject.SetActive(false);
             
         }
 
@@ -379,7 +369,7 @@ public class PlayerMovement : MonoBehaviour
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
-            if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 5 && _dialogNPCM._missaoConcluida[0] == false)
+            if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && _dialogNPCM._missaoConcluida[0] == false)
             {
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo2;
@@ -416,7 +406,7 @@ public class PlayerMovement : MonoBehaviour
         //
         //}
 
-
+        // por colider com atk da iara
         // collieder com inimigo
         if (other.CompareTag("AtkInimigo") && !_checkHitMo)
         {
