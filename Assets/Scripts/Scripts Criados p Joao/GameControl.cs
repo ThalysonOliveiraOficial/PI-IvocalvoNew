@@ -77,6 +77,10 @@ public class GameControl : MonoBehaviour
             _somMusic[i].mute = _muteMusic;
         }
 
+        if (_bossOn) {
+            _hudCanvas.gameObject.GetComponent<HudInventario>().BossIaraOn();
+        }
+        else _hudCanvas.gameObject.GetComponent<HudInventario>().BossIaraOff();
 
     }
 

@@ -2,6 +2,7 @@ using Cinemachine;
 using DG.Tweening;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -407,6 +408,14 @@ public class PlayerMovement : MonoBehaviour
         //}
 
         // por colider com atk da iara
+
+        //entrar na area da iara
+
+        if (other.gameObject.CompareTag("BossFightOn"))
+        {
+            _gameCtrl._bossOn = true;
+        }
+
         // collieder com inimigo
         if (other.CompareTag("AtkInimigo") && !_checkHitMo)
         {
@@ -458,6 +467,14 @@ public class PlayerMovement : MonoBehaviour
         {
             UnityEngine.Debug.Log(other.transform.localPosition);
             _gameCtrl.CheckpointSalvarPos(other.transform.position);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("BossFightOn"))
+        {
+            _gameCtrl._bossOn = false;
         }
     }
 

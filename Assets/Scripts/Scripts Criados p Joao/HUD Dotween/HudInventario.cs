@@ -25,6 +25,8 @@ public class HudInventario : MonoBehaviour
     public Transform _panelConcluirMissao;
     // criar um enumerator coroutine e uma função pra fazer  _panelConcluirMissao aparecer e desaparecer quando uma missao for concluida
 
+    public Transform _panelIaraVida;
+
     void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
@@ -52,7 +54,7 @@ public class HudInventario : MonoBehaviour
 
     public void AbrirHudTutorial()
     {
-        _panelMissao.DOScale(1f,0f);
+        _panelMissao.DOScale(1f, 0f);
         _TelaTutorial.DOScale(1f, .25f);
         _inventHudAberto = true;
 
@@ -99,5 +101,17 @@ public class HudInventario : MonoBehaviour
         _btInvHudInicial.Select();
     }
     //IEnumerator para tela de conclusão de missão
+
+    public void BossIaraOn()
+    {
+        _panelIaraVida.DOScale(1, .5f);
+
+    }
+    public void BossIaraOff()
+    {
+        _panelIaraVida.DOScale(0, .5f);
+    }
+
+
 
 }

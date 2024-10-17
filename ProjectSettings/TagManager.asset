@@ -18,6 +18,7 @@ TagManager:
   - NPCMissao2
   - Missao iara
   - Bloco
+  - BossFightOn
   layers:
   - Default
   - TransparentFX

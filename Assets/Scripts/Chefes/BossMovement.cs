@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class BossMovement : MonoBehaviour
 {
     public GameControl _gameCtrl;
-    public int _vidaChefe = 100;
+    //public int _vidaChefe = 100;
     public float _distPlayer;
     public float _distPos;
 
@@ -54,6 +54,7 @@ public class BossMovement : MonoBehaviour
     void Update()
     {
         MovimentoChefe();
+        _iara = _gameCtrl._bossOn;
 
     }
 
