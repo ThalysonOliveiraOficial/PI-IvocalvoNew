@@ -36,6 +36,8 @@ public class BossMovement : MonoBehaviour
     int _ataqueSort;
 
     public AtaqueBoss _atkBoss;
+    public float _iaraVida;
+    public bool _iaraMorta;
 
 
     void Start()
@@ -49,13 +51,29 @@ public class BossMovement : MonoBehaviour
         _posSelec = 1;
         //_timerValue = 8;
         Shuffle(_posSelecLis);
+        _iaraMorta = false;
+
     }
 
     void Update()
     {
-        MovimentoChefe();
-        _iara = _gameCtrl._bossOn;
+        _iaraVida = GetComponent<BossVida>()._vidaBoss;
+        AnimaIara();
 
+        if (_iaraVida <= 0)
+        {
+            _iaraMorta = true;
+        }
+
+        if (!_iaraMorta)
+        {
+            MovimentoChefe();
+        }
+        else
+        {
+            Morte();
+        }
+        _iara = _gameCtrl._bossOn;
     }
 
     public void MovimentoChefe()
@@ -65,16 +83,19 @@ public class BossMovement : MonoBehaviour
         }
 
     }
+    void AnimaIara()
+    {
+        //Animações
+        _anim.SetBool("Movendo", _seMovendo);
+        _anim.SetInteger("Ataque", _ataque);
+        _anim.SetBool("Atacando", _atacando);
+        _anim.SetBool("Morta", _iaraMorta);
+    }
 
     void IaraCheck()
     {
         _distPlayer = Vector3.Distance(transform.position, _player.position);
         _distPos = Vector3.Distance(transform.position, _pos[_posSelec].position);
-
-        //Animações
-        _anim.SetBool("Movendo", _seMovendo);
-        _anim.SetInteger("Ataque", _ataque);
-        _anim.SetBool("Atacando", _atacando);
 
         //timer pra iara mudar de posição
         _timer -= Time.deltaTime;
@@ -146,6 +167,19 @@ public class BossMovement : MonoBehaviour
 
     }
 
+    IEnumerator MorteIara()
+    {
+        _gameCtrl._hudCanvas.GetComponent<HudInventario>().BossIaraOff();
+        yield return new WaitForSeconds(4.4f);
+        // fazer painel para recomeçar o jogo depois de matar iara
+        gameObject.SetActive(false);
+    }
+
+    private void Morte()
+    {
+        MorteIara();
+
+    }
 
     void Shuffle(List<int> lists)
     {

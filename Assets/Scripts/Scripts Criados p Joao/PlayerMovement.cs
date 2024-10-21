@@ -191,19 +191,24 @@ public class PlayerMovement : MonoBehaviour
 
         float _Velocparar = Mathf.Abs(_moveZ) + Mathf.Abs(_moveX);
 
-
+        //Debug.Log(_Velocparar + " _velocparar");
+        //ajeitar a corrida do player criar uma variavel bool pra chekar se esta parado e por no animator
         if(_Velocparar == 0)
         {
             _checkRunnig = false;
+        }else
+        {
+            _checkRunnig = true;
         }
         if (_checkRunnig && _Velocparar != 0)
         {
             _moveSpeed = 5.75f;
+            _checkRunnig = true;
         }
-        else if (_checkAndar && !_checkRunnig && _Velocparar != 0)
+       /* else if (_checkAndar && !_checkRunnig && _Velocparar != 0)
         {
             _moveSpeed = 2.35f;
-        }
+        } */
        
         _pulando = _controller.velocity.y;
 
@@ -227,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
         _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
 
         // checkar se esta correndo e ativar a animação
-        if (_moveSpeed > 4)
+        if (_moveSpeed > 4 && _checkRunnig)
         {
             _anim.SetFloat("Correndo", _correndo = 1);
         }
@@ -414,6 +419,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("BossFightOn"))
         {
             _gameCtrl._bossOn = true;
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>().BossIaraOn();
         }
 
         // collieder com inimigo
@@ -475,6 +481,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("BossFightOn"))
         {
             _gameCtrl._bossOn = false;
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>().BossIaraOn();
         }
     }
 
@@ -494,19 +501,19 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator HitPartcPlayer()
     {
-        _hitPlayerPartc.gameObject.SetActive(true);
+        //_hitPlayerPartc.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
-        _hitPlayerPartc.gameObject.SetActive(false);
+        //_hitPlayerPartc.gameObject.SetActive(false);
 
     }
 
     IEnumerator RestartPlayerTime()
     {
-        _RestartPlayerPartc.gameObject.SetActive(true);
+        //_RestartPlayerPartc.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         //gameObject.SetActive(true);
         _checkMorte = false;
-        _RestartPlayerPartc.gameObject.SetActive(false);
+        //_RestartPlayerPartc.gameObject.SetActive(false);
 
     }
 

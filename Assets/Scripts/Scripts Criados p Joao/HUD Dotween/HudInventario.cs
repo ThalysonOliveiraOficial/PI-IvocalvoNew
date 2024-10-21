@@ -101,10 +101,21 @@ public class HudInventario : MonoBehaviour
         _btInvHudInicial.Select();
     }
     //IEnumerator para tela de conclusão de missão
+    IEnumerator ConcluirMissao()
+    {
+        _panelConcluirMissao.DOScale(1, .7f);
+        yield return new WaitForSeconds(4.4f);
+        _panelConcluirMissao.DOScale(0, .7f);
+    }
+
+    public void MissaoConcluir()
+    {
+        ConcluirMissao();
+    }
 
     public void BossIaraOn()
     {
-        _panelIaraVida.DOScale(1, .5f);
+        _panelIaraVida.DOScale(1, 1.58f);
 
     }
     public void BossIaraOff()

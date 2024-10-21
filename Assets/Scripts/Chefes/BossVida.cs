@@ -31,7 +31,7 @@ public class BossVida : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("AtqueDistancia"))
+        if (other.CompareTag("AtaqueDistancia"))
         {
             _vidaBoss = _vidaBoss - 3;
             HitBossVida();
