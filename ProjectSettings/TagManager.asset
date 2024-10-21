@@ -19,6 +19,7 @@ TagManager:
   - Missao iara
   - Bloco
   - BossFightOn
+  - Conta
   layers:
   - Default
   - TransparentFX

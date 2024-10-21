@@ -10,6 +10,7 @@ public class Move_multi : MonoBehaviour
     Rigidbody2D _rigidbody2;
     public TextMeshPro _textPlayer;
     public blocoNumero _blocoNumero;
+    public Conta _conta;
     void Start()
     {
         _rigidbody2 = GetComponent<Rigidbody2D>();
@@ -32,6 +33,19 @@ public class Move_multi : MonoBehaviour
         {
             _blocoNumero = collision.gameObject.GetComponent<blocoNumero>();
             _textPlayer.text = "" + _blocoNumero._numeroBloco;
+        }
+        if (collision.gameObject.CompareTag("Conta"))
+        {
+            _conta = collision.gameObject.GetComponent<Conta>();
+            if(_conta._resp == _blocoNumero._numeroBloco)
+            {
+                
+                _conta.ContaSet("" + _blocoNumero._numeroBloco);
+            }
+            else
+            {
+                Debug.Log("Errou");
+            }
         }
     }
 }
