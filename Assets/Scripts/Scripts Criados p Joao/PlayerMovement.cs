@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Dialogo NPC
     DialogNPCMissao _dialogNPCM;
+    private bool _missaoAceita1;
 
     public Button _btDialogFechar;
     public bool _inventAberto;
@@ -102,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         _gridItem = Camera.main.GetComponent<GridItem>();
         _dialogNPCM = Camera.main.GetComponent<DialogNPCMissao>();
         //button fechar dialogo por no script HudInventario depois
-        _btDialogFechar = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._imgRepsDialgNPC.gameObject.GetComponent<Button>();
+        //_btDialogFechar = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._imgRepsDialgNPC.gameObject.GetComponent<Button>();
         _inventAberto = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._inventHudAberto;
 
         _timer = _timerValue;
@@ -115,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
         
         //quando o jogo começar aparecer no mapa a marcação da missao 1
         _dialogNPCM._iconeMiniMapMissao[0].SetActive(true);
+
+        _missaoAceita1 = false;
 
         if (PlayerPrefs.GetInt("StartSalve") ==1)
         {
@@ -378,47 +381,50 @@ public class PlayerMovement : MonoBehaviour
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
-            if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && _dialogNPCM._missaoConcluida[0] == false)
+            if (_missaoAceita1 == false)
             {
-                _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo2;
+                Debug.Log("missao 1 aceita");
+                _dialogNPCM._contadorObjetivo = 5;
+                //se der problemas fazer texto usando string mesmo
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Traga 8 copaibas pra mim";
+                _missaoAceita1 = true;
+            }
+            else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && _dialogNPCM._missaoConcluida[0] == false)
+            {
+                _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 8;
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigada por trazer, voce é uma fofura";
                 _dialogNPCM._missaoConcluida[0] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
-                _dialogNPCM._iconeMiniMapMissao[0].SetActive(false);
-                _dialogNPCM._iconeMiniMapMissao[1].SetActive(true);
-            }
-            else if (_dialogNPCM._missaoConcluida[0] == false)
-            {
-                _dialogNPCM._contadorObjetivo = 5;
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1;
+                _dialogNPCM._iconeMiniMapMissao[0].transform.localScale = Vector3.zero;
+                _dialogNPCM._iconeMiniMapMissao[1].transform.localScale = new Vector3(5.5f, 5.5f, 5.5f);
             }
             else
             {
-                Debug.Log("Missão cumprida");
+                Debug.Log("Missão sendo feita ou cumprida");
             }
         }
-        //Missao 2 matar monstros
+        //Missao 10 matar monstros
         if (other.gameObject.CompareTag("NPCMissao2"))
         {
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
-            if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[1] == false)
+            if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
             {
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo2;
+                //_dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
+                _dialogNPCM._contadorObjetivo = 10;
+            }
+            else if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[1] == false)
+            {
+                //_dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo2;
                 _dialogNPCM._missaoConcluida[1] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
-                _dialogNPCM._iconeMiniMapMissao[1].SetActive(false);
-                _dialogNPCM._iconeMiniMapMissao[2].SetActive(true);
-            }
-            else if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
-            {
-                _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
-                _dialogNPCM._contadorObjetivo = 10;
+                _dialogNPCM._iconeMiniMapMissao[1].transform.localScale = Vector3.zero;
+                _dialogNPCM._iconeMiniMapMissao[2].transform.localScale = new Vector3(18.18182f, 18.18182f, 18.18182f);
             }
             else
             {
-                Debug.Log("Missão cumprida");
+                Debug.Log("Missão sendo feita ou cumprida");
             }
         }
 

@@ -90,7 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmpDialogo: {fileID: 0}
-  _questNPC: []
+  _questNPC:
+  - {fileID: 11400000, guid: ef9112daf76b7e5439881ce00b0d9a1e, type: 2}
+  - {fileID: 11400000, guid: 20d3a4a843f108941ab771001c99abcd, type: 2}
   _contadorObjetivo: 0
   _missaoConcluida: 000000
   _iconeMiniMapMissao:
@@ -283,7 +285,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2616175415901282607}

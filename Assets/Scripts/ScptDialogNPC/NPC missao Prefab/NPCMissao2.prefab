@@ -2608,7 +2608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmpDialogo: {fileID: 0}
-  _questNPC: []
+  _questNPC:
+  - {fileID: 11400000, guid: ef9112daf76b7e5439881ce00b0d9a1e, type: 2}
+  - {fileID: 11400000, guid: 20d3a4a843f108941ab771001c99abcd, type: 2}
   _contadorObjetivo: 0
   _missaoConcluida: 000000
   _iconeMiniMapMissao:
@@ -2695,7 +2697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &963884378596262847
 Transform:
   m_ObjectHideFlags: 0
@@ -2706,7 +2708,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7738365, z: -0, w: 0.6333855}
   m_LocalPosition: {x: 0, y: 38, z: 0}
-  m_LocalScale: {x: 1.420765, y: 1.4207649, z: 1.420765}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4896124102728019860}

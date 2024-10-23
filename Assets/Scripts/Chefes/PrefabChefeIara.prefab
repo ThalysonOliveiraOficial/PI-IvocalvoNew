@@ -1635,7 +1635,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.0906615, y: 108.545456, z: 3.272594}
-  m_LocalScale: {x: 18.181818, y: 18.181818, z: 18.181818}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 534552437554997200}
@@ -3693,6 +3693,8 @@ MonoBehaviour:
   _ataque: 0
   _ataqueLis: 010000000200000003000000
   _atkBoss: {fileID: 0}
+  _iaraVida: 0
+  _iaraMorta: 0
 --- !u!114 &5892641404582037342
 MonoBehaviour:
   m_ObjectHideFlags: 0
