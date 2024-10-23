@@ -9,5 +9,6 @@ public class DialogNPCMissao : MonoBehaviour
     public List<Dialogos> _questNPC = new List<Dialogos>();
     public int _contadorObjetivo;
     public List<bool> _missaoConcluida = new List<bool>();
+    public List<GameObject> _iconeMiniMapMissao = new List<GameObject>();
 
 }

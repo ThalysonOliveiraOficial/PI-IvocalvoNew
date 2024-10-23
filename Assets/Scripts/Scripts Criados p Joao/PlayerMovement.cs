@@ -112,8 +112,11 @@ public class PlayerMovement : MonoBehaviour
 
         _vidaInicialPlayer = _vidaPlayerMax;
         _playerVivo = true;
+        
+        //quando o jogo começar aparecer no mapa a marcação da missao 1
+        _dialogNPCM._iconeMiniMapMissao[0].SetActive(true);
 
-        if(PlayerPrefs.GetInt("StartSalve") ==1)
+        if (PlayerPrefs.GetInt("StartSalve") ==1)
         {
             //posiçao
             _posSalva.x = PlayerPrefs.GetFloat("posX");
@@ -380,10 +383,18 @@ public class PlayerMovement : MonoBehaviour
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 5;
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo2;
                 _dialogNPCM._missaoConcluida[0] = true;
-            }else if (_dialogNPCM._missaoConcluida[0] == false)
+                _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
+                _dialogNPCM._iconeMiniMapMissao[0].SetActive(false);
+                _dialogNPCM._iconeMiniMapMissao[1].SetActive(true);
+            }
+            else if (_dialogNPCM._missaoConcluida[0] == false)
             {
                 _dialogNPCM._contadorObjetivo = 5;
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[0]._dialogo1;
+            }
+            else
+            {
+                Debug.Log("Missão cumprida");
             }
         }
         //Missao 2 matar monstros
@@ -396,11 +407,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo2;
                 _dialogNPCM._missaoConcluida[1] = true;
+                _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
+                _dialogNPCM._iconeMiniMapMissao[1].SetActive(false);
+                _dialogNPCM._iconeMiniMapMissao[2].SetActive(true);
             }
             else if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
             {
                 _dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
                 _dialogNPCM._contadorObjetivo = 10;
+            }
+            else
+            {
+                Debug.Log("Missão cumprida");
             }
         }
 
