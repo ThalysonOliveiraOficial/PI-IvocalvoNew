@@ -206,6 +206,10 @@ MonoBehaviour:
   _textPlayer: {fileID: 4741432417763309200}
   _blocoNumero: {fileID: 0}
   _conta: {fileID: 0}
+  _playerN: 0
+  SpriteIMG:
+  - {fileID: -1125530684, guid: 290b258f074d78546aa063ce741f309d, type: 3}
+  - {fileID: -2142245454, guid: 290b258f074d78546aa063ce741f309d, type: 3}
 --- !u!61 &1479715682407341087
 BoxCollider2D:
   m_ObjectHideFlags: 0
