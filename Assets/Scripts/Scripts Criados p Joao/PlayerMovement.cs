@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
     //Dialogo NPC
     DialogNPCMissao _dialogNPCM;
     private bool _missaoAceita1;
+    private bool _missaoAceita2;
 
     public Button _btDialogFechar;
     public bool _inventAberto;
@@ -389,14 +390,15 @@ public class PlayerMovement : MonoBehaviour
                 other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Traga 8 copaibas pra mim";
                 _missaoAceita1 = true;
             }
-            else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && _dialogNPCM._missaoConcluida[0] == false)
+            else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && other.GetComponent<DialogNPCMissao>()._missaoConcluida[0] == false)
             {
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 8;
                 other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigada por trazer, voce é uma fofura";
-                _dialogNPCM._missaoConcluida[0] = true;
+                other.GetComponent<DialogNPCMissao>()._missaoConcluida[0] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
-                _dialogNPCM._iconeMiniMapMissao[0].transform.localScale = Vector3.zero;
-                _dialogNPCM._iconeMiniMapMissao[1].transform.localScale = new Vector3(5.5f, 5.5f, 5.5f);
+                other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[0].transform.localScale = Vector3.zero;
+                other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[1].transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+                _missaoAceita2 = true;
             }
             else
             {
@@ -409,18 +411,19 @@ public class PlayerMovement : MonoBehaviour
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
-            if (_dialogNPCM._missaoConcluida[0] == true && _dialogNPCM._missaoConcluida[1] == false)
+            if (_missaoAceita2)
             {
-                //_dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo1;
-                _dialogNPCM._contadorObjetivo = 10;
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "" + other.GetComponent<DialogNPCMissao>()._questNPC[1]._dialogo1;
+                other.GetComponent<DialogNPCMissao>()._contadorObjetivo = 10;
+                _missaoAceita2 = false;
             }
-            else if (_dialogNPCM._contadorObjetivo == 0 && _dialogNPCM._missaoConcluida[1] == false)
+            else if (other.GetComponent<DialogNPCMissao>()._contadorObjetivo == 0 && other.GetComponent<DialogNPCMissao>()._missaoConcluida[1] == false)
             {
-                //_dialogNPCM._tmpDialogo.text = "" + _dialogNPCM._questNPC[1]._dialogo2;
-                _dialogNPCM._missaoConcluida[1] = true;
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "" + other.GetComponent<DialogNPCMissao>()._questNPC[1]._dialogo2;
+                other.GetComponent<DialogNPCMissao>()._missaoConcluida[1] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
-                _dialogNPCM._iconeMiniMapMissao[1].transform.localScale = Vector3.zero;
-                _dialogNPCM._iconeMiniMapMissao[2].transform.localScale = new Vector3(18.18182f, 18.18182f, 18.18182f);
+                other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[1].transform.localScale = Vector3.zero;
+                other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[2].transform.localScale = new Vector3(18.18182f, 18.18182f, 18.18182f);
             }
             else
             {
