@@ -70,10 +70,14 @@ public class Move_multi : MonoBehaviour
 
                 if (_contaControl.pontosPlayer[1]==2)
                 {
+                    _contaControl.AbrirPanelVitoria();
+                    _contaControl._textvitoria.text = "Player 2";
                     Debug.Log("para o jogo, apresenta tela de jogador 1 vencedor");
                 }
                 else if (_contaControl.pontosPlayer[0] == 2)
                 {
+                    _contaControl.AbrirPanelVitoria();
+                    _contaControl._textvitoria.text = "Player 1";
                     Debug.Log("para o jogo, apresenta tela de jogador 2 vencedor");
                 }
                 
