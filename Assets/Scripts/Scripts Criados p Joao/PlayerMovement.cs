@@ -405,7 +405,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Missão sendo feita ou cumprida");
             }
         }
-        //Missao 10 matar monstros
+        //Missao  matar monstros
         if (other.gameObject.CompareTag("NPCMissao2"))
         {
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
@@ -414,7 +414,7 @@ public class PlayerMovement : MonoBehaviour
             if (_missaoAceita2)
             {
                 other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "" + other.GetComponent<DialogNPCMissao>()._questNPC[1]._dialogo1;
-                other.GetComponent<DialogNPCMissao>()._contadorObjetivo = 10;
+                other.GetComponent<DialogNPCMissao>()._contadorObjetivo = 5;
                 _missaoAceita2 = false;
             }
             else if (other.GetComponent<DialogNPCMissao>()._contadorObjetivo == 0 && other.GetComponent<DialogNPCMissao>()._missaoConcluida[1] == false)
