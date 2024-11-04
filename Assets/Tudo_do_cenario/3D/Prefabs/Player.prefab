@@ -490,7 +490,7 @@ MonoBehaviour:
   _gameCtrl: {fileID: 0}
   _vidaInicialPlayer: 0
   _vidaPlayerMax: 10
-  _hitPlayerPartc: {fileID: 0}
+  _hitPlayerPartc: {fileID: 5024009746357069192, guid: c3b70d7274f41084894d34416e567769, type: 3}
   _RestartPlayerPartc: {fileID: 0}
   _TelaGameOver: {fileID: 0}
   _reiniciarBT: {fileID: 0}
