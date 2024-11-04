@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HudInventario : MonoBehaviour
@@ -27,6 +28,9 @@ public class HudInventario : MonoBehaviour
 
     public Transform _panelIaraVida;
     public Slider _vidaIaraSlider;
+
+    public Transform _panelVitoriaIara;
+    public Button _vitoriaVoltarMenu;
 
     void Start()
     {
@@ -124,6 +128,23 @@ public class HudInventario : MonoBehaviour
         _panelIaraVida.DOScale(0, .5f);
     }
 
+    public void VitoriaIara()
+    {
+        _panelVitoriaIara.DOScale(1f, 0.5f);
+        _inventHudAberto = true;
+        _vitoriaVoltarMenu.Select();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
+    public void VoltarProMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void ChamarMultiiplayer()
+    {
+        SceneManager.LoadScene("Multiplayer");
+    }
 
 }
