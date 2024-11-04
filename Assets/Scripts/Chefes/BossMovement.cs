@@ -24,9 +24,9 @@ public class BossMovement : MonoBehaviour
     public bool _iara;
 
     float _timer;
-    [SerializeField] float _timerValue = 10;
+    [SerializeField] float _timerValue = 12;
     float _timerAtk;
-    [SerializeField] float _timerVatk = 1.5f;
+    [SerializeField] float _timerVatk;
 
     public bool _seMovendo;
     public bool _atacando;
@@ -39,6 +39,7 @@ public class BossMovement : MonoBehaviour
     public float _iaraVida;
     public bool _iaraMorta;
 
+    public ParticleSystem _curaPart;
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class BossMovement : MonoBehaviour
         //_timerValue = 8;
         Shuffle(_posSelecLis);
         _iaraMorta = false;
+        _curaPart.Stop();
 
     }
 
@@ -138,6 +140,17 @@ public class BossMovement : MonoBehaviour
                 _ataque = _ataqueLis[_ataqueSort];
                 //mudar o contador pra ativar o ataque em area
                 if (_ataque == 2 || _ataque == 3) _atkBoss._contadorAtk = 1;
+                //ataque 1 é uma cura, se a iara estiver com 40 ou mais de vida, faz avida setar em 40 de novo
+                if (_ataque == 1 && _iaraVida <= 40)
+                {
+                    GetComponent<BossVida>()._vidaBoss = GetComponent<BossVida>()._vidaBoss + 4;
+                    IaraCuraAtk();
+                    Debug.Log("iara curou");
+                }else
+                {
+                    Debug.Log("iara vida cheia");
+                    
+                }
 
                 _ataqueSort++;
                 if (_ataqueSort > _ataqueLis.Count - 1)
@@ -173,6 +186,20 @@ public class BossMovement : MonoBehaviour
         yield return new WaitForSeconds(4.4f);
         // fazer painel para recomeçar o jogo depois de matar iara
         gameObject.SetActive(false);
+    }
+
+    IEnumerator CuraIara()
+    {
+        _curaPart.Play();
+        yield return new WaitForSeconds(1.4f);
+        _curaPart.Stop();
+
+    }
+
+    private void IaraCuraAtk()
+    {
+        GetComponent<BossVida>().HitBossVida();
+        StartCoroutine(CuraIara());
     }
 
     private void Morte()

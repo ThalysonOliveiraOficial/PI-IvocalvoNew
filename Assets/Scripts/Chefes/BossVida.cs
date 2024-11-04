@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BossVida : MonoBehaviour
 {
@@ -11,34 +12,37 @@ public class BossVida : MonoBehaviour
     [SerializeField] Slider _sliderBossVida;
     public float _vidaBoss;
     [SerializeField] float _vidaMaxBoss = 40;
+    public bool _1vez;
 
-
-    private void Awake()
+    void Start()
     {
         _gameControl = Camera.main.GetComponent<GameControl>();
         _vidaMaxBoss = 40;
         _vidaBoss = 40;
-        _sliderBossVida.maxValue = _vidaMaxBoss;
-        _sliderBossVida.value = _sliderBossVida.maxValue;
+        _sliderBossVida = _gameControl.GetComponent<GameControl>()._hudCanvas.GetComponent<HudInventario>()._vidaIaraSlider;
+        _1vez = true;
     }
 
-    void Start()
+    private void Update()
     {
-        _sliderBossVida.maxValue = _vidaMaxBoss;
-        _sliderBossVida.value = _sliderBossVida.maxValue;
-
+        if (_1vez && GetComponent<BossMovement>()._player.GetComponent<PlayerMovement>()._desbugarVidaIara)
+        {
+            _sliderBossVida.maxValue = _vidaMaxBoss;
+            _sliderBossVida.value = _sliderBossVida.maxValue;
+            _1vez = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("AtaqueDistancia"))
         {
-            _vidaBoss = _vidaBoss - 3;
+            _vidaBoss = _vidaBoss - 2.5f;
             HitBossVida();
         }
     }
 
-    private void HitBossVida()
+    public void HitBossVida()
     {
         _sliderBossVida.DOValue(_vidaBoss, .5f, false);
     }

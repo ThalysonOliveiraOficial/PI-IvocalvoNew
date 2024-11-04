@@ -26,6 +26,7 @@ public class HudInventario : MonoBehaviour
     // criar um enumerator coroutine e uma função pra fazer  _panelConcluirMissao aparecer e desaparecer quando uma missao for concluida
 
     public Transform _panelIaraVida;
+    public Slider _vidaIaraSlider;
 
     void Start()
     {

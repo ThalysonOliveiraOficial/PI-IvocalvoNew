@@ -55,6 +55,10 @@ public class MenuControl : MonoBehaviour
         SceneManager.LoadScene("Mapa_Arborizado");
     }
 
+    public void IniciarMultiiplayer()
+    {
+        SceneManager.LoadScene("Multiplayer");
+    }
     public void GameFechar()
     {
         Application.Quit();

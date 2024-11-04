@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public GameControl _gameCtrl;
 
     public float _vidaInicialPlayer;
-    public float _vidaPlayerMax = 10;
+    public float _vidaPlayerMax = 20;
 
     [SerializeField] ParticleSystem _hitPlayerPartc;
     [SerializeField] ParticleSystem _RestartPlayerPartc;
@@ -90,8 +90,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Button _btDialogFechar;
     public bool _inventAberto;
-    
 
+    public bool _desbugarVidaIara;
 
     private void Start()
     {
@@ -135,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
         _checkRunnig = true;
         _checkAndar = false;
+        _desbugarVidaIara = false;
     }
 
     private void Update()
@@ -439,7 +440,6 @@ public class PlayerMovement : MonoBehaviour
         //
         //}
 
-        // por colider com atk da iara
 
         //entrar na area da iara
 
@@ -447,6 +447,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _gameCtrl._bossOn = true;
             _gameCtrl._hudCanvas.GetComponent<HudInventario>().BossIaraOn();
+            _desbugarVidaIara = true;
         }
 
         // collieder com inimigo
@@ -463,7 +464,7 @@ public class PlayerMovement : MonoBehaviour
 
                 _TelaGameOver.DOScale(1f, 1.95f);
                 _playerVivo = false;
-
+                _checkMorte = true;
 
                 //Criar um Script separado
                 _reiniciarBT.Select();
@@ -473,6 +474,62 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Morte());
             }
             StartCoroutine(HitTime());
+        }
+
+        // colder ataque iara 1 spray
+        if (other.CompareTag("Atk1Iara") && !_checkHitMo)
+        {
+            _checkHitMo = true;
+            _vidaInicialPlayer = _vidaInicialPlayer - 3;
+            _gameCtrl._hudCanvas.GetComponent<VidaHud>().HitSlider();
+            Debug.Log("ataque spray acertou");
+
+            StartCoroutine(HitPartcPlayer());
+            if (_vidaInicialPlayer <= 0)
+            {
+                //
+
+                _TelaGameOver.DOScale(1f, 1.95f);
+                _playerVivo = false;
+                _checkMorte = true;
+
+                //Criar um Script separado
+                _reiniciarBT.Select();
+
+                //
+
+                StartCoroutine(Morte());
+            }
+            StartCoroutine(HitTime());
+
+        }
+
+        // colder ataque iara 2 linha
+        if (other.CompareTag("Atk2Iara") && !_checkHitMo)
+        {
+            _checkHitMo = true;
+            _vidaInicialPlayer = _vidaInicialPlayer - 2;
+            _gameCtrl._hudCanvas.GetComponent<VidaHud>().HitSlider();
+            Debug.Log("ataque linha acertou");
+
+            StartCoroutine(HitPartcPlayer());
+            if (_vidaInicialPlayer <= 0)
+            {
+                //
+
+                _TelaGameOver.DOScale(1f, 1.95f);
+                _playerVivo = false;
+                _checkMorte = true;
+
+                //Criar um Script separado
+                _reiniciarBT.Select();
+
+                //
+
+                StartCoroutine(Morte());
+            }
+            StartCoroutine(HitTime());
+
         }
 
         if (other.CompareTag("agua"))
@@ -485,7 +542,7 @@ public class PlayerMovement : MonoBehaviour
 
                 _TelaGameOver.DOScale(1f, 1.95f);
                 _playerVivo = false;
-
+                _checkMorte = true;
 
                 //Criar um Script separado
                 _reiniciarBT.Select();
@@ -514,7 +571,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Morte()
     {
-        _checkMorte = true;
+        //_checkMorte = true;
         yield return new WaitForSeconds(4.4f);
         gameObject.SetActive(false);
     }
