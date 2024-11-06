@@ -136,7 +136,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.5
+  bundleVersion: B0.6
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.IvoCalvo.Lendas
+    Standalone: com.IvoCalvo.O-Despertar-das-Lendas
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -290,7 +290,7 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: f19686c7f26b2734487e76a63940d206, type: 3}
+      m_Icon: {fileID: 2800000, guid: 46a25e40a587dda4f99709898ae7bbd0, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0
