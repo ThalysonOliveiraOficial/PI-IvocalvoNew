@@ -21,9 +21,11 @@ public class MenuControl : MonoBehaviour
     {
         for (int i = 0; i < _ItensMenu.Count; i++)
         {
+            _nomeDoJogo.DOScale(1f, 0.20f);
             _ItensMenu[i].DOScale(1.2f, 0.25f);
             yield return new WaitForSeconds(.25f);
             _ItensMenu[i].DOScale(1f, 0.25f);
+            
         }
     }
 
