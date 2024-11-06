@@ -4242,7 +4242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2647454306561977394, guid: 60b07124ae849ea45b467792b61096ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2647454306561977394, guid: 60b07124ae849ea45b467792b61096ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4403,7 +4403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2647454306561977394, guid: 60b07124ae849ea45b467792b61096ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2647454306561977394, guid: 60b07124ae849ea45b467792b61096ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21920,11 +21920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ccf2a40c47de3974fa743515678c7144, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ccf2a40c47de3974fa743515678c7144, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44689,7 +44689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4920088290758738003, guid: 63cfa2fbdf19c7b4e8f6eddea4830dd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.010665894
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4920088290758738003, guid: 63cfa2fbdf19c7b4e8f6eddea4830dd4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49166,7 +49166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451885958}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: NPCPosition (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52972,7 +52972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2647454306561977394, guid: 60b07124ae849ea45b467792b61096ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2647454306561977394, guid: 60b07124ae849ea45b467792b61096ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55026,44 +55026,6 @@ Transform:
   - {fileID: 1664209971}
   m_Father: {fileID: 79447347}
   m_LocalEulerAnglesHint: {x: 0, y: -13.72, z: 0}
---- !u!84 &1640114673
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1652043349
 GameObject:
   m_ObjectHideFlags: 0
@@ -60635,8 +60597,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 19a301271df614e4cb916cad74de6352, type: 2}
-  m_sharedMaterial: {fileID: 137193798737298152, guid: 19a301271df614e4cb916cad74de6352, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -73223,6 +73185,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6234468795373693967, guid: d539f09405ad0cf4fb5db739de365e14, type: 3}
+      propertyPath: _tmpDialogo
+      value: 
+      objectReference: {fileID: 1801580392}
+    - target: {fileID: 6234468795373693967, guid: d539f09405ad0cf4fb5db739de365e14, type: 3}
       propertyPath: _iconeMiniMapMissao.Array.data[0]
       value: 
       objectReference: {fileID: 884823217}
@@ -74701,6 +74667,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3300807408878660688, guid: 79058397d9902fa4196d1e65b33067a8, type: 3}
+      propertyPath: _tmpDialogo
+      value: 
+      objectReference: {fileID: 1801580392}
     - target: {fileID: 3300807408878660688, guid: 79058397d9902fa4196d1e65b33067a8, type: 3}
       propertyPath: _iconeMiniMapMissao.Array.data[0]
       value: 
