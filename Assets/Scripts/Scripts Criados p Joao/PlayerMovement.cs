@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         _playerVivo = true;
         
         //quando o jogo come�ar aparecer no mapa a marca��o da missao 1
-        _dialogNPCM._iconeMiniMapMissao[0].SetActive(true);
+        //_dialogNPCM._iconeMiniMapMissao[0].SetActive(true);
 
         _missaoAceita1 = false;
 
