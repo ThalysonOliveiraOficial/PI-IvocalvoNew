@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool _playerVivo;
 
-    //timer pra criar delay no pulo pra não ter spam
+    //timer pra criar delay no pulo pra nï¿½o ter spam
     float _delayJumpTimer;
     [SerializeField] float _delayJumpTimerValue;
     [SerializeField] bool _pularDelay;
@@ -115,14 +115,14 @@ public class PlayerMovement : MonoBehaviour
         _vidaInicialPlayer = _vidaPlayerMax;
         _playerVivo = true;
         
-        //quando o jogo começar aparecer no mapa a marcação da missao 1
+        //quando o jogo comeï¿½ar aparecer no mapa a marcaï¿½ï¿½o da missao 1
         _dialogNPCM._iconeMiniMapMissao[0].SetActive(true);
 
         _missaoAceita1 = false;
 
         if (PlayerPrefs.GetInt("StartSalve") ==1)
         {
-            //posiçao
+            //posiï¿½ao
             _posSalva.x = PlayerPrefs.GetFloat("posX");
             _posSalva.y = PlayerPrefs.GetFloat("posY");
             _posSalva.z = PlayerPrefs.GetFloat("posZ");
@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
         Gravidade();
         GroundCheck();
         
-        //fazer personagem para de se mexer quando morrer ou abrir o inventario provavelmente ta errado, mas tá funcionando
+        //fazer personagem para de se mexer quando morrer ou abrir o inventario provavelmente ta errado, mas tï¿½ funcionando
         if (_inventAberto)
         {
             Debug.Log("Inventario aberto" );
@@ -189,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovimentoPlayer()
     {
-        //orientação do movimento
+        //orientaï¿½ï¿½o do movimento
         _moveDir = (_orientation.forward * _moveZ + _orientation.right * _moveX) * _moveSpeed;       
 
 
@@ -239,7 +239,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _anim.SetFloat("Andando", Mathf.Abs(_moveZ) + Mathf.Abs(_moveX));
 
-        // checkar se esta correndo e ativar a animação
+        // checkar se esta correndo e ativar a animaï¿½ï¿½o
         if (_moveSpeed > 4 && _checkRunnig)
         {
             _anim.SetFloat("Correndo", _correndo = 1);
@@ -376,7 +376,14 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        //Dialogos com NPCs que dão missão
+        //dialogo NPC Multiplayer
+        if(other.gameObject.CompareTag("NPCMultiplayer"))
+        {
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>().MultiplayerDialogo();
+        }
+
+
+        //Dialogos com NPCs que dï¿½o missï¿½o
         //Missao 1 Pegar 8 Copaiba
         if (other.gameObject.CompareTag("NPCMissao1"))
         {
@@ -394,7 +401,7 @@ public class PlayerMovement : MonoBehaviour
             else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && other.GetComponent<DialogNPCMissao>()._missaoConcluida[0] == false)
             {
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 8;
-                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigada por trazer, voce é uma fofura";
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigada por trazer, voce ï¿½ uma fofura";
                 other.GetComponent<DialogNPCMissao>()._missaoConcluida[0] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[0].transform.localScale = Vector3.zero;
@@ -403,7 +410,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log("Missão sendo feita ou cumprida");
+                Debug.Log("Missï¿½o sendo feita ou cumprida");
             }
         }
         //Missao  matar monstros
@@ -428,11 +435,11 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log("Missão sendo feita ou cumprida");
+                Debug.Log("Missï¿½o sendo feita ou cumprida");
             }
         }
 
-        //missão Iara PRIMEIRO FAZER A IARA MORRER NO SCRIPT
+        //missï¿½o Iara PRIMEIRO FAZER A IARA MORRER NO SCRIPT
         //if (other.gameObject.CompareTag("NPCMissaoIara"))
         //{
         //  _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();

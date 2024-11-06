@@ -20,17 +20,21 @@ public class HudInventario : MonoBehaviour
     public bool _inventHudAberto;
     public Button _btInvHudInicial;
 
-    //botão de confirmação do panel quando o jogo abre
+    //botï¿½o de confirmaï¿½ï¿½o do panel quando o jogo abre
     public Button _btConfirmStart;
 
     public Transform _panelConcluirMissao;
-    // criar um enumerator coroutine e uma função pra fazer  _panelConcluirMissao aparecer e desaparecer quando uma missao for concluida
+    // criar um enumerator coroutine e uma funï¿½ï¿½o pra fazer  _panelConcluirMissao aparecer e desaparecer quando uma missao for concluida
 
     public Transform _panelIaraVida;
     public Slider _vidaIaraSlider;
 
     public Transform _panelVitoriaIara;
     public Button _vitoriaVoltarMenu;
+
+    //panel para comeÃ§ar multiplayer
+    public Transform _panelDialogMult;
+    public Button _btMultDialog; 
 
     void Start()
     {
@@ -105,7 +109,7 @@ public class HudInventario : MonoBehaviour
     {
         _btInvHudInicial.Select();
     }
-    //IEnumerator para tela de conclusão de missão
+    //IEnumerator para tela de conclusï¿½o de missï¿½o
     IEnumerator ConcluirMissao()
     {
         _panelConcluirMissao.DOScale(1, .7f);
@@ -147,4 +151,14 @@ public class HudInventario : MonoBehaviour
         SceneManager.LoadScene("Multiplayer");
     }
 
+    public void MultiplayerDialogo()
+    {
+        _panelDialogMult.DOScale(1f, 0.5f);
+        _btMultDialog.Select();
+    }
+
+    public void FecharMultiplayerDialogo()
+    {
+        _panelDialogMult.DOScale(0f, 0.5f);
+    }
 }

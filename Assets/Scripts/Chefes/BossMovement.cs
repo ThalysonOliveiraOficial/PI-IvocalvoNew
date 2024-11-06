@@ -87,7 +87,7 @@ public class BossMovement : MonoBehaviour
     }
     void AnimaIara()
     {
-        //Animações
+        //Animaï¿½ï¿½es
         _anim.SetBool("Movendo", _seMovendo);
         _anim.SetInteger("Ataque", _ataque);
         _anim.SetBool("Atacando", _atacando);
@@ -99,7 +99,7 @@ public class BossMovement : MonoBehaviour
         _distPlayer = Vector3.Distance(transform.position, _player.position);
         _distPos = Vector3.Distance(transform.position, _pos[_posSelec].position);
 
-        //timer pra iara mudar de posição
+        //timer pra iara mudar de posiï¿½ï¿½o
         _timer -= Time.deltaTime;
         if (_timer < 0)
         {
@@ -140,7 +140,7 @@ public class BossMovement : MonoBehaviour
                 _ataque = _ataqueLis[_ataqueSort];
                 //mudar o contador pra ativar o ataque em area
                 if (_ataque == 2 || _ataque == 3) _atkBoss._contadorAtk = 1;
-                //ataque 1 é uma cura, se a iara estiver com 40 ou mais de vida, faz avida setar em 40 de novo
+                //ataque 1 ï¿½ uma cura, se a iara estiver com 40 ou mais de vida, faz avida setar em 40 de novo
                 if (_ataque == 1 && _iaraVida <= 40)
                 {
                     GetComponent<BossVida>()._vidaBoss = GetComponent<BossVida>()._vidaBoss + 4;
@@ -183,8 +183,9 @@ public class BossMovement : MonoBehaviour
     IEnumerator MorteIara()
     {
         _gameCtrl._hudCanvas.GetComponent<HudInventario>().BossIaraOff();
+        _gameCtrl._hudCanvas.GetComponent<HudInventario>().VitoriaIara();
         yield return new WaitForSeconds(4.4f);
-        // fazer painel para recomeçar o jogo depois de matar iara
+        // fazer painel para recomeï¿½ar o jogo depois de matar iara
         gameObject.SetActive(false);
     }
 

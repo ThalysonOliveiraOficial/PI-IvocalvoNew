@@ -22,6 +22,7 @@ TagManager:
   - Conta
   - Atk1Iara
   - Atk2Iara
+  - NPCMultiplayer
   layers:
   - Default
   - TransparentFX
