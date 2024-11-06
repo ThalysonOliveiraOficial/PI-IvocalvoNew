@@ -40,7 +40,7 @@ public class Move_multi : MonoBehaviour
 
     public void SetMove(InputAction.CallbackContext value)
     {
-        _move = value.ReadValue<Vector3>().normalized;
+        _move = value.ReadValue<Vector3>().normalized * 2.5f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
