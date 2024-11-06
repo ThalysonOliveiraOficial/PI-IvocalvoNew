@@ -27,7 +27,7 @@ public class MenuControl : MonoBehaviour
         }
     }
 
-    //fazer o nome do jogo balançar
+    //fazer o nome do jogo balanï¿½ar
     /*
     private IEnumerator NomeDoJogo()
     {

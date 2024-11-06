@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mapa_Arborizado.unity
     guid: c0744ac85b092e74dbc4a73f57b9d08f
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer.unity
+    guid: 1357c822cbced954b842af5d1eab0003
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: ab12716c955c9f94b90485260b851408, type: 2}

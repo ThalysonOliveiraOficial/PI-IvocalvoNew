@@ -154,11 +154,17 @@ public class HudInventario : MonoBehaviour
     public void MultiplayerDialogo()
     {
         _panelDialogMult.DOScale(1f, 0.5f);
+        _inventHudAberto = true;
         _btMultDialog.Select();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void FecharMultiplayerDialogo()
     {
+        _inventHudAberto = false;
         _panelDialogMult.DOScale(0f, 0.5f);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
