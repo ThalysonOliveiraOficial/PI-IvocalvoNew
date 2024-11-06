@@ -65,16 +65,14 @@ public class BossMovement : MonoBehaviour
         if (_iaraVida <= 0)
         {
             _iaraMorta = true;
+            Morte();
         }
 
         if (!_iaraMorta)
         {
             MovimentoChefe();
         }
-        else
-        {
-            Morte();
-        }
+        
         _iara = _gameCtrl._bossOn;
     }
 

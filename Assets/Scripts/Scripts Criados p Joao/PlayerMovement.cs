@@ -472,6 +472,7 @@ public class PlayerMovement : MonoBehaviour
                 _TelaGameOver.DOScale(1f, 1.95f);
                 _playerVivo = false;
                 _checkMorte = true;
+                _inventAberto = true;
 
                 //Criar um Script separado
                 _reiniciarBT.Select();
@@ -499,6 +500,7 @@ public class PlayerMovement : MonoBehaviour
                 _TelaGameOver.DOScale(1f, 1.95f);
                 _playerVivo = false;
                 _checkMorte = true;
+                _inventAberto = true;
 
                 //Criar um Script separado
                 _reiniciarBT.Select();
@@ -527,6 +529,7 @@ public class PlayerMovement : MonoBehaviour
                 _TelaGameOver.DOScale(1f, 1.95f);
                 _playerVivo = false;
                 _checkMorte = true;
+                _inventAberto = true;
 
                 //Criar um Script separado
                 _reiniciarBT.Select();
@@ -550,7 +553,7 @@ public class PlayerMovement : MonoBehaviour
                 _TelaGameOver.DOScale(1f, 1.95f);
                 _playerVivo = false;
                 _checkMorte = true;
-
+                _inventAberto = true;
                 //Criar um Script separado
                 _reiniciarBT.Select();
 
@@ -604,6 +607,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         //gameObject.SetActive(true);
         _checkMorte = false;
+        _inventAberto = false;
         //_RestartPlayerPartc.gameObject.SetActive(false);
 
     }
