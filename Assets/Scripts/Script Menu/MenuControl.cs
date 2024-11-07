@@ -64,7 +64,7 @@ public class MenuControl : MonoBehaviour
     //loading
     public void GameIniciar()
     {
-        _panelLoading.DOScale(1f, .25f);
+        _panelLoading.gameObject.SetActive(true);
         StartCoroutine(CarregarCena());
     }
     private IEnumerator CarregarCena(){
@@ -79,8 +79,19 @@ public class MenuControl : MonoBehaviour
     //Multiplayer
     public void IniciarMultiiplayer()
     {
-        SceneManager.LoadScene("Multiplayer");
+        _panelLoading.gameObject.SetActive(true);
+        StartCoroutine(CarregarMultiplayer());
     }
+
+    private IEnumerator CarregarMultiplayer(){
+        AsyncOperation _asyncOperation =  SceneManager.LoadSceneAsync("Multiplayer");
+        while(!_asyncOperation.isDone){
+            _sliderLoading.value =_asyncOperation.progress;
+            _textoCarregamento.text = "Carregando: "+ (_asyncOperation.progress * 100f) +"%";
+            yield return null;
+        }
+    }
+
     public void GameFechar()
     {
         Application.Quit();

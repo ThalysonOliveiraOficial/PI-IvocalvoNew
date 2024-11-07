@@ -560,6 +560,17 @@
                     "action": "MultiAbrirPausa",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8afaa14d-2262-4a30-bbf4-a28e69aea092",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MultiAbrirPausa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

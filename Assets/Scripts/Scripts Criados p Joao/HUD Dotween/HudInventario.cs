@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class HudInventario : MonoBehaviour
 {
@@ -35,6 +36,11 @@ public class HudInventario : MonoBehaviour
     //panel para começar multiplayer
     public Transform _panelDialogMult;
     public Button _btMultDialog; 
+
+    //
+    [SerializeField] private Transform _panelLoading;
+    [SerializeField] private Slider _sliderLoading;
+    [SerializeField] private TextMeshProUGUI _textoCarregamento;
 
     void Start()
     {
@@ -141,14 +147,39 @@ public class HudInventario : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void VoltarProMenu()
-    {
-        SceneManager.LoadScene("Menu");
+
+    //loading menu
+    
+    private IEnumerator CarregarMenu(){
+        AsyncOperation _asyncOperation =  SceneManager.LoadSceneAsync("Menu");
+        while(!_asyncOperation.isDone){
+            _sliderLoading.value =_asyncOperation.progress;
+            _textoCarregamento.text = "Carregando: "+ (_asyncOperation.progress * 100f) +"%";
+            yield return null;
+        }
     }
 
-    public void ChamarMultiiplayer()
+    public void VoltarProMenu()
     {
-        SceneManager.LoadScene("Multiplayer");
+        _panelLoading.gameObject.SetActive(true);
+        StartCoroutine(CarregarMenu());
+    }
+
+    //loading multiplayer
+
+    public void IniciarMultiiplayer()
+    {
+        _panelLoading.gameObject.SetActive(true);
+        StartCoroutine(CarregarMultiplayer());
+    }
+
+    private IEnumerator CarregarMultiplayer(){
+        AsyncOperation _asyncOperation =  SceneManager.LoadSceneAsync("Multiplayer");
+        while(!_asyncOperation.isDone){
+            _sliderLoading.value =_asyncOperation.progress;
+            _textoCarregamento.text = "Carregando: "+ (_asyncOperation.progress * 100f) +"%";
+            yield return null;
+        }
     }
 
     public void MultiplayerDialogo()

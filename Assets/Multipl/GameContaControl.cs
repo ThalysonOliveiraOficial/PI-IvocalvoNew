@@ -23,6 +23,11 @@ public class GameContaControl : MonoBehaviour
     public Transform _panelPause;
     public Button _btPauseinicial;
 
+    //coisas para o loading
+    [SerializeField] private Transform _panelLoading;
+    [SerializeField] private Slider _sliderLoading;
+    [SerializeField] private TextMeshProUGUI _textoCarregamento;
+    
     public bool _pause;
 
     // Start is called before the first frame update
@@ -63,8 +68,20 @@ public class GameContaControl : MonoBehaviour
         _pause = false;
     }
 
+    //loading menu
+
+    private IEnumerator CarregarMenu(){
+        AsyncOperation _asyncOperation =  SceneManager.LoadSceneAsync("Menu");
+        while(!_asyncOperation.isDone){
+            _sliderLoading.value =_asyncOperation.progress;
+            _textoCarregamento.text = "Carregando: "+ (_asyncOperation.progress * 100f) +"%";
+            yield return null;
+        }
+    }
+
     public void VoltarJogoPrincipal()
     {
-         SceneManager.LoadScene("Menu");
+        _panelLoading.gameObject.SetActive(true);
+        StartCoroutine(CarregarMenu());
     }
 }
