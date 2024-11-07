@@ -54,7 +54,8 @@ public class MenuControl : MonoBehaviour
     }
     public void GameIniciar()
     {
-        SceneManager.LoadScene("Mapa_Arborizado");
+        AsyncOperation _asyncOperation =  SceneManager.LoadSceneAsync("Mapa_Arborizado");
+        
     }
 
     public void IniciarMultiiplayer()
