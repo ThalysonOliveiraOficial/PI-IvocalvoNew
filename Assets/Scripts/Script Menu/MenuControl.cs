@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,13 @@ public class MenuControl : MonoBehaviour
 {
     [SerializeField] List<Transform> _ItensMenu;
     [SerializeField] Transform _nomeDoJogo;
+
+    //coisas para o loading
+    [SerializeField] private Transform _panelLoading;
+    [SerializeField] private Slider _sliderLoading;
+    [SerializeField] private TextMeshProUGUI _textoCarregamento;
+
+
     
     // Start is called before the first frame update
     void Start()
@@ -52,12 +60,23 @@ public class MenuControl : MonoBehaviour
         }
 
     }
+
+    //loading
     public void GameIniciar()
     {
+        _panelLoading.DOScale(1f, .25f);
+        StartCoroutine(CarregarCena());
+    }
+    private IEnumerator CarregarCena(){
         AsyncOperation _asyncOperation =  SceneManager.LoadSceneAsync("Mapa_Arborizado");
-        
+        while(!_asyncOperation.isDone){
+            _sliderLoading.value =_asyncOperation.progress;
+            _textoCarregamento.text = "Carregando: "+ (_asyncOperation.progress * 100f) +"%";
+            yield return null;
+        }
     }
 
+    //Multiplayer
     public void IniciarMultiiplayer()
     {
         SceneManager.LoadScene("Multiplayer");

@@ -151,7 +151,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 824894598}
   - {fileID: 1564201080}
@@ -1097,8 +1097,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000047684, y: 11}
-  m_SizeDelta: {x: 705.167, y: 93.423}
+  m_AnchoredPosition: {x: 0.0010147, y: 10.388}
+  m_SizeDelta: {x: 511.66, y: 92.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581844221
 MonoBehaviour:
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Carregando
+  m_text: 'Carregando: 100%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1147,10 +1147,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1658,6 +1658,9 @@ MonoBehaviour:
   - {fileID: 463163235}
   - {fileID: 1409117615}
   _nomeDoJogo: {fileID: 282473303}
+  _panelLoading: {fileID: 49329479}
+  _sliderLoading: {fileID: 869902290}
+  _textoCarregamento: {fileID: 581844221}
 --- !u!1 &981886666
 GameObject:
   m_ObjectHideFlags: 0
