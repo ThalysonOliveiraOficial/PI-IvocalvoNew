@@ -15,6 +15,9 @@ public class Move_multi : MonoBehaviour
     public int _playerN;
     public Sprite[] SpriteIMG;
     SpriteRenderer _spriteRenderer;
+
+    public bool _jogoPausado;
+
     void Start()
     {
         _rigidbody2 = GetComponent<Rigidbody2D>();
@@ -30,18 +33,34 @@ public class Move_multi : MonoBehaviour
         {
             _spriteRenderer.sprite = SpriteIMG[1];
         }
+
+        _jogoPausado = false;
     }
 
     // Update is called once per frame
     void Update()
     {//
-        _rigidbody2.velocity = _move;
+        _jogoPausado = _contaControl._pause;
+
+        if(_jogoPausado)
+        {
+            Debug.Log("Jogo pausado");
+        }else{
+            _rigidbody2.velocity = _move;
+        }
+        
     }
 
     public void SetMove(InputAction.CallbackContext value)
     {
         _move = value.ReadValue<Vector3>().normalized * 2.5f;
     }
+
+public void SetPause(InputAction.CallbackContext value)
+{
+    _contaControl.PausarAbrir();
+    
+}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

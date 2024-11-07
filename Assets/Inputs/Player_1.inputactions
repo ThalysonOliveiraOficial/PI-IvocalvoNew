@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MultiAbrirPausa",
+                    "type": "Button",
+                    "id": "3cb1497e-612b-4eba-a0c6-886c8567a0d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -529,6 +538,28 @@
                     "action": "MoveIvo",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0fd4f898-77be-43af-958d-3c2c6a380b1e",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MultiAbrirPausa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fcf36a22-9536-4326-8967-580b8ad3a5aa",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MultiAbrirPausa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

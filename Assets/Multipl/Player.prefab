@@ -185,6 +185,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bda45372-cb45-4697-a1e8-7a95fe4097ba
     m_ActionName: Move-Player/MoveIvo
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4972309641020672528}
+        m_TargetAssemblyTypeName: Move_multi, Assembly-CSharp
+        m_MethodName: SetPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3cb1497e-612b-4eba-a0c6-886c8567a0d0
+    m_ActionName: Move-Player/MultiAbrirPausa[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Move-Player
@@ -210,6 +226,7 @@ MonoBehaviour:
   SpriteIMG:
   - {fileID: -1125530684, guid: 290b258f074d78546aa063ce741f309d, type: 3}
   - {fileID: -2142245454, guid: 290b258f074d78546aa063ce741f309d, type: 3}
+  _jogoPausado: 0
 --- !u!61 &4204492017222217005
 BoxCollider2D:
   m_ObjectHideFlags: 0

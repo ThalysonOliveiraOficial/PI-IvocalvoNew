@@ -20,12 +20,18 @@ public class GameContaControl : MonoBehaviour
 
     public Button _buttonVitoria;
         
+    public Transform _panelPause;
+    public Button _btPauseinicial;
+
+    public bool _pause;
+
     // Start is called before the first frame update
     private void Start()
     {
         Invoke("SetblocoNumber", 1);
         textMeshProUGUI[0].text = "Pontos 0";
         textMeshProUGUI[1].text = "Pontos 0";
+        _pause = false;
     }
 
     // Update is called once per frame
@@ -42,6 +48,19 @@ public class GameContaControl : MonoBehaviour
     {
         _panelVitoria.DOScale(1, 1.5f);
         _buttonVitoria.Select();
+    }
+
+    public void PausarAbrir()
+    {
+        _panelPause.DOScale(1f, .30f);
+        _btPauseinicial.Select();
+        _pause = true;
+    }
+
+    public void PausarFechar()
+    {
+        _panelPause.DOScale(0f, .30f);
+        _pause = false;
     }
 
     public void VoltarJogoPrincipal()
