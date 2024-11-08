@@ -24,6 +24,8 @@ public class HudInventario : MonoBehaviour
     //bot�o de confirma��o do panel quando o jogo abre
     public Button _btConfirmStart;
 
+    public Button _voltarMenu;
+
     public Transform _panelConcluirMissao;
     // criar um enumerator coroutine e uma fun��o pra fazer  _panelConcluirMissao aparecer e desaparecer quando uma missao for concluida
 
@@ -36,11 +38,16 @@ public class HudInventario : MonoBehaviour
     //panel para começar multiplayer
     public Transform _panelDialogMult;
     public Button _btMultDialog; 
+    public Button _btVazioPraNaoBugar;
 
     //
     [SerializeField] private Transform _panelLoading;
     [SerializeField] private Slider _sliderLoading;
     [SerializeField] private TextMeshProUGUI _textoCarregamento;
+
+    //
+    public Transform _panelObjCOnt;
+    public TextMeshProUGUI _tmpObjCont;
 
     void Start()
     {
@@ -62,6 +69,7 @@ public class HudInventario : MonoBehaviour
     public void FecharHudInvet()
     {
         _panelInvet.DOScale(0f, .25f);
+        _btVazioPraNaoBugar.Select();
         _inventHudAberto = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -118,14 +126,14 @@ public class HudInventario : MonoBehaviour
     //IEnumerator para tela de conclus�o de miss�o
     IEnumerator ConcluirMissao()
     {
-        _panelConcluirMissao.DOScale(1, .7f);
+        _panelConcluirMissao.DOScale(1, .33f);
         yield return new WaitForSeconds(4.4f);
-        _panelConcluirMissao.DOScale(0, .7f);
+        _panelConcluirMissao.DOScale(0, .33f);
     }
 
     public void MissaoConcluir()
     {
-        ConcluirMissao();
+        StartCoroutine(ConcluirMissao());
     }
 
     public void BossIaraOn()
@@ -194,8 +202,22 @@ public class HudInventario : MonoBehaviour
     public void FecharMultiplayerDialogo()
     {
         _inventHudAberto = false;
+        _btVazioPraNaoBugar.Select();
         _panelDialogMult.DOScale(0f, 0.5f);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    //Panel contador
+    public void AbrirPanelOBjCont () {
+
+     _panelObjCOnt.DOScale(1f, .25f);
+
+    }
+
+    public void FecharPanelObjCont(){
+        _panelObjCOnt.DOScale(0, .25f);
+    }
+
+
 }

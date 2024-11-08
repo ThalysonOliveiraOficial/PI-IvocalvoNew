@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Missao2
   m_EditorClassIdentifier: 
   _nome: 
-  _dialogo1: Apareceram Monstros, voce pode derrotalos e tirar eles de la
+  _dialogo1: Apareceram Monstros, derrote 5 deles para ajudar a cidade
   _dialogo2: Obrigado pela ajuda com os monstros, parece que a iara apareceu derrote
     ela!

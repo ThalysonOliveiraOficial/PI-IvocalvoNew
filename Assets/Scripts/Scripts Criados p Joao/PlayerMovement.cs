@@ -86,12 +86,14 @@ public class PlayerMovement : MonoBehaviour
     //Dialogo NPC
     DialogNPCMissao _dialogNPCM;
     private bool _missaoAceita1;
-    private bool _missaoAceita2;
+    public bool _missaoAceita2;
 
     public Button _btDialogFechar;
     public bool _inventAberto;
 
     public bool _desbugarVidaIara;
+
+    bool _missao2 = false;
 
     private void Start()
     {
@@ -142,6 +144,20 @@ public class PlayerMovement : MonoBehaviour
     {
         _ponteiroMM.eulerAngles = new Vector3(0, 0, -_orientation.transform.eulerAngles.y);
         _inventAberto = _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>()._inventHudAberto;
+
+        if(!_missaoAceita2 &&_missaoAceita1){
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>().AbrirPanelOBjCont();
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>()._tmpObjCont.text = "" + _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber + " /8";
+        }else{
+            Debug.Log("ContInvisivel");
+        }
+
+        if(_missao2 &&_missaoAceita1){
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>().AbrirPanelOBjCont();
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>()._tmpObjCont.text = "" + _gameCtrl._contKillInimigo + " /5";
+        }else{
+            Debug.Log("ContInvisivel");
+        }
 
         //desbugar o pulo
         if (_checkJump)
@@ -395,23 +411,25 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("missao 1 aceita");
                 _dialogNPCM._contadorObjetivo = 5;
                 //se der problemas fazer texto usando string mesmo
-                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Traga 8 copaibas pra mim";
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Estou com dores, Traga 8 copaibas pra mim por favor";
                 _missaoAceita1 = true;
             }
             else if (_gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber >= 8 && other.GetComponent<DialogNPCMissao>()._missaoConcluida[0] == false)
             {
                 _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber = _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber - 8;
-                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigada por trazer, voce � uma fofura";
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigada por trazer, voce e uma fofura";
                 other.GetComponent<DialogNPCMissao>()._missaoConcluida[0] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[0].transform.localScale = Vector3.zero;
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[1].transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
                 _missaoAceita2 = true;
+                _gameCtrl._hudCanvas.GetComponent<HudInventario>().FecharPanelObjCont();
             }
             else
             {
                 Debug.Log("Miss�o sendo feita ou cumprida");
             }
+
         }
         //Missao  matar monstros
         if (other.gameObject.CompareTag("NPCMissao2"))
@@ -419,19 +437,27 @@ public class PlayerMovement : MonoBehaviour
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
+            other.GetComponent<DialogNPCMissao>()._contadorObjetivo = _gameCtrl._contKillInimigo;
+
             if (_missaoAceita2)
             {
-                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "" + other.GetComponent<DialogNPCMissao>()._questNPC[1]._dialogo1;
-                other.GetComponent<DialogNPCMissao>()._contadorObjetivo = 5;
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Apareceram Monstros, derrote 5 deles para ajudar a cidade";
+                other.GetComponent<DialogNPCMissao>()._contadorObjetivo = _gameCtrl._contKillInimigo;
                 _missaoAceita2 = false;
+                _missao2 = true;
             }
-            else if (other.GetComponent<DialogNPCMissao>()._contadorObjetivo == 0 && other.GetComponent<DialogNPCMissao>()._missaoConcluida[1] == false)
+            else {
+                Debug.Log("missão aceita");
+            }
+            if (other.GetComponent<DialogNPCMissao>()._contadorObjetivo == 0 && _missao2)
             {
-                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "" + other.GetComponent<DialogNPCMissao>()._questNPC[1]._dialogo2;
+                other.GetComponent<DialogNPCMissao>()._tmpDialogo.text = "Obrigado pela ajuda com os monstros, parece que a iara apareceu derrote ela!";
                 other.GetComponent<DialogNPCMissao>()._missaoConcluida[1] = true;
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[1].transform.localScale = Vector3.zero;
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[2].transform.localScale = new Vector3(18.18182f, 18.18182f, 18.18182f);
+                _missao2 = false;
+                _gameCtrl._hudCanvas.GetComponent<HudInventario>().FecharPanelObjCont();
             }
             else
             {

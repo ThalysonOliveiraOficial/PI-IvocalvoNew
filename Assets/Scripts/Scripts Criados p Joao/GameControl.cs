@@ -44,6 +44,8 @@ public class GameControl : MonoBehaviour
     //
     public int _contKillInimigo;
 
+    public bool _iniciaM2;
+
 
     void Start()
     {
@@ -55,12 +57,19 @@ public class GameControl : MonoBehaviour
             PlayerPrefs.SetInt("StartSalve", 0);
         }
 
-        _contKillInimigo = 10;
+        _contKillInimigo = 5;
     }
 
     void Update()
     {
+        _iniciaM2 = _player.GetComponent<PlayerMovement>()._missaoAceita2;
+
         _minicamera.position = new Vector3(_player.position.x, _minicamera.position.y, _player.position.z);
+
+        if(_iniciaM2) {
+            _contKillInimigo = 5;
+            Debug.Log("MonstrosContKill: "+ _contKillInimigo);
+        }else Debug.Log("MonstrosContKill: "+ _contKillInimigo);
 
         for (int i = 0; i < _somHud.Count; i++)
         {

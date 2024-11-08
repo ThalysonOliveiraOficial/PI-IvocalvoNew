@@ -51,6 +51,7 @@ public class HitInimigo : MonoBehaviour
                 if(_gameControl._contKillInimigo > 0)
                 {
                     _gameControl._contKillInimigo = _gameControl._contKillInimigo - 1;
+                    Debug.Log("contador monstros: " +_gameControl._contKillInimigo);
                 }
                 
                 StartCoroutine(Morte());

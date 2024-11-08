@@ -203,7 +203,7 @@ public class BossMovement : MonoBehaviour
 
     private void Morte()
     {
-        MorteIara();
+        StartCoroutine(MorteIara());
 
     }
 
