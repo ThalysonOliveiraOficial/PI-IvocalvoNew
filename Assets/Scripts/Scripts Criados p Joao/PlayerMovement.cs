@@ -95,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool _missao2 = false;
 
+    bool _desbugarCont;
+
     private void Start()
     {
         _gameCtrl = Camera.main.GetComponent<GameControl>();
@@ -148,15 +150,12 @@ public class PlayerMovement : MonoBehaviour
         if(!_missaoAceita2 &&_missaoAceita1){
             _gameCtrl._hudCanvas.GetComponent<HudInventario>().AbrirPanelOBjCont();
             _gameCtrl._hudCanvas.GetComponent<HudInventario>()._tmpObjCont.text = "" + _gridItem._itensInvet[0].GetComponent<SlotItem>()._contadorNumber + " /8";
-        }else{
-            Debug.Log("ContInvisivel");
-        }
-
+        } 
         if(_missao2 &&_missaoAceita1){
             _gameCtrl._hudCanvas.GetComponent<HudInventario>().AbrirPanelOBjCont();
-            _gameCtrl._hudCanvas.GetComponent<HudInventario>()._tmpObjCont.text = "" + _gameCtrl._contKillInimigo + " /5";
-        }else{
-            Debug.Log("ContInvisivel");
+            _gameCtrl._hudCanvas.GetComponent<HudInventario>()._tmpObjCont.text = "" + _gameCtrl._contKilDecre + " /5";
+        }else if(_desbugarVidaIara) {
+            Debug.Log("as");
         }
 
         //desbugar o pulo
@@ -406,7 +405,7 @@ public class PlayerMovement : MonoBehaviour
             _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().AbriDialogNPC();
             _btDialogFechar.Select();
 
-            if (_missaoAceita1 == false)
+            if (_missaoAceita1 == false && _desbugarCont == false)
             {
                 Debug.Log("missao 1 aceita");
                 _dialogNPCM._contadorObjetivo = 5;
@@ -456,7 +455,9 @@ public class PlayerMovement : MonoBehaviour
                 _gameCtrl._hudCanvas.gameObject.GetComponent<HudInventario>().MissaoConcluir();
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[1].transform.localScale = Vector3.zero;
                 other.GetComponent<DialogNPCMissao>()._iconeMiniMapMissao[2].transform.localScale = new Vector3(18.18182f, 18.18182f, 18.18182f);
+                _desbugarCont = true;
                 _missao2 = false;
+                _missaoAceita1 = false;
                 _gameCtrl._hudCanvas.GetComponent<HudInventario>().FecharPanelObjCont();
             }
             else

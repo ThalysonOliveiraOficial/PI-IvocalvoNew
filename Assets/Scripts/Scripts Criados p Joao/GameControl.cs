@@ -44,6 +44,8 @@ public class GameControl : MonoBehaviour
     //
     public int _contKillInimigo;
 
+    public int _contKilDecre;
+
     public bool _iniciaM2;
 
 
@@ -68,6 +70,7 @@ public class GameControl : MonoBehaviour
 
         if(_iniciaM2) {
             _contKillInimigo = 5;
+            _contKilDecre = 0;
             Debug.Log("MonstrosContKill: "+ _contKillInimigo);
         }else Debug.Log("MonstrosContKill: "+ _contKillInimigo);
 
