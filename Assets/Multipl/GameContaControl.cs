@@ -23,6 +23,8 @@ public class GameContaControl : MonoBehaviour
     public Transform _panelPause;
     public Button _btPauseinicial;
 
+    public Button _btVazioDeBug;
+
     //coisas para o loading
     [SerializeField] private Transform _panelLoading;
     [SerializeField] private Slider _sliderLoading;
@@ -65,6 +67,7 @@ public class GameContaControl : MonoBehaviour
     public void PausarFechar()
     {
         _panelPause.DOScale(0f, .30f);
+        _btVazioDeBug.Select();
         _pause = false;
     }
 

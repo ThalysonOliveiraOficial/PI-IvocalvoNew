@@ -53,7 +53,7 @@ public class Move_multi : MonoBehaviour
 
     public void SetMove(InputAction.CallbackContext value)
     {
-        _move = value.ReadValue<Vector3>().normalized * 2.5f;
+        _move = value.ReadValue<Vector3>().normalized * 3.5f;
     }
 
 public void SetPause(InputAction.CallbackContext value)
